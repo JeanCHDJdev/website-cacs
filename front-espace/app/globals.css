@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 0, 0, 255;
   --background-end-rgb: 255, 255, 255;
+  --darkblue-cacs: #0a1e3a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,12 +17,12 @@
   }
 }
 
-body {
+/*body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+    background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+}*/
