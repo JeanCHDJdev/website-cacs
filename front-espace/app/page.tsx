@@ -7,11 +7,13 @@ export default function Home() {
     '/main_img_diapo/photo_grp_cspace.jpg',
     '/main_img_diapo/prix.jpg'
   ];
-  const slideSwitchTimer = 5000;
+  const slideSwitchTimer = 10000;
 
   return (
-    <div className="slideshow-container" style={{ position: 'absolute', top: 0, left: 0, zIndex: -1 }}>
-      <Slideshow images={images} timer={slideSwitchTimer} />
-    </div>
-    );
+    <main>
+      <div className="slideshow-container" style={{ position: 'absolute', top: 0, left: 0, zIndex: -1 }}>
+        <Slideshow images={images} timer={slideSwitchTimer} />
+      </div>
+    </main>
+  );
 }
