@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 
 interface SlideshowProps {
@@ -13,11 +14,19 @@ const Slideshow: React.FC<SlideshowProps> = ({ images, timer }) => {
         console.log("Slideshow.tsx: handleClick: currentImageIndex: ", currentImageIndex);
     };
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, timer);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, [images.length, timer]);
+
     return (
         <div>
-            <img src={images[currentImageIndex]} alt="Slideshow Image" />
-            <p>Current Slide: {currentImageIndex + 1}</p>
-            <button style={{ cursor: 'pointer' }} onClick={handleClick}>Next Slide</button>
+            <img src={images[currentImageIndex]} alt="Slideshow Image" onClick={handleClick} />
         </div>
     );
 };

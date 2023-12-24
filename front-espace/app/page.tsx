@@ -1,4 +1,3 @@
-"use client";
 import React from 'react';
 import Slideshow from './tools/Slideshow';
 
@@ -11,8 +10,8 @@ export default function Home() {
   const slideSwitchTimer = 5000;
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <div className="slideshow-container" style={{ position: 'absolute', top: 0, left: 0, zIndex: -1 }}>
       <Slideshow images={images} timer={slideSwitchTimer} />
-    </main>
-  );
+    </div>
+    );
 }
