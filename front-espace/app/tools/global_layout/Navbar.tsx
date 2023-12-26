@@ -26,8 +26,8 @@ const Navbar: React.FC = () => {
         },
         {
             label: 'Partenariats',
-            options: ['Nos Partenaires', 'Devenir Partenaire'],
-            links: ['/Partenaires', '/nous-soutenir'],
+            options: ['Nos Partenaires', 'Devenir Partenaire', 'Soutiens'],
+            links: ['/Partenaires', '/Nous-Soutenir', '/Soutiens'],
             showMenu: false,
         },
         // Add more tabs here if needed
@@ -37,43 +37,50 @@ const Navbar: React.FC = () => {
 
     const handleTabClick = (index: number) => {
         setTabs((prevTabs) => {
-            const updatedTabs = [...prevTabs];
-            updatedTabs[index] = { ...updatedTabs[index], showMenu: !updatedTabs[index].showMenu };
+            const updatedTabs = prevTabs.map((tab, i) => ({
+                ...tab,
+                showMenu: i === index ? !tab.showMenu : false,
+            }));
             return updatedTabs;
         });
     };
 
     const handleBlur: React.FocusEventHandler<HTMLLIElement> = (event) => {
-        // Find the index of the tab that contains the event target
         const index = tabs.findIndex((tab) => event.currentTarget.contains(event.relatedTarget as Node));
         if (index !== -1) {
+            clearTimeout(timeoutRef.current!); // Clear the timeout
             timeoutRef.current = window.setTimeout(() => {
                 setTabs((prevTabs) => {
                     const updatedTabs = [...prevTabs];
                     updatedTabs[index] = { ...updatedTabs[index], showMenu: false };
                     return updatedTabs;
                 });
-            }, 1000); // 1 second delay
+            }, 500);
         }
     };
 
     const handleMouseEnter = (index: number) => {
-        clearTimeout(timeoutRef.current!);
+        clearTimeout(timeoutRef.current!); // Clear the timeout
         setTabs((prevTabs) => {
-            const updatedTabs = [...prevTabs];
-            updatedTabs[index] = { ...updatedTabs[index], showMenu: true };
+            const updatedTabs = prevTabs.map((tab, i) => ({
+                ...tab,
+                showMenu: i === index ? true : false,
+            }));
             return updatedTabs;
         });
     };
 
     const handleMouseLeave = (index: number) => {
+        clearTimeout(timeoutRef.current!); // Clear the timeout
         timeoutRef.current = window.setTimeout(() => {
             setTabs((prevTabs) => {
-                const updatedTabs = [...prevTabs];
-                updatedTabs[index] = { ...updatedTabs[index], showMenu: false };
+                const updatedTabs = prevTabs.map((tab) => ({
+                    ...tab,
+                    showMenu: false,
+                }));
                 return updatedTabs;
             });
-        }, 1000); // 1000ms delay
+        }, 1000);
     };
 
     return (
@@ -95,7 +102,7 @@ const Navbar: React.FC = () => {
                     </li>
                 ))}
             </ul>
-            <ul style={{ display: 'flex', flexDirection: 'row', listStyleType: 'none', padding: 0, marginRight: 'auto' }}>
+            <ul style={{ display: 'flex', flexDirection: 'row', listStyleType: 'none', padding: 0, marginRight: 'auto' }} onMouseEnter={() => handleMouseEnter(-1)}>
                 <li style={{ marginRight: '2rem' }}>
                     <a href="/Contact">Contact</a>
                 </li>

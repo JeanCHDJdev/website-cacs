@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div style={{ flex: '2', textAlign: 'center' }}>
-          <p style={{ color: 'white', textAlign: 'center', fontSize: '30px', fontWeight: 'bold', marginBottom: '0px' }}>CACS</p>
+          <p style={{ color: 'white', textAlign: 'center', fontSize: '30px', fontWeight: 'bold', marginBottom: '0px', fontStyle: 'italic' }}>CACS</p>
           <p style={{ color: 'white', textAlign: 'center', fontSize: '20px', marginBottom: '10px' }}>Cercle Aéronautique CentraleSupélec</p>
           <p style={{ color: 'white', textAlign: 'center', marginBottom: '10px' }}>Suivez-nous sur les réseaux sociaux: </p>
           <SocialMedia style={{ display: 'flex', justifyContent: 'center', marginBottom: '10px' }}/>

@@ -14,8 +14,7 @@ export default function Home() {
       <div className="slideshow-container" style={{ position: 'absolute', top: 0, left: 0, zIndex: -1 }}>
         <Slideshow images={slideshow} timer={slideSwitchTimer} />
       </div>
-      <div style={{ backgroundColor: 'transparent', height: '500px', width: '100%', pointerEvents: 'none' }}></div>
-      <div style={{ backgroundColor: 'rgb(0, 0, 50)', height: '1000px', width: '100%' }}></div>
+      <div style={{ backgroundColor: 'rgb(0, 0, 50)', height: '1000px', width: '100%', marginTop: '500px' }}></div>
     </main>
   );
 }
