@@ -1,11 +1,12 @@
-import React from 'react';
+"use client";
+import React, { useEffect, useRef } from 'react';
 
 type ParagraphProps = {
     title?: string;
     image: string;
     imagePosition: 'left' | 'right';
-    imageWidth: number;
-    imageHeight?: 'auto' | number;
+    imageWidth: string;
+    imageHeight?: 'auto' | string;
     text: string;
 };
 
@@ -17,8 +18,26 @@ const Paragraph: React.FC<ParagraphProps> = ({
     imageHeight = 'auto',
     text,
 }) => {
+    const paragraphRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const paragraphElement = paragraphRef.current;
+        if (paragraphElement) {
+            const fadeInAnimation = () => {
+                const paragraphTop = paragraphElement.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (paragraphTop < windowHeight) {
+                    paragraphElement.classList.add('fade-in');
+                    window.removeEventListener('scroll', fadeInAnimation);
+                }
+            };
+            window.addEventListener('scroll', fadeInAnimation);
+            fadeInAnimation();
+        }
+    }, []);
+
     return (
-        <div className="paragraph-container" style={{ margin: '20px', padding: '20px' }}>
+        <div className="paragraph-container" style={{ margin: '1.5rem', padding: '1.5rem' }} ref={paragraphRef}>
             {title && (
                 <div className="paragraph-title">
                     {title}
@@ -27,14 +46,14 @@ const Paragraph: React.FC<ParagraphProps> = ({
             <div className="paragraph-content" style={{ display: 'flex', alignItems: 'center' }}>
                 {imagePosition === 'left' && (
                     <>
-                        <img src={image} alt="Paragraph Image" style={{ width: imageWidth, height: imageHeight, marginRight: '20px' }} />
-                        <div className="paragraph-text" style={{ marginLeft: '50px' }}>{text}</div>
+                        <img src={image} alt="Paragraph Image" style={{ width: imageWidth, height: imageHeight, marginRight: '1.5rem' }} />
+                        <div className="paragraph-text" style={{ marginLeft: '1.5rem' }}>{text}</div>
                     </>
                 )}
                 {imagePosition === 'right' && (
                     <>
-                        <div className="paragraph-text" style={{ marginRight: '50px' }}>{text}</div>
-                        <img src={image} alt="Paragraph Image" style={{ width: imageWidth, height: imageHeight, marginLeft: '20px' }} />
+                        <div className="paragraph-text" style={{ marginRight: '3.75rem' }}>{text}</div>
+                        <img src={image} alt="Paragraph Image" style={{ width: imageWidth, height: imageHeight, marginLeft: '1.5rem' }} />
                     </>
                 )}
             </div>

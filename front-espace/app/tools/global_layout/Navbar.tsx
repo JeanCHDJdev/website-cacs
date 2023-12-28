@@ -87,10 +87,10 @@ const Navbar: React.FC = () => {
         <nav style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(0, 0, 50, 0.4)', padding: '0.5rem 1rem', position: 'fixed', top: 0, width: "100%"}}>
             {/*CACS Home Logo*/}
             <a href="/">
-                <img className='clickable-mini-images' src="../home_page/main_animations/cacs_animated_gif.gif" alt="Logo" style={{ width: '25px', transform: 'scale(4)', marginRight: '1.5rem', marginLeft: '1rem' }} />
+                <img className='clickable-mini-images' src="../home_page/main_animations/cacs_animated_gif.gif" alt="Logo" style={{ width: '1.875rem', transform: 'scale(4)', marginRight: '1.5rem', marginLeft: '1rem' }} />
             </a>
             {/*Menus*/}
-            <ul style={{ display: 'flex', flexDirection: 'row', listStyleType: 'none', padding: 0, marginLeft: '1rem'}}>
+            <ul style={{ display: 'flex', flexDirection: 'row', listStyleType: 'none', padding: '0rem', marginLeft: '1rem'}}>
                 {tabs.map((tab, index) => (
                     <li key={index} style={{ marginRight: '0.5rem' }} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={() => handleMouseLeave(index)} onBlur={handleBlur} tabIndex={0}>
                         <div onClick={() => handleTabClick(index)}>{tab.label}</div>

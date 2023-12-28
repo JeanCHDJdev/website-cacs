@@ -7,17 +7,33 @@ const Page = () => {
     return (
         <div>
             <Paragraph 
+                image='../../soutiens/planete-sciences.png' 
+                imagePosition='right' 
+                imageWidth='30rem' 
+                text={CNEStext} 
+            />
+            <Paragraph 
                 image='../../soutiens/centralesupelec.png' 
                 imagePosition='right' 
-                imageWidth={400}
-                title='Soutiens' 
+                imageWidth='30rem' 
                 text={CNEStext} 
             />
             <Paragraph 
                 image='../../soutiens/cnes.png' 
                 imagePosition='left'
-                imageWidth={400}
-                title='Soutiens' 
+                imageWidth='30rem'
+                text={CNEStext} 
+            />
+            <Paragraph 
+                image='../../soutiens/em2c.png' 
+                imagePosition='right' 
+                imageWidth='30rem' 
+                text={CNEStext} 
+            />
+            <Paragraph 
+                image='../../soutiens/lafabrique.png' 
+                imagePosition='left' 
+                imageWidth='30rem' 
                 text={CNEStext} 
             />
         </div>
