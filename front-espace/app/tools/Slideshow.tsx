@@ -2,12 +2,14 @@
 import React, { useState, useEffect } from 'react';
 
 interface SlideshowProps {
-    images: string[];
+    content: React.ReactNode[];
     timer: number;
 }
-const Slideshow: React.FC<SlideshowProps> = ({ images, timer }) => {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+const Slideshow: React.FC<SlideshowProps> = ({ content, timer }) => {
+    const [currentContentIndex, setCurrentContentIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
+
     const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
         const clickPosition = event.clientX;
         const screenWidth = window.innerWidth;
@@ -17,9 +19,9 @@ const Slideshow: React.FC<SlideshowProps> = ({ images, timer }) => {
 
         setTimeout(() => {
             if (clickPosition < halfScreenWidth) {
-                setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+                setCurrentContentIndex((prevIndex) => (prevIndex - 1 + content.length) % content.length);
             } else {
-                setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+                setCurrentContentIndex((prevIndex) => (prevIndex + 1) % content.length);
             }
             setIsTransitioning(false);
         }, 500);
@@ -29,33 +31,23 @@ const Slideshow: React.FC<SlideshowProps> = ({ images, timer }) => {
         const interval = setInterval(() => {
             setIsTransitioning(true);
             setTimeout(() => {
-                setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+                setCurrentContentIndex((prevIndex) => (prevIndex + 1) % content.length);
                 setIsTransitioning(false);
-            }, 1000); 
+            }, 1000);
         }, timer);
 
         return () => {
             clearInterval(interval);
         };
-    }, [images.length, timer]);
+    }, [content.length, timer]);;
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <img
-                src={images[currentImageIndex]}
-                onClick={handleClick}
-                style={{
-                    transform: isTransitioning ? `translateX(-100%)` : 'none',
-                    transition: 'transform 0.5s ease-in-out',
-                }}
-            />
-            <img
-                src={images[(currentImageIndex + 1) % images.length]}
-                style={{
-                    transform: isTransitioning ? 'none' : 'translateX(100%)',
-                    transition: 'transform 0.5s ease-in-out',
-                }}
-            />
+        <div>
+            <div
+                className={isTransitioning ? '' : ''}
+            >
+                {content[currentContentIndex]}
+            </div>
         </div>
     );
 };

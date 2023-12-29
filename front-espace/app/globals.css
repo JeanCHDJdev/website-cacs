@@ -6,11 +6,12 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 0, 0, 255;
   --background-end-rgb: 255, 255, 255;
-  --darkblue-cacs: rgb(0, 0, 50);
+  --darkblue-cacs: rgb(0,0,50);
   --darkblue-cacs-transparent: rgba(0, 0, 50, 0.6);
   --lightblue-cacs: rgb(100, 246, 255);
   --white-cacs: #fff;
   --gray-cacs: #bbb;
+  --navy-cacs: #263f6b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,8 +57,30 @@ li:hover {
 }
 
 .dropdown-menu {
+  transition: max-height 1s ease-in-out;
   background: var(--darkblue-cacs-transparent);
-  box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
-  transition: all linear 0.2s;
-  border-radius: 8px;
+  box-shadow: 0rem 0.75rem 2.25rem 0rem rgba(82, 63, 105, 0.05);
+  transform-origin: top;
+  border-radius: 0.6rem;
+}
+
+.title-text {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--darkblue-cacs);
+}
+.buttons {
+  border-radius: 3rem;
+  border-color: var(--white-cacs);
+  border-width: 0.2rem;
+  background: var(--darkblue-cacs-transparent);
+  color: var(--white-cacs);
+  font-size: 1.2rem; 
+  padding: 0.8rem 1.2rem; 
+} 
+.buttons:hover {
+  background: var(--lightblue-cacs);
+  color: var(--darkblue-cacs);
+  cursor: pointer;
 }

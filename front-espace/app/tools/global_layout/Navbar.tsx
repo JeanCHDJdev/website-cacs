@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
         });
     };
 
-    const handleMouseLeave = (index: number) => {
+    const handleMouseLeave = () => {
         clearTimeout(timeoutRef.current!); // Clear the timeout
         timeoutRef.current = window.setTimeout(() => {
             setTabs((prevTabs) => {
@@ -92,7 +92,7 @@ const Navbar: React.FC = () => {
             {/*Menus*/}
             <ul style={{ display: 'flex', flexDirection: 'row', listStyleType: 'none', padding: '0rem', marginLeft: '1rem'}}>
                 {tabs.map((tab, index) => (
-                    <li key={index} style={{ marginRight: '0.5rem' }} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={() => handleMouseLeave(index)} onBlur={handleBlur} tabIndex={0}>
+                    <li key={index} style={{ marginRight: '0.5rem' }} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={() => handleMouseLeave()} onBlur={handleBlur} tabIndex={0}>
                         <div onClick={() => handleTabClick(index)}>{tab.label}</div>
                         {tab.showMenu && (
                             <div style={{ position: 'absolute', top: '100%', marginLeft: '-0.5rem' }}>

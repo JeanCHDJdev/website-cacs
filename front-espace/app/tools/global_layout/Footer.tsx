@@ -3,9 +3,9 @@ import SocialMedia from '../SocialMedia';
 
 const Footer: React.FC = () => {
   const autres_assos = [
-    { src: '../layout_images/footer/ViaRezo.png', alt: 'ViaRézo', text: 'ViaRézo est l\'association d\'informatique et de réseau de CentraleSupélec à Gif', link: 'https://viarezo.fr/', width: '3.15rem', height: '2.25rem', marginLeft: '2.7rem' },
-    { src: '../layout_images/footer/pics.png', alt: 'Pics', text: 'Pics est l\'association de photographie de CentraleSupélec', link: 'https://galerie.pics/galerie', width: '4.5rem', height: '2.25rem', marginLeft: '0.9rem' },
-    { src: '../layout_images/footer/Logo_Hyris_B.png', alt: 'Hyris', text: 'Hyris est l\'assocation d\'audiovisuel de CentraleSupélec', link: 'https://hyris.tv/', width: '2.25rem', height: '2.25rem', marginLeft: '2.625rem' },
+    { src: '../layout_images/footer/ViaRezo.png', alt: 'ViaRézo', text: 'ViaRézo est l\'association d\'informatique et de réseau de CentraleSupélec à Gif. L\'association héberge ce site web!', link: 'https://viarezo.fr/', width: '7rem', height: 'auto', marginLeft: '3.15rem' },
+    { src: '../layout_images/footer/pics.png', alt: 'Pics', text: 'Pics est l\'association de photographie de CentraleSupélec. Plusieurs contenus de ce site ont été photographiés par leurs soins!', link: 'https://galerie.pics/galerie', width: '10rem', height: 'auto', marginLeft: '2.4rem' },
+    { src: '../layout_images/footer/Logo_Hyris_B.png', alt: 'Hyris', text: 'Hyris est l\'assocation d\'audiovisuel de CentraleSupélec. Une partie de notre contenu vidéo a été fourni par leur travail !', link: 'https://hyris.tv/', width: '7rem', height: 'auto', marginLeft: '3.4rem' },
   ];
 
   return (
