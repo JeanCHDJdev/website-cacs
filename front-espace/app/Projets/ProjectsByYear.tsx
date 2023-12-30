@@ -13,7 +13,7 @@ const ProjectsByYear: React.FC<Projects> = ({ names, subtexts, patches }) => {
                 <div key={index} style={{ display: 'flex', alignItems: 'center' }}>
                     {patches.map((patch, patchIndex) => (
                         <div key={patchIndex} style={{ marginRight: '10px' }}>
-                            <img src={patch} alt={`Project ${index + 1} Image ${patchIndex + 1}`} />
+                            <img src={patch} alt={names[index]} style={{ width: '20rem', height:'auto'}} />
                             <text>{names[index]}</text>
                             <text>{subtexts[index]}</text>
                         </div>
