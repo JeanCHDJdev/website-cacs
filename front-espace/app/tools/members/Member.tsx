@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface MemberDesc {
     image: string;
@@ -23,7 +24,7 @@ const Member: React.FC<MemberDesc> = ({
 }) => {
     return (
         <div>
-            <img src={image} alt={name} />
+            <Image src={image} alt={name} />
             <div style={{ borderBottom: '2px solid darkblue' }} />
             <div>
                 <h2>{name} P{prom}</h2>

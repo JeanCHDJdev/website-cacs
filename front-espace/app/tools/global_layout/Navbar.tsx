@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import DropdownMenu from './Dropdown';
 import SocialMedia from '../SocialMedia';
 
@@ -28,6 +28,12 @@ const Navbar: React.FC = () => {
             label: 'Partenariats',
             options: ['Nos Partenaires', 'Devenir Partenaire', 'Soutiens'],
             links: ['/Partenaires', '/Nous-Soutenir', '/Soutiens'],
+            showMenu: false,
+        },
+        {
+            label: 'Autres activités',
+            options: ['HéliCS'],
+            links: ['/Helics'],
             showMenu: false,
         },
         // Add more tabs here if needed
@@ -82,9 +88,41 @@ const Navbar: React.FC = () => {
             });
         }, 1000);
     };
+    const [navbarBackgroundColor, setNavbarBackgroundColor] = useState<string>('transparent');
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollDistance = window.scrollY;
+            const scrollThreshold = '70rem'; 
+
+            if (scrollDistance > parseFloat(scrollThreshold)) {
+                setNavbarBackgroundColor('rgba(0, 0, 50, 0.6)');
+            } else {
+                setNavbarBackgroundColor('transparent');
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
-        <nav style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(0, 0, 50, 0.4)', padding: '0.5rem 1rem', position: 'fixed', top: 0, width: "100%"}}>
+        <nav style={{ 
+            display: 'flex', 
+            flexDirection: 'row', 
+            alignItems: 'center', 
+            backgroundColor: navbarBackgroundColor, 
+            padding: '0.5rem 1rem', 
+            position: 'fixed', 
+            top: 0, 
+            width: "100%",
+            height: 'auto',
+            transition: 'background-color 0.3s ease-in-out',
+            zIndex: 100,
+            }}>
             {/*CACS Home Logo*/}
             <a href="/">
                 <img className='clickable-mini-images' src="../home_page/main_animations/cacs_animated_gif.gif" alt="Logo" style={{ width: '1.875rem', transform: 'scale(4)', marginRight: '1.5rem', marginLeft: '1rem' }} />
@@ -108,7 +146,7 @@ const Navbar: React.FC = () => {
                 </li>
             </ul>
             {/*Social Media*/}
-            <SocialMedia style={{ display: 'flex', alignItems: 'center', marginLeft: 'auto' }} />
+            {/*<SocialMedia style={{ display: 'flex', alignItems: 'center', marginLeft: 'auto' }} />*/}
         </nav>
     );
 };

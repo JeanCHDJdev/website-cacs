@@ -1,5 +1,6 @@
 import React from 'react';
 import SocialMedia from '../SocialMedia';
+import Image from 'next/image';
 
 const Footer: React.FC = () => {
   const autres_assos = [

@@ -2,15 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './css-style-sheets/slideshow.css';
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 0, 0, 255;
   --background-end-rgb: 255, 255, 255;
   --darkblue-cacs: rgb(0,0,50);
   --darkblue-cacs-transparent: rgba(0, 0, 50, 0.6);
-  --lightblue-cacs: rgb(100, 246, 255);
+  --lightblue-cacs: rgb(47, 122, 172);
   --white-cacs: #fff;
-  --gray-cacs: #bbb;
+  --gray-cacs: #ccc;
   --navy-cacs: #263f6b;
 }
 
@@ -41,7 +43,6 @@ li {
   transition: all linear 0.2s;
   color: var(--gray-cacs);
 }
-
 li:hover {
   background: var(--darkblue-cacs-transparent);
   cursor: pointer;
@@ -57,7 +58,7 @@ li:hover {
 }
 
 .dropdown-menu {
-  transition: max-height 1s ease-in-out;
+  transition: all 0.2s ease-in-out;
   background: var(--darkblue-cacs-transparent);
   box-shadow: 0rem 0.75rem 2.25rem 0rem rgba(82, 63, 105, 0.05);
   transform-origin: top;
@@ -65,22 +66,47 @@ li:hover {
 }
 
 .title-text {
-  font-size: 3rem;
+  font-size: 6rem;
   font-weight: 700;
   line-height: 1.2;
+}
+.title-text.small {
+  font-size: 3rem;
+}
+.regular-text {
+  font-size: 2.5rem;
+}
+.regular-text.white {
+  color: white;
+}
+
+.title-text.dark-blue {
   color: var(--darkblue-cacs);
 }
+.title-text.white {
+  color: white;
+}
+
 .buttons {
-  border-radius: 3rem;
+  border-radius: 0.3rem;
   border-color: var(--white-cacs);
-  border-width: 0.2rem;
-  background: var(--darkblue-cacs-transparent);
+  border-width: 0.3rem;
+  background: rgba(0,0,50,0.1);
   color: var(--white-cacs);
-  font-size: 1.2rem; 
-  padding: 0.8rem 1.2rem; 
+  font-size: 2rem; 
+  padding: 1rem 1.4rem; 
+  z-index: 10;
 } 
 .buttons:hover {
-  background: var(--lightblue-cacs);
+  background: var(--white-cacs);
   color: var(--darkblue-cacs);
   cursor: pointer;
+  background-size: 100% 0%;
+  transition: background-size 1s ease-in-out;
+}
+
+.numbers {
+  font-size: 7rem;
+  font-weight: bold;
+  color: var(--lightblue-cacs);
 }

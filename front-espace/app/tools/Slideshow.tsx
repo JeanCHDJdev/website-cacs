@@ -4,18 +4,16 @@ import React, { useState, useEffect } from 'react';
 interface SlideshowProps {
     content: React.ReactNode[];
     timer: number;
+    slideshow_styles: React.CSSProperties;
 }
 
-const Slideshow: React.FC<SlideshowProps> = ({ content, timer }) => {
+const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles }) => {
     const [currentContentIndex, setCurrentContentIndex] = useState(0);
-    const [isTransitioning, setIsTransitioning] = useState(false);
 
     const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
         const clickPosition = event.clientX;
         const screenWidth = window.innerWidth;
         const halfScreenWidth = screenWidth / 2;
-
-        setIsTransitioning(true);
 
         setTimeout(() => {
             if (clickPosition < halfScreenWidth) {
@@ -23,29 +21,24 @@ const Slideshow: React.FC<SlideshowProps> = ({ content, timer }) => {
             } else {
                 setCurrentContentIndex((prevIndex) => (prevIndex + 1) % content.length);
             }
-            setIsTransitioning(false);
-        }, 500);
+        }, 1000);
     };
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setIsTransitioning(true);
             setTimeout(() => {
                 setCurrentContentIndex((prevIndex) => (prevIndex + 1) % content.length);
-                setIsTransitioning(false);
             }, 1000);
         }, timer);
 
         return () => {
             clearInterval(interval);
         };
-    }, [content.length, timer]);;
+    }, [content.length, timer]);
 
     return (
-        <div>
-            <div
-                className={isTransitioning ? '' : ''}
-            >
+        <div style={{...slideshow_styles}}>
+            <div onClick={handleClick}>
                 {content[currentContentIndex]}
             </div>
         </div>
