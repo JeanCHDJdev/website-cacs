@@ -3,48 +3,13 @@ import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
 
 export default function Page() {
-  const [count, setCount] = useState(0);
-  const numberRef = useRef(null);
 
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5, // Adjust this threshold as needed
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Start counting up to 30
-          const interval = setInterval(() => {
-            setCount((prevCount) => prevCount + 1);
-          }, 100); // Adjust the interval as needed
-
-          // Stop counting when reaching 30
-          if (count >= 30) {
-            clearInterval(interval);
-          }
-        }
-      });
-    }, options);
-
-    if (numberRef.current) {
-      observer.observe(numberRef.current);
-    }
-
-    return () => {
-      if (numberRef.current) {
-        observer.unobserve(numberRef.current);
-      }
-    };
-  }, []);
   return (
     <>
       <div className="slideshow-container" style={{top: 0, left: 0, right: 0}}>
         <img src="/home_page/main_imgs/Pole_Espace.png" alt="Logo Pôle Espace" style={{ position: 'absolute', top: '23rem', left: '10.5rem', width: '15rem', height: 'auto' }} />
         <h1 
-          className='title-text white' 
+          className='title-text huge white' 
           style={{ 
           position: 'absolute',
           top: '23rem', 
@@ -55,21 +20,21 @@ export default function Page() {
         </h1>
         <div style={{ display: 'flex', justifyContent: 'center', position: 'absolute', top: '40rem', left: '28rem' }}>
           <a className="buttons" href='/Projets' style={{ marginRight: '4rem'}}>Découvrir nos projets</a>
-          <a className="buttons" href='/Projets'>Nous soutenir</a>
+          <a className="buttons" href='/Nous-Soutenir'>Nous soutenir</a>
         </div>
         {/*<Slideshow content={slideshow} timer={slideSwitchTimer} slideshow_styles={{display: 'flex', objectFit:'cover', width:'100%', height:'80rem'}}/>*/}
         <img src='/home_page/main_img_diapo/phenics_decollage.jpg' alt="Phenics Decollage" />
         <div style={{position: 'relative'}}>
             <img src='/home_page/main_img_diapo/photo_grp_cspace_phenics.jpg' alt="Group Photo" style={{ filter: 'brightness(60%)' }}/>
             <text className='title-text small white' style={{position: 'absolute', top: '36rem', left: '10rem', zIndex:10, whiteSpace: 'pre-wrap'}}>A propos de notre équipe</text>
-            <a href='/Projets/PheniCS' className='regular-text tiny white' style={{position: 'absolute', top: '40rem', left: '10rem', zIndex:10, whiteSpace: 'pre-wrap'}}>Premier vol supersonique nominal{'\n'}en France depuis plus de 10 ans</a>
+            <p className='regular-text tiny white' style={{position: 'absolute', top: '40rem', left: '10rem', zIndex:10, whiteSpace: 'pre-wrap'}}>Le pôle espace a été fondé en 2021 avec le project AjaCS, première fusée expérimentale de CentraleSupélec.{'\n'}Nous expérimentons, améliorons et développons continuellement de nouvelles techniques en vue de vols toujours plus ambitieux.{'\n'}En 2023, nous avons accompli le premier vol supersonique nominal étudiant en France depuis plus de 10 ans.</p>
             <div style={{ display: 'flex', position: 'absolute', top: '48rem', left: '10rem' }}>
               <div style={{marginRight:'5rem', display: 'flex', flexDirection: 'column'}}>
-              <text className='numbers' style={{position: 'relative'}} ref={numberRef}>30+</text>
+              <text className='numbers' style={{position: 'relative'}}>30+</text>
                 <text className='regular-text white' style={{position: 'relative', whiteSpace: 'pre-wrap'}}>Etudiants en{'\n'}1ère et{'\n'}2ème année</text>
               </div>
               <div style={{marginRight:'5rem', display: 'flex', flexDirection: 'column'}}>
-                <text className='numbers' style={{position: 'relative'}} ref={numberRef}>2</text>
+                <text className='numbers' style={{position: 'relative'}}>2</text>
                 <text className='regular-text white' style={{position: 'relative', whiteSpace: 'pre-wrap'}}>Lancements{'\n'}réussis</text>
               </div>
               <div style={{marginRight:'5rem', display: 'flex', flexDirection: 'column'}}>
@@ -78,7 +43,15 @@ export default function Page() {
               </div>
             </div>
           </div>
-        <img src='/hackathon/group_photo_2023_2.jpg' alt = 'Hackathon 2023' style={{ filter: 'brightness(80%)' }}/>  
+          <div style={{position: 'relative'}}>
+            <text className='title-text small white' style={{position: 'absolute', top: '36rem', left: '10rem', zIndex:10, whiteSpace: 'pre-wrap'}}>Nos objectifs</text>
+            <img src='/hackathon/group_photo_2023_2.jpg' alt = 'Hackathon 2023' style={{ filter: 'brightness(72%)' }}/>
+            <p className='regular-text tiny white' style={{position: 'absolute', top: '40rem', left: '10rem', zIndex:10, whiteSpace: 'pre-wrap'}}>Chaque année, nous formons et acceuillons de nouveaux membres, commençons de nouveaux projets et{'\n'}développons notre savoir-faire aérospatial. Nous participons anuellement à la campagne C'Space,{'\n'}organisée par le CNES et PlanèteSciences. Nos prochains objectifs se situent dans les nouvelles altitudes{'\n'}en maîtrisant les systèmes de propulsion. Nous développons également actuellement{'\n'}un ambitieux projet de fusée bi-étage pour le C'Space 2024.</p>
+            <div style={{ display: 'flex', justifyContent: 'center', position: 'absolute', top: '54rem', left: '10rem' }}>
+              <a className="buttons" href='/Nous-rejoindre' style={{ marginRight: '4rem'}}>Nous rejoindre</a>
+              <a className="buttons" href='/Membres'>Nos membres</a>
+            </div>
+          </div>
       </div>
     </>
   );

@@ -5,7 +5,7 @@ interface Props {
     images: string[];
     texts: string[];
     pdfs: string[];
-    statistics: number[];
+    statistics: string[];
 }
 
 const TemplatePageFusEx: React.FC<Props> = ({ video, images, texts, pdfs, statistics }) => {

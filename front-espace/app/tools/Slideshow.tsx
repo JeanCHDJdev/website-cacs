@@ -3,11 +3,13 @@ import React, { useState, useEffect } from 'react';
 
 interface SlideshowProps {
     content: React.ReactNode[];
-    timer: number;
+    timer?: number;
     slideshow_styles: React.CSSProperties;
+    showAdjacentSlides?: boolean;
 }
 
-const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles }) => {
+const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles, showAdjacentSlides }) => {
+
     const [currentContentIndex, setCurrentContentIndex] = useState(0);
 
     const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -25,22 +27,39 @@ const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles 
     };
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setTimeout(() => {
-                setCurrentContentIndex((prevIndex) => (prevIndex + 1) % content.length);
-            }, 1000);
-        }, timer);
+        if (timer) {
+            const interval = setInterval(() => {
+                setTimeout(() => {
+                    setCurrentContentIndex((prevIndex) => (prevIndex + 1) % content.length);
+                }, 1000);
+            }, timer);
 
-        return () => {
-            clearInterval(interval);
-        };
+            return () => {
+                clearInterval(interval);
+            };
+        }
     }, [content.length, timer]);
 
     return (
         <div style={{...slideshow_styles}}>
+            {showAdjacentSlides && (
+                <div style={{ display: 'flex', justifyContent: 'space-between'}}>
+                    {content[currentContentIndex- 1] && <div onClick={handleClick} style={{opacity:'0.5'}}>
+                        {content[(currentContentIndex - 1 + content.length) % content.length]}
+                    </div>}
+                    <div>
+                        {content[currentContentIndex]}
+                    </div>
+                    {content[currentContentIndex + 1] && <div onClick={handleClick} style={{opacity:'0.5'}}>
+                        {content[(currentContentIndex + 1) % content.length]}
+                    </div>}
+                </div>
+            )}
+            {!showAdjacentSlides && (            
             <div onClick={handleClick}>
                 {content[currentContentIndex]}
-            </div>
+            </div>)
+            }
         </div>
     );
 };

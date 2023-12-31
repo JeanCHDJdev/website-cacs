@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import './css-style-sheets/slideshow.css';
+@import './css-style-sheets/buttons.css';
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -66,9 +67,12 @@ li:hover {
 }
 
 .title-text {
-  font-size: 6rem;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1.2;
+}
+.title-text.huge {
+  font-size: 6rem;
 }
 .title-text.small {
   font-size: 3rem;
@@ -76,8 +80,14 @@ li:hover {
 .regular-text {
   font-size: 2.5rem;
 }
+.regular-text.tiny {
+  font-size: 1.5rem;
+}
 .regular-text.white {
   color: white;
+}
+.regular-text.navy {
+  color: var(--navy-cacs);
 }
 
 .title-text.dark-blue {
@@ -86,23 +96,8 @@ li:hover {
 .title-text.white {
   color: white;
 }
-
-.buttons {
-  border-radius: 0.3rem;
-  border-color: var(--white-cacs);
-  border-width: 0.3rem;
-  background: rgba(0,0,50,0.1);
-  color: var(--white-cacs);
-  font-size: 2rem; 
-  padding: 1rem 1.4rem; 
-  z-index: 10;
-} 
-.buttons:hover {
-  background: var(--white-cacs);
-  color: var(--darkblue-cacs);
-  cursor: pointer;
-  background-size: 100% 0%;
-  transition: background-size 1s ease-in-out;
+.title-text.navy {
+  color: var(--navy-cacs);
 }
 
 .numbers {

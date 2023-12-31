@@ -1,0 +1,36 @@
+.buttons {
+    border-radius: 0.3rem;
+    border-color: var(--white-cacs);
+    border-width: 0.3rem;
+    background: rgba(0,0,50,0.1);
+    color: var(--white-cacs);
+    font-size: 2rem; 
+    padding: 1rem 1.4rem; 
+    z-index: 10;
+  } 
+  .buttons:hover {
+    background: var(--white-cacs);
+    color: black;
+    cursor: pointer;
+    background-size: 100% 0%;
+    transition: background-size 1s ease-in-out;
+  }
+  
+  .alt-buttons {
+    border-radius: 2rem;
+    border-color: var(--white-cacs);
+    border-width: 0.1rem;
+    background: var(--darkblue-cacs);
+    color: var(--white-cacs);
+    font-size: 1rem; 
+    padding: 0.8rem 1.2rem; 
+    z-index: 10;
+  } 
+  .alt-buttons:hover {
+    background: var(--white-cacs);
+    color: black;
+    border-color: var(--darkblue-cacs);
+    cursor: pointer;
+    background-size: 100% 0%;
+    transition: background-size 1s ease-in-out;
+  }

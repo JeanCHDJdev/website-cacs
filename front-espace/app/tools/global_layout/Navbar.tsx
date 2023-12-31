@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from 'react';
 import DropdownMenu from './Dropdown';
-import SocialMedia from '../SocialMedia';
 
 interface Tab {
     label: string;
