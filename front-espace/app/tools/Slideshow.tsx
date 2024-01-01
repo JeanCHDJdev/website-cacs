@@ -43,16 +43,16 @@ const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles,
     return (
         <div style={{...slideshow_styles}}>
             {showAdjacentSlides && (
-                <div style={{ display: 'flex', justifyContent: 'space-between'}}>
-                    {content[currentContentIndex- 1] && <div onClick={handleClick} style={{opacity:'0.5'}}>
-                        {content[(currentContentIndex - 1 + content.length) % content.length]}
-                    </div>}
-                    <div>
+                <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'row' }}>
+                    <div onClick={handleClick} style={{ opacity: '0.5'}}>
+                        {content[currentContentIndex - 1]}
+                    </div>
+                    <div style={{}}>
                         {content[currentContentIndex]}
                     </div>
-                    {content[currentContentIndex + 1] && <div onClick={handleClick} style={{opacity:'0.5'}}>
-                        {content[(currentContentIndex + 1) % content.length]}
-                    </div>}
+                    <div onClick={handleClick} style={{ opacity: '0.5'}}>
+                        {content[currentContentIndex + 1]}
+                    </div>
                 </div>
             )}
             {!showAdjacentSlides && (            

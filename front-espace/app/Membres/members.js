@@ -2,6 +2,7 @@
 //DISCLAIMER : This file lists the members of the association. It was very long to design. Please modify it sparingly.
 // Je considère que ce n'est pas un travail dantesque d'ajouter les membres de l'association. Il faut cependant être très régulier.
 // Roles
+
 const Role = {
     VP_Espace: 'VP Espace',
     Respo : 'Responsable',
