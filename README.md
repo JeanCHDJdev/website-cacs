@@ -17,3 +17,15 @@ npm install react next react-router
 ```bash
 npm install axios
 ```
+
+# Lancer le projet
+Dans un terminal, lancer les commandes suivantes :
+```bash
+cd back_espace
+python manage.py runserver
+```
+Dans un autre terminal, lancer les commandes suivantes :
+```bash
+cd front_espace
+npm run dev
+```
