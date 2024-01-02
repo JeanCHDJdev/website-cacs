@@ -3,13 +3,15 @@ import Member from './Member';
 
 interface MemberDesc {
     image: string;
-    name: string;
-    prom: number;
+    first_name: string;
+    last_name: string;
+    mail: string;
+    gpa_year: number;
     role: string;
     team: string;
     projects: string[];
     year: number;
-    socialMediaLinks: string[];
+    linkedin: string;
 }
 
 interface TeamDisplayProps {
@@ -33,7 +35,7 @@ const TeamDisplay: React.FC<TeamDisplayProps> = ({ members }) => {
                 <div className="box-content">
                     <div className="member-row">
                         {members.map((member, index) => (
-                            <Member image={member.image} name={member.name} prom={member.prom} role={member.role} team={member.team} projects={member.projects} year={member.year} socialMediaLinks={member.socialMediaLinks}/>
+                            <Member image={member.image} first_name={member.first_name} last_name={member.last_name} mail={member.mail} gpa_year={member.gpa_year} role={member.role} team={member.team} projects={member.projects} year={member.year} linkedin={member.linkedin}/>
                         ))}
                     </div>
                 </div>

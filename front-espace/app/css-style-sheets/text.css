@@ -1,0 +1,38 @@
+.title-text {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.title-text.huge {
+    font-size: 6rem;
+}
+.title-text.small {
+    font-size: 3rem;
+}
+.title-text.dark-blue {
+    color: var(--darkblue-cacs);
+}
+.title-text.white {
+    color: white;
+}
+.title-text.navy {
+    color: var(--navy-cacs);
+}
+
+.regular-text {
+    font-size: 2.5rem;
+}
+.regular-text.tiny {
+    font-size: 1.5rem;
+}
+.regular-text.mini {
+    font-size: 1rem;
+}
+.regular-text.white {
+    color: white;
+}
+.regular-text.navy {
+    color: var(--navy-cacs);
+}
+
+  
