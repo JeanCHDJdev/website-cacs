@@ -26,6 +26,6 @@ python manage.py runserver
 ```
 Dans un autre terminal, lancer les commandes suivantes :
 ```bash
-cd front_espace
+cd front-espace
 npm run dev
 ```
