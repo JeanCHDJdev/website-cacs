@@ -8,6 +8,8 @@ type RocketDetailsProps = {
     launch_location: string;
     project_type: string;
     propulsion_type: string;
+    diameter: string;
+    length: string;
     exps: string[];
     exps_state: string[];
     prizes: string[];
@@ -36,10 +38,12 @@ const RocketDetails: React.FC<RocketDetailsProps> = ({
     prizes, 
     exps, 
     launch_date, 
-    exps_state, 
     launch_location, 
+    exps_state, 
     project_type, 
     propulsion_type,
+    diameter,
+    length,
     rocket_image, 
     rocket_styles,
     paragraph_array }) => {
@@ -49,13 +53,15 @@ const RocketDetails: React.FC<RocketDetailsProps> = ({
                 <h1 style={{justifyContent:'center', display:'flex'}} className='regular-text navy'><strong>Détails</strong></h1>
                 <p className='regular-text navy tiny'><strong>Type de projet :</strong> {project_type}</p>
                 <p className='regular-text navy tiny'><strong>Type de propulsion :</strong> {propulsion_type}</p>
+                <p className='regular-text navy tiny'><strong>Longueur :</strong> {length}</p>
+                <p className='regular-text navy tiny'><strong>Diamètre :</strong> {diameter}</p>
                 <p className='regular-text navy tiny'><strong>Années de développement :</strong> {years}</p>
                 <p className='regular-text navy tiny'><strong>Etat de vol :</strong> {flightStatus}</p>
                 <p className='regular-text navy tiny'><strong>Date de lancement :</strong> {launch_date}</p>
                 <p className='regular-text navy tiny'><strong>Lieu de lancement :</strong> {launch_location}</p>
                 <p className='regular-text navy tiny'><strong>Nombre de membres :</strong> {number_members}</p>
                 {paragraph_array.map((paragraph, index) => {
-                    if (index % 2 === 0 && index < paragraph_array.length) {
+                    if (index % 2 === 0) {
                         return createDivContent(paragraph);
                     }
                     return null;
@@ -74,7 +80,7 @@ const RocketDetails: React.FC<RocketDetailsProps> = ({
                     <li className='list-statistics small' key={exp}>{exp} : {exps_state[index]}</li>
                 ))}
                 {paragraph_array.map((paragraph, index) => {
-                    if (index % 2 === 1 && index < paragraph_array.length) {
+                    if (index % 2 === 1) {
                         return createDivContent(paragraph);
                     }
                     return null;

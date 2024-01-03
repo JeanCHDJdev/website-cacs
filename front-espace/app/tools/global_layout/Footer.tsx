@@ -1,16 +1,16 @@
 import React from 'react';
 import SocialMedia from '../SocialMedia';
-import Image from 'next/image';
 
 const Footer: React.FC = () => {
   const autres_assos = [
+    { src: '../layout_images/footer/club_tech_cut.png', alt: 'Club Tech', text: 'Le Club Tech est l\'association de robotique et de conception de CentraleSupélec. Nous partageons avec eux le local technique et nous entraidons mutuellement sur les projets.', width: '14rem', height: 'auto', marginLeft: '2.5rem' },
     { src: '../layout_images/footer/ViaRezo.png', alt: 'ViaRézo', text: 'ViaRézo est l\'association d\'informatique et de réseau de CentraleSupélec à Gif. L\'association héberge ce site web!', link: 'https://viarezo.fr/', width: '7rem', height: 'auto', marginLeft: '3.15rem' },
     { src: '../layout_images/footer/pics.png', alt: 'Pics', text: 'Pics est l\'association de photographie de CentraleSupélec. Plusieurs contenus de ce site ont été photographiés par leurs soins!', link: 'https://galerie.pics/galerie', width: '10rem', height: 'auto', marginLeft: '2.4rem' },
     { src: '../layout_images/footer/Logo_Hyris_B.png', alt: 'Hyris', text: 'Hyris est l\'assocation d\'audiovisuel de CentraleSupélec. Une partie de notre contenu vidéo a été fourni par leur travail !', link: 'https://hyris.tv/', width: '7rem', height: 'auto', marginLeft: '3.4rem' },
   ];
 
   return (
-    <footer style={{ width: '100%', height: '22.5rem', backgroundColor: 'rgb(0, 0, 50)', borderTop: '0.75rem solid white' }}>
+    <footer style={{ width: '100%', height: '26rem', backgroundColor: 'rgb(0, 0, 50)', borderTop: '0.75rem solid white' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', height: '100%' }}>
         <div style={{ flex: '1', textAlign: 'center' }}>
           <p style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.75rem', marginTop: '0.75rem' }}>D'autres assos qu'on apprécie</p>
@@ -20,18 +20,18 @@ const Footer: React.FC = () => {
                 <a href={image.link} target="_blank" rel="noopener noreferrer">
                   <img className='clickable-mini-images' src={image.src} alt={image.alt} style={{ width: image.width, height: image.height, marginRight: '0.75rem' }} />
                 </a>
-                <p style={{ color: 'white', fontSize: '0.9rem', marginBottom: '0px', marginLeft: image.marginLeft, textAlign: 'left' }}>{image.text}</p>
+                <p style={{ color: 'white', fontSize: '0.9rem', marginLeft: image.marginLeft, textAlign: 'left' }}>{image.text}</p>
               </div>
             ))}
           </div>
         </div>
         <div style={{ flex: '2', textAlign: 'center' }}>
-          <p style={{ color: 'white', textAlign: 'center', fontSize: '2.25rem', fontWeight: 'bold', marginBottom: '0px', fontStyle: 'italic' }}>CACS</p>
-          <p style={{ color: 'white', textAlign: 'center', fontSize: '1.5rem', marginBottom: '0.75rem' }}>Cercle Aéronautique CentraleSupélec</p>
-          <p style={{ color: 'white', textAlign: 'center', marginBottom: '0.75rem' }}>Suivez-nous sur les réseaux sociaux: </p>
-          <SocialMedia style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.75rem' }}/>
-          <a style={{ color: 'white', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '4.5rem' }} href="mailto:cercle.aero.cs@gmail.com">
-            Nous contacter par mail
+          <p style={{ color: 'white', textAlign: 'center', fontSize: '2.25rem', fontWeight: 'bold', fontStyle: 'italic' }}>CACS</p>
+          <p style={{ color: 'white', textAlign: 'center', fontSize: '1.5rem', marginBottom: '1.5rem' }}>Cercle Aéronautique CentraleSupélec</p>
+          <p style={{ color: 'white', textAlign: 'center', marginBottom: '1rem' }}>Suivez-nous sur les réseaux sociaux: </p>
+          <SocialMedia style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}/>
+          <a style={{ color: 'white', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '8rem' }} href="mailto:cercle.aero.cs@gmail.com">
+            Nous contacter par mail :
             <img className='clickable-mini-images' src="../layout_images/networks/mail_logo.png" alt="Mail icon" style={{ width: '2.25rem', height: '1.5rem', filter: 'invert(1)', marginLeft: '0.9rem' }} />
           </a>
           <p style={{ color: 'white', textAlign: 'center', fontSize: '0.75rem', marginBottom: '0.6rem' }}>© 2024 - CACS - By Jean Choppin de Janvry & Anas Himmi (P25)</p>

@@ -8,6 +8,7 @@ interface SlideshowProps {
     showAdjacentSlides?: boolean;
 }
 
+const right_arrow = '/layout_images/other/arrow.png';
 const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles, showAdjacentSlides }) => {
 
     const [currentContentIndex, setCurrentContentIndex] = useState(0);
@@ -56,8 +57,10 @@ const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles,
                 </div>
             )}
             {!showAdjacentSlides && (            
-            <div onClick={handleClick}>
-                {content[currentContentIndex]}
+            <div onClick={handleClick} style={{ display: 'flex', justifyContent:'center' }}>
+                <img src={right_arrow} alt="Left Arrow" style={{transform: 'scaleX(-1)' }} />
+                    {content[currentContentIndex]}
+                <img src={right_arrow} alt="Right Arrow" />
             </div>)
             }
         </div>
