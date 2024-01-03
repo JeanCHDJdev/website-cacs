@@ -92,7 +92,7 @@ const Navbar: React.FC = () => {
     useEffect(() => {
         const handleScroll = () => {
             const scrollDistance = window.scrollY;
-            const scrollThreshold = '70rem'; 
+            const scrollThreshold = '300rem'; 
 
             if (scrollDistance > parseFloat(scrollThreshold)) {
                 setNavbarBackgroundColor('rgba(0, 0, 50, 0.6)');
@@ -129,7 +129,7 @@ const Navbar: React.FC = () => {
             {/*Menus*/}
             <ul style={{ display: 'flex', flexDirection: 'row', listStyleType: 'none', padding: '0rem', marginLeft: '1rem'}}>
                 {tabs.map((tab, index) => (
-                    <li key={index} style={{ marginRight: '0.5rem' }} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={() => handleMouseLeave()} onBlur={handleBlur} tabIndex={0}>
+                    <li  className='list-navbar' key={index} style={{ marginRight: '0.5rem' }} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={() => handleMouseLeave()} onBlur={handleBlur} tabIndex={0}>
                         <div onClick={() => handleTabClick(index)}>{tab.label}</div>
                         {tab.showMenu && (
                             <div style={{ position: 'absolute', top: '100%', marginLeft: '-0.5rem' }}>
@@ -140,7 +140,7 @@ const Navbar: React.FC = () => {
                 ))}
             </ul>
             <ul style={{ display: 'flex', flexDirection: 'row', listStyleType: 'none', padding: 0, marginRight: 'auto' }} onMouseEnter={() => handleMouseEnter(-1)}>
-                <li style={{ marginRight: '2rem' }}>
+                <li  className='list-navbar' style={{ marginRight: '2rem' }}>
                     <a href="/Contact">Contact</a>
                 </li>
             </ul>

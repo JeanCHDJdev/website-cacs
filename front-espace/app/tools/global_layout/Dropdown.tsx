@@ -10,7 +10,7 @@ const DropdownMenu: React.FC<DropdownProps> = ({ options, links }) => {
         <div className="dropdown-menu">
             <ul>
                 {options.map((option, index) => (
-                    <li key={index}>
+                    <li className = 'list-navbar' key={index}>
                         <a href={links[index]}>{option}</a>
                     </li>
                 ))}

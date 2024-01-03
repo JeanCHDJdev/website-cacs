@@ -28,9 +28,18 @@
   } 
   .alt-buttons:hover {
     background: var(--white-cacs);
-    color: black;
+    color:black;
     border-color: var(--darkblue-cacs);
     cursor: pointer;
     background-size: 100% 0%;
     transition: background-size 1s ease-in-out;
   }
+
+.buttons img,
+.alt-buttons img {
+  filter: invert(100%);
+}
+.buttons img:hover,
+.alt-buttons img:hover {
+  filter: invert(0%);
+}

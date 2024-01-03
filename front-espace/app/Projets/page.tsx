@@ -30,7 +30,6 @@ const project_slideshow = [
 const Page = () => {
     return (
         <div>
-            {/*this shouldnt be a div but rather a <img> but I cant get it to work and div works*/}
             <div style={{ position: 'relative', zIndex: '1', height: '70rem' }}>
                 <img src="/projets/bg_projets.png" style={{ objectFit: 'cover', objectPosition: 'center', height: '100%', filter: 'brightness(72%)' }} />
                 <text className='title-text huge white' style={{ textAlign: 'center', zIndex: '5', position: 'absolute', left: '10rem', top: '40rem'}}>Nos projets</text>

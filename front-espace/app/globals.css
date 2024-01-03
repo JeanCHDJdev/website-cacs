@@ -40,12 +40,12 @@ ul {
   margin: unset;
 }
 
-li {
+.list-navbar {
   padding: 10px;
   transition: all linear 0.2s;
   color: var(--gray-cacs);
 }
-li:hover {
+.list-navbar:hover {
   background: var(--darkblue-cacs-transparent);
   cursor: pointer;
   color: var(--white-cacs);
@@ -71,4 +71,25 @@ li:hover {
   font-size: 7rem;
   font-weight: bold;
   color: var(--lightblue-cacs);
+}
+
+.img-invert{
+  filter: invert(1);
+}
+.img-invert:hover{
+  filter: invert(0);
+}
+
+.list-statistics{
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--navy-cacs);
+}
+.list-statistics.small{
+  font-size: 1.5rem;
+}
+
+.rocket-header{
+  border: '0.5rem' solid black;
+  margin: '1rem';
 }

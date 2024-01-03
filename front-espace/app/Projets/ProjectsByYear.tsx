@@ -17,12 +17,12 @@ const ProjectsByYear: React.FC<Projects> = ({ names, subtexts, patches, year}) =
                         <text className='regular-text navy'>{names[index]}</text>
                     </div>
                     <div style={{ marginTop: '1em' }}>
-                        <a href={`/projects/${names[index]}`}>
+                        <a href={`/Projets/${names[index]}`}>
                             <img src={patch} alt={names[index]} style={{ width: '20rem', height: 'auto' }} />
                         </a>
                     </div>
                     <text className='regular-text tiny navy'>{subtexts[index]}</text>
-                    <a className='alt-buttons' href={`/projects/${names[index]}`} style={{ marginTop: '1em' }}>En savoir plus</a>
+                    <a className='alt-buttons' href={`/Projets/${names[index]}`} style={{ marginTop: '1em' }}>En savoir plus</a>
                 </div>
             ))}
         </div>

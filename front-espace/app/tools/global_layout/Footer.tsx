@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
             Nous contacter par mail
             <img className='clickable-mini-images' src="../layout_images/networks/mail_logo.png" alt="Mail icon" style={{ width: '2.25rem', height: '1.5rem', filter: 'invert(1)', marginLeft: '0.9rem' }} />
           </a>
-          <p style={{ color: 'white', textAlign: 'center', fontSize: '0.75rem', marginBottom: '0.6rem' }}>© 2023 - CACS - By Jean Choppin de Janvry & Anas Himmi (P25)</p>
+          <p style={{ color: 'white', textAlign: 'center', fontSize: '0.75rem', marginBottom: '0.6rem' }}>© 2024 - CACS - By Jean Choppin de Janvry & Anas Himmi (P25)</p>
           <p style={{ color: 'white', textAlign: 'center', fontSize: '0.75rem', marginBottom: '0.75rem' }}>Tous droits réservés</p>
         </div>
         <div style={{ flex: '1', textAlign: 'center' }}>
