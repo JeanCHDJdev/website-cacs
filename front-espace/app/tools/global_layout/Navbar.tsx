@@ -19,20 +19,14 @@ const Navbar: React.FC = () => {
         },
         {
             label: 'Rejoignez-nous!',
-            options: ['Postes','Formations', 'Hackathon'],
-            links: ['/Postes','/Formations', '/Hackathon'],
+            options: ['Nous rejoindre','Formations', 'Hackathon'],
+            links: ['/Nous-rejoindre','/Formations', '/Hackathon'],
             showMenu: false,
         },
         {
             label: 'Partenariats',
-            options: ['Nos Partenaires', 'Devenir Partenaire', 'Soutiens'],
-            links: ['/Partenaires', '/Nous-Soutenir', '/Soutiens'],
-            showMenu: false,
-        },
-        {
-            label: 'Autres activités',
-            options: ['HéliCS'],
-            links: ['/Helics'],
+            options: ['Nos Partenaires', 'Devenir Partenaire'],
+            links: ['/Partenaires', '/Devenir-Partenaire'],
             showMenu: false,
         },
         // Add more tabs here if needed

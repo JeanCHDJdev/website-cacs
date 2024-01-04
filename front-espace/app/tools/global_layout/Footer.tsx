@@ -3,10 +3,14 @@ import SocialMedia from '../SocialMedia';
 
 const Footer: React.FC = () => {
   const autres_assos = [
-    { src: '../layout_images/footer/club_tech_cut.png', alt: 'Club Tech', text: 'Le Club Tech est l\'association de robotique et de conception de CentraleSupélec. Nous partageons avec eux le local technique et nous entraidons mutuellement sur les projets.', width: '14rem', height: 'auto', marginLeft: '2.5rem' },
-    { src: '../layout_images/footer/ViaRezo.png', alt: 'ViaRézo', text: 'ViaRézo est l\'association d\'informatique et de réseau de CentraleSupélec à Gif. L\'association héberge ce site web!', link: 'https://viarezo.fr/', width: '7rem', height: 'auto', marginLeft: '3.15rem' },
-    { src: '../layout_images/footer/pics.png', alt: 'Pics', text: 'Pics est l\'association de photographie de CentraleSupélec. Plusieurs contenus de ce site ont été photographiés par leurs soins!', link: 'https://galerie.pics/galerie', width: '10rem', height: 'auto', marginLeft: '2.4rem' },
-    { src: '../layout_images/footer/Logo_Hyris_B.png', alt: 'Hyris', text: 'Hyris est l\'assocation d\'audiovisuel de CentraleSupélec. Une partie de notre contenu vidéo a été fourni par leur travail !', link: 'https://hyris.tv/', width: '7rem', height: 'auto', marginLeft: '3.4rem' },
+    { src: '../layout_images/footer/club_tech_cut.png', alt: 'Club Tech', text: 'Le Club Tech est l\'association de robotique et de conception de CentraleSupélec. Nous partageons avec eux le local technique et nous entraidons mutuellement sur les projets.', width: '14rem', height: 'auto', marginLeft: '2.5rem', scale: '1' },
+    { src: '../layout_images/footer/ViaRezo.png', alt: 'ViaRézo', text: 'ViaRézo est l\'association d\'informatique et de réseau de CentraleSupélec à Gif. L\'association héberge ce site web!', link: 'https://viarezo.fr/', width: '7rem', height: 'auto', marginLeft: '3.15rem', scale: '1' },
+    { src: '../layout_images/footer/pics.png', alt: 'Pics', text: 'Pics est l\'association de photographie de CentraleSupélec. Plusieurs contenus de ce site ont été photographiés par leurs soins!', link: 'https://galerie.pics/galerie', width: '10rem', height: 'auto', marginLeft: '2.4rem', scale: '1' },
+    { src: '../layout_images/footer/Logo_Hyris_B.png', alt: 'Hyris', text: 'Hyris est l\'assocation d\'audiovisuel de CentraleSupélec. Une partie de notre contenu vidéo a été fourni par leur travail !', link: 'https://hyris.tv/', width: '7rem', height: 'auto', marginLeft: '3.4rem', scale: '1' },
+  ];
+
+  const partenaires = [
+    { src :'/soutiens/ArianeGroup_Blanc.png', alt: 'ArianeGroup', link: 'https://www.ariane.group/fr/', width: '25rem', height: 'auto', marginLeft: '2.5rem', text: 'ArianeGroup est le leader européen des lanceurs spatiaux, avec leur programme de fusée phare Ariane. ArianeGroup nous soutient à la fois par son expertise technique et financièrement dans nos projets.', scale: '1.5'},
   ];
 
   return (
@@ -39,6 +43,16 @@ const Footer: React.FC = () => {
         </div>
         <div style={{ flex: '1', textAlign: 'center' }}>
           <p style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.75rem', marginTop: '0.75rem' }}>Partenaires</p>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'left', marginLeft: '1.5rem' }}>
+              {partenaires.map((image, index) => (
+                  <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '0.75rem' }}>
+                    <a href={image.link} target="_blank" rel="noopener noreferrer">
+                      <img className='clickable-mini-images' src={image.src} alt={image.alt} style={{ width: image.width, height: image.height, scale: image.scale}} />
+                    </a>
+                    <p style={{ color: 'white', fontSize: '0.9rem', marginLeft: image.marginLeft, marginRight:'0.75rem', textAlign: 'left' }}>{image.text}</p>
+                  </div>
+                ))}
+            </div>
         </div>
       </div>
     </footer>

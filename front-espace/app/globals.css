@@ -58,6 +58,10 @@ ul {
   cursor: pointer;
   transform: scale(1.3);
 }
+.clickable-images:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
 
 .dropdown-menu {
   transition: all 0.2s ease-in-out;
@@ -89,7 +93,7 @@ ul {
   font-size: 1.5rem;
 }
 
-.rocket-header{
-  border: '0.5rem' solid black;
-  margin: '1rem';
+.paragraph-container{
+  margin-bottom: 2rem;
+  color: var(--navy-cacs);
 }
