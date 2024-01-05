@@ -18,9 +18,7 @@ class Page extends React.Component {
           interface Results {
             [key: string]: any;
           }
-
           // ...
-
           const results: Results = {};
           results[model] = res.data;
         })
