@@ -4,12 +4,13 @@ import React, { useState, useEffect } from 'react';
 interface SlideshowProps {
     content: React.ReactNode[];
     timer?: number;
+    content_styles?: React.CSSProperties;
     slideshow_styles: React.CSSProperties;
     showAdjacentSlides?: boolean;
 }
 
 const right_arrow = '/layout_images/other/arrow.png';
-const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles, showAdjacentSlides }) => {
+const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles, showAdjacentSlides, content_styles }) => {
 
     const [currentContentIndex, setCurrentContentIndex] = useState(0);
 
@@ -24,7 +25,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles,
             } else {
                 setCurrentContentIndex((prevIndex) => (prevIndex + 1) % content.length);
             }
-        }, 1000);
+        }, 10);
     };
 
     useEffect(() => {
@@ -44,23 +45,25 @@ const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles,
     return (
         <div style={{...slideshow_styles}}>
             {showAdjacentSlides && (
-                <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'row' }}>
-                    <div onClick={handleClick} style={{ opacity: '0.5'}}>
+                <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'row', position:'relative' }}>
+                    <div onClick={handleClick} style={{ opacity: '0.5', ...content_styles}}>
                         {content[currentContentIndex - 1]}
                     </div>
-                    <div style={{}}>
+                    <div style={{...content_styles}}>
                         {content[currentContentIndex]}
                     </div>
-                    <div onClick={handleClick} style={{ opacity: '0.5'}}>
+                    <div onClick={handleClick} style={{ opacity: '0.5', ...content_styles}}>
                         {content[currentContentIndex + 1]}
                     </div>
                 </div>
             )}
             {!showAdjacentSlides && (            
-            <div onClick={handleClick} style={{ display: 'flex', justifyContent:'center' }}>
-                <img src={right_arrow} alt="Left Arrow" style={{transform: 'scaleX(-1)' }} />
-                    {content[currentContentIndex]}
-                <img src={right_arrow} alt="Right Arrow" />
+            <div style={{width:"100%", height:"100%", position:'relative'}}>
+                <img src={right_arrow} alt="Left Arrow" style={{transform: 'scaleX(-1)', left:0 }} className='img-slider-buttons' />
+                    <div style={{...content_styles}}>
+                        {content[currentContentIndex]}
+                    </div>
+                <img src={right_arrow} alt="Right Arrow" style={{ right:0 }} className='img-slider-buttons'/>
             </div>)
             }
         </div>
