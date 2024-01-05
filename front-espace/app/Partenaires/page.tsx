@@ -42,57 +42,7 @@ const Page = () => {
                     imageWidth='30rem' 
                     text={ArianeGroupText}
                 />
-                <Paragraph 
-                    image='/projets/FusEx/PheniCS/perce_nuages.png' 
-                    imageName="ArianeGroup"
-                    imagePosition='left' 
-                    imageWidth='30rem' 
-                    text={ArianeGroupSubText}
-                />
-            </div>
-            <div style={{marginTop:'5rem'}}>
-                <text className='title-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'4rem'}}>Nos soutiens</text>
-                <Paragraph 
-                    image='../../soutiens/planete-sciences.png' 
-                    title='Planète Sciences'
-                    imageName="Planète Sciences"
-                    imagePosition='right' 
-                    imageWidth='30rem' 
-                    text={PlaneteSciencesText} 
-                />
-                <Paragraph 
-                    image='../../soutiens/cnes.png' 
-                    title='CNES'
-                    imageName="CNES"
-                    imagePosition='left'
-                    imageWidth='30rem'
-                    text={CNESText} 
-                />
-                <Paragraph 
-                    image='../../soutiens/centralesupelec.png' 
-                    title="CentraleSupélec"
-                    imageName="CentraleSupélec"
-                    imagePosition='right' 
-                    imageWidth='30rem' 
-                    text={CSText} 
-                />
-                <Paragraph 
-                    image='../../soutiens/lafabrique.png'
-                    title="La Fabrique" 
-                    imageName="La Fabrique"
-                    imagePosition='left' 
-                    imageWidth='70rem' 
-                    text={LaFabriqueText} 
-                />
-                <Paragraph 
-                    image='../../soutiens/em2c.png' 
-                    title="Laboratoire EM2C"
-                    imageName="EM2C"
-                    imagePosition='right' 
-                    imageWidth='22rem' 
-                    text={EM2CText} 
-                />
-            </div>
+          </div>
         </div>
     );
 };

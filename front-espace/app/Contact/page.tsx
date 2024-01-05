@@ -3,10 +3,6 @@ import React from 'react';
 const Page = () => {
     return (
         <div>
-            {/*<div style={{ position: 'relative', zIndex: '1', height: '59rem' }}>
-                <img src="/contact/bg_contact.jpg" style={{ objectFit: 'cover', objectPosition: 'center', height: '55rem', filter: 'brightness(72%)', width:'100%' }} />
-                <text className='title-text huge white' style={{ textAlign: 'center', zIndex: '5', position: 'absolute', left: '10rem', top: '45rem'}}>Nous contacter</text>
-            </div>*/}
             <text className='title-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'4rem', marginTop:'4rem' }}>Notre base d'opérations</text>
             <div style={{justifyContent:'center', display:'flex', marginLeft: '25rem', marginRight: '25rem', marginBottom:'5rem'}}>
                 <div style={{display:'flex', flexDirection:'column', marginRight:'4rem', width:'30rem'}}>
@@ -25,16 +21,16 @@ const Page = () => {
             <text className='regular-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'2rem', marginTop:'2rem', marginRight:'25rem', marginLeft:'25rem' }}>Une question ? Une demande ? Remplissez le formulaire de contact ci-dessous et nous reviendrons vers vous au plus vite !</text>
             <form style={{display:'flex', justifyContent:'center', alignContent:'center', flexDirection:'column', marginRight:'30rem', marginLeft:'30rem'}}>
                 <label htmlFor="nom" className='regular-text navy' style={{ marginTop:'2rem'}}>Nom :</label>
-                <input type="text" id="nom" name="nom" required />
+                <input type="text" id="nom" name="nom" required className="input-box"/>
 
                 <label htmlFor="email" className='regular-text navy' style={{ marginTop:'2rem'}}>E-mail :</label>
                 <input type="email" id="email" name="email" required className="input-box"/>
 
                 <label htmlFor="sujet" className='regular-text navy' style={{ marginTop:'2rem'}}>Sujet :</label>
-                <input type="text" id="sujet" name="sujet" required />
+                <input type="text" id="sujet" name="sujet" required className="input-box"/>
 
                 <label htmlFor="message" className='regular-text navy' style={{ marginTop:'2rem'}}>Message :</label>
-                <textarea id="message" name="message" rows={6} required></textarea>
+                <textarea id="message" name="message" rows={6} required className="input-box"/>
 
                 <button className='alt-buttons' style={{zIndex:6, marginTop:'2rem'}} type="submit">Envoyer</button>
             </form>
