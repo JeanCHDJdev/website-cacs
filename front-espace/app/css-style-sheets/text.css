@@ -25,6 +25,9 @@
 .regular-text.tiny {
     font-size: 1.5rem;
 }
+.regular-text.small {
+    font-size: 1.2rem;
+}
 .regular-text.mini {
     font-size: 1rem;
 }

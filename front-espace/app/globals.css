@@ -5,6 +5,7 @@
 @import './css-style-sheets/slideshow.css';
 @import './css-style-sheets/buttons.css';
 @import './css-style-sheets/text.css';
+@import './css-style-sheets/form.css';
 
 :root {
   --foreground-rgb: 0, 0, 0;
