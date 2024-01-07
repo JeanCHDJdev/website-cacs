@@ -73,11 +73,11 @@ const RocketDetails: React.FC<RocketDetailsProps> = ({
             <div>
                 <p className='regular-text navy tiny' style={{ textDecoration: 'underline', marginTop:'3.5rem'  }}>Prix et distinctions :</p>
                 {prizes.map((prize, index) => (
-                    <li className='list-statistics small' key={prize}>{prize}</li>
+                    <li className='list-statistics small' key={index}>{prize}</li>
                 ))}
                 <p className='regular-text navy tiny' style={{ textDecoration: 'underline', marginTop:'1rem' }}>Expériences :</p>
                 {exps.map((exp, index) => (
-                    <li className='list-statistics small' key={exp}>{exp} : {exps_state[index]}</li>
+                    <li className='list-statistics small' key={index}>{exp} : {exps_state[index]}</li>
                 ))}
                 {paragraph_array.map((paragraph, index) => {
                     if (index % 2 === 1) {

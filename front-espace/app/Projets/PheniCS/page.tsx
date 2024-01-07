@@ -6,15 +6,19 @@ import Slideshow from '@/app/tools/Slideshow';
 const background_top_image = '/home_page/main_img_diapo/phenics_decollage.jpg';
 
 const patch_image = '/projets/patchs/patch PheniCS.png';
-
+const img_styles : React.CSSProperties = {
+    height: '40rem',
+    width: '60rem',
+    objectFit: 'cover',
+};
 const project_image_slides = [
-    <img src='/home_page/main_img_diapo/photo_grp_cspace_phenics.jpg' style={{height:'40rem', width:'60rem', objectFit:'cover'}}></img>,
-    <img src='/projets/FusEx/PheniCS/vol_phenics.jpg' style={{height:'40rem', width:'60rem', objectFit:'cover'}}></img>,
-    <img src='/projets/FusEx/PheniCS/moteur_phenics.png' style={{height:'40rem', width:'60rem', objectFit:'cover'}}></img>,
-    <img src='/projets/FusEx/PheniCS/perce_nuages.png' style={{height:'40rem', width:'60rem', objectFit:'cover'}}></img>,
-    <img src='/projets/FusEx/PheniCS/tube_carbone.jpg' style={{height:'40rem', width:'60rem', objectFit:'cover'}}></img>,
-    <img src='/projets/FusEx/PheniCS/vue_rampe.png' style={{height:'40rem', width:'60rem', objectFit:'cover'}}></img>,
-    <img src='/projets/FusEx/PheniCS/qualification.png' style={{height:'40rem', width:'60rem', objectFit:'cover'}}></img>,
+    <img src='/home_page/main_img_diapo/photo_grp_cspace_phenics.jpg' style={img_styles}></img>,
+    <img src='/projets/FusEx/PheniCS/vol_phenics.jpg' style={img_styles}></img>,
+    <img src='/projets/FusEx/PheniCS/moteur_phenics.png' style={img_styles}></img>,
+    <img src='/projets/FusEx/PheniCS/perce_nuages.png' style={img_styles}></img>,
+    <img src='/projets/FusEx/PheniCS/tube_carbone.jpg' style={img_styles}></img>,
+    <img src='/projets/FusEx/PheniCS/vue_rampe.png' style={img_styles}></img>,
+    <img src='/projets/FusEx/PheniCS/qualification.png' style={img_styles}></img>,
 ]
 
 const video_trailer = '/videos/projets/PheniCS/Teaser Phenics Peinte.mp4';
@@ -74,7 +78,7 @@ const Page: React.FC = () => {
                         paragraph_array={side_paragraphs}
                     />
                 </div>
-                <Slideshow content={project_image_slides} slideshow_styles={{height:'40rem', width:'auto', margin:'2rem'}} timer={5000}/>
+                <Slideshow content={project_image_slides} slideshow_styles={{height:'40rem', width:'auto', margin:'2rem'}}/>
                 <h2 className='title-text navy tiny' style={{margin:'4rem'}}>Les expériences embarquées</h2>
                 <div style={{ display: 'flex', flexDirection: 'row', marginLeft:'20rem', marginRight:'20rem' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', marginRight:'4rem' }}>    

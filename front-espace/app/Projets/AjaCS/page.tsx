@@ -7,14 +7,19 @@ const background_top_image = '/projets/FusEx/AjaCS/ajacs en vol.jpg';
 
 const patch_image = '/projets/patchs/patch AjaCS.png';
 
+const slide_styles : React.CSSProperties = {
+    height:'40rem',
+    width:'60rem',
+    objectFit:'cover',
+}
 const project_image_slides = [
-    <img src='/projets/FusEx/AjaCS/ajacs_attente.jpg' style={{height:'40rem', width:'60rem', objectFit:'cover'}}></img>,
-    <img src='/projets/FusEx/AjaCS/ajacs_dos.jpg' style={{height:'40rem', width:'60rem', objectFit:'cover'}}></img>,
-    <img src='/projets/FusEx/AjaCS/ajacs_ramp.jpg' style={{height:'40rem', width:'60rem', objectFit:'cover'}}></img>,
-    <img src='/projets/FusEx/AjaCS/ajacs_team_ramp.jpg' style={{height:'40rem', width:'60rem', objectFit:'cover'}}></img>,
-    <img src='/projets/FusEx/AjaCS/ajacs_team.jpg' style={{height:'40rem', width:'60rem', objectFit:'cover'}}></img>,
-    <img src='/projets/FusEx/AjaCS/en travail.jpg' style={{height:'40rem', width:'60rem', objectFit:'cover'}}></img>,
-    <img src='/projets/FusEx/AjaCS/rce.jpg' style={{height:'40rem', width:'60rem', objectFit:'cover'}}></img>,
+    <img src='/projets/FusEx/AjaCS/ajacs_attente.jpg' style={slide_styles}></img>,
+    <img src='/projets/FusEx/AjaCS/ajacs_dos.jpg' style={slide_styles}></img>,
+    <img src='/projets/FusEx/AjaCS/ajacs_ramp.jpg' style={slide_styles}></img>,
+    <img src='/projets/FusEx/AjaCS/ajacs_team_ramp.jpg' style={slide_styles}></img>,
+    <img src='/projets/FusEx/AjaCS/ajacs_team.jpg' style={slide_styles}></img>,
+    <img src='/projets/FusEx/AjaCS/en travail.jpg' style={slide_styles}></img>,
+    <img src='/projets/FusEx/AjaCS/rce.jpg' style={slide_styles}></img>,
 ]
 
 const video_decollage = '/videos/projets/AjaCS/decollage_AJACS.mp4';
@@ -71,7 +76,7 @@ const Page: React.FC = () => {
                         paragraph_array={side_paragraphs}
                     />
                 </div>
-                <Slideshow content={project_image_slides} slideshow_styles={{height:'40rem', width:'auto', margin:'2rem'}} timer={5000}/>
+                <Slideshow content={project_image_slides} slideshow_styles={{height:'40rem', width:'auto', marginLeft:'18.5rem', marginRight:'18.5rem'}}/>
                 <h2 className='title-text navy tiny' style={{margin:'4rem'}}>Les expériences embarquées</h2>
                 <div style={{ display: 'flex', flexDirection: 'row', marginLeft:'20rem', marginRight:'20rem' }}>
                         <p className='regular-text tiny navy' style={{marginBottom:'1rem'}}>AjaCS avait pour ambition et objectif principal de créer un profil pression-température de l'atmosphère. Bien que les capteurs ont a priori bien fonctionné, l'inertie sur le capteur thermique n'a pas révélé la baisse de température attendue avec la montée en altitude. Cependant, la dépression observée par l'ascension s'est transcrite dans les données du vol.</p>                    

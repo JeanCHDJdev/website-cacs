@@ -5,19 +5,19 @@ import Slideshow from '../tools/Slideshow';
 const projects2024 = {
     names:['Sirius', 'HyMir', 'Nyx'],
     subtexts:['Notre première fusée bi-étage !', 'Projet de développement d\'un moteur fusée à ergols hybrides', 'Mini-fusée tirée de nuit bariolée de LEDs'],
-    patches:['../../projets/patchs/patch PheniCS.png', '../../projets/patchs/patch PheniCS.png', '../../projets/patchs/patch PheniCS.png'],
+    patches:['/projets/patchs/patch PheniCS.png', '/projets/patchs/patch PheniCS.png', '/projets/patchs/patch PheniCS.png'],
     path: ['/Projets/Sirius', '/Projets/HyMir', '/Projets/Nyx'],
 };
 const projects2023 = {
     names:['PheniCS'],
     subtexts:['Première fusée supersonique nominale depuis plus de 10 ans en France'],
-    patches:['../../projets/patchs/patch PheniCS.png'],
+    patches:['/projets/patchs/patch PheniCS.png'],
     path: ['/Projets/PheniCS'],
 };
 const projects2022 = {
     names:['AjaCS'],
     subtexts:['Première fusée de l\'association. Trajectographie inertielle et initiation au monde de l\'astromodélisme'],
-    patches:['../../projets/patchs/patch AjaCS.png'],
+    patches:['/projets/patchs/patch AjaCS.png'],
     path: ['/Projets/AjaCS'],
 };
 
@@ -38,10 +38,12 @@ const Page = () => {
                     <p className='regular-text navy' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: '20rem', marginRight: '20rem', marginBottom:'2rem', zIndex:3}}>Depuis 2021, nous acceuillons chaque année de nouveaux projets, des fusées expérimentales aux moteurs-fusées. Toujours plus exigeants et motivants, ils portent l'association vers de nouvelles altitudes. Vous pouvez ici découvrir un historique des projets du pôle espace.</p>
                 </div>
             </div>
+            <div style={{height:'200rem', marginRight:'25rem', marginLeft:'25rem', marginTop:'22rem', justifyContent:'center'}}>
             <Slideshow 
                     content={project_slideshow} 
-                    slideshow_styles={{ alignItems: 'column', marginTop: '12rem', marginBottom:'10rem', zIndex: '10'}} 
+                    slideshow_styles={{ marginTop: '12rem', marginBottom:'10rem', zIndex: '10', marginLeft:'0rem', marginRight:'0rem'}} 
                     showAdjacentSlides={true}/>
+            </div>
         </div>
     );
 };

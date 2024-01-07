@@ -34,23 +34,3 @@
     background-size: 100% 0%;
     transition: background-size 1s ease-in-out;
   }
-
-.img-slider-buttons {
-  all:unset;
-  display:block;
-  top:0;
-  bottom:0; 
-  cursor:pointer;
-  width:3rem;
-  height:'100%';
-  object-fit: cover;
-  background: rgba(0,0,50,0.1);
-  color: var(--white-cacs);
-  padding: 0.1rem 0.2rem; 
-  z-index: 10;
-  position: absolute;
-}
-.img-slider-buttons > * {
-  stroke: var(--white-cacs);
-  fill:rgba(0,0,50,0.1);
-}
