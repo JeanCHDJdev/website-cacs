@@ -4,13 +4,12 @@ import React, { useState, useEffect } from 'react';
 interface SlideshowProps {
     content: React.ReactNode[];
     timer?: number;
-    content_styles?: React.CSSProperties;
     slideshow_styles: React.CSSProperties;
     showAdjacentSlides?: boolean;
 }
 
 const right_arrow = '/layout_images/other/arrow.png';
-const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles, showAdjacentSlides, content_styles }) => {
+const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles, showAdjacentSlides }) => {
 
     const [currentContentIndex, setCurrentContentIndex] = useState(0);
     const showNextContent = () => {

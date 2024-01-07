@@ -37,7 +37,7 @@ const Page = () => {
                     <p className='regular-text navy' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: '20rem', marginRight: '20rem', marginBottom:'2rem', zIndex:3}}>Depuis 2021, nous acceuillons chaque année de nouveaux projets, des fusées expérimentales aux moteurs-fusées. Toujours plus exigeants et motivants, ils portent l'association vers de nouvelles altitudes. Vous pouvez ici découvrir un historique des projets du pôle espace.</p>
                 </div>
             </div>
-            <div style={{height:'200rem', marginRight:'25rem', marginLeft:'25rem', marginTop:'22rem', justifyContent:'center', display:'flex', flexDirection:'row'}}>
+            <div style={{height:'110rem', marginRight:'25rem', marginLeft:'25rem', marginTop:'15rem', justifyContent:'center', display:'flex', flexDirection:'row'}}>
                 {project_slideshow} 
             </div>
         </div>
