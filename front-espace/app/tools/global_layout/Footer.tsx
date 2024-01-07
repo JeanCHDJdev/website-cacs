@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
   ];
 
   const partenaires = [
-    { src :'/soutiens/ArianeGroup_Blanc.png', alt: 'ArianeGroup', link: 'https://www.ariane.group/fr/', width: '25rem', height: 'auto', marginLeft: '2.5rem', text: 'ArianeGroup est le leader européen des lanceurs spatiaux, avec leur programme de fusée phare Ariane. ArianeGroup nous soutient à la fois par son expertise technique et financièrement dans nos projets.', scale: '1.5'},
+    { src :'/soutiens/ArianeGroup_blanc.png', alt: 'ArianeGroup', link: 'https://www.ariane.group/fr/', width: '25rem', height: 'auto', marginLeft: '2.5rem', text: 'ArianeGroup est le leader européen des lanceurs spatiaux, avec leur programme de fusée phare Ariane. ArianeGroup nous soutient à la fois par son expertise technique et financièrement dans nos projets.', scale: '1.5'},
   ];
 
   return (
