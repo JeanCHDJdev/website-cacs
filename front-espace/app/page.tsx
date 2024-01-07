@@ -32,9 +32,9 @@ class Page extends React.Component {
     console.log(this.state.details);
 
   return (
-    <>
+    <div>
       <div className="slideshow-container" style={{top: 0, left: 0, right: 0}}>
-        <img src="/home_page/main_imgs/Pole_Espace.png" alt="Logo Pôle Espace" style={{ position: 'absolute', top: '23rem', left: '10.5rem', width: '15rem', height: 'auto' }} />
+        <img src="/home_page/main_imgs/Pole_Espace.png" alt="Logo Pôle Espace" style={{ position: 'absolute', top: '24rem', left: '10.5rem', width: '15rem', height: 'auto' }} />
         <h1 
           className='title-text huge white' 
           style={{ 
@@ -80,7 +80,7 @@ class Page extends React.Component {
                 <a className="buttons" href='/Membres'>Nos membres</a>
               </div>
             </div>
-      </>
+      </div>
     );
   }
 }

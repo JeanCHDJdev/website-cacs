@@ -1,5 +1,4 @@
-"use client";
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 type ParagraphProps = {
     title?: string;
@@ -20,26 +19,9 @@ const Paragraph: React.FC<ParagraphProps> = ({
     imageHeight = 'auto',
     text,
 }) => {
-    const paragraphRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const paragraphElement = paragraphRef.current;
-        if (paragraphElement) {
-            const fadeInAnimation = () => {
-                const paragraphTop = paragraphElement.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                if (paragraphTop < windowHeight) {
-                    paragraphElement.classList.add('fade-in');
-                    window.removeEventListener('scroll', fadeInAnimation);
-                }
-            };
-            window.addEventListener('scroll', fadeInAnimation);
-            fadeInAnimation();
-        }
-    }, []);
 
     return (
-        <div style={{ marginTop: '3rem', marginBottom:'3rem', marginLeft:'20rem', marginRight:'20rem' }} ref={paragraphRef}>
+        <div style={{ marginTop: '3rem', marginBottom:'3rem', marginLeft:'20rem', marginRight:'20rem' }} >
             {title && (
                 <div className="title-text small navy" style={{marginTop:'2rem', marginBottom:'2rem'}}>
                     {title}

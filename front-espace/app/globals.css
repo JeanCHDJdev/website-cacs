@@ -17,6 +17,7 @@
   --white-cacs: #fff;
   --gray-cacs: #ccc;
   --navy-cacs: #263f6b;
+  font-size: 0.75vw;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,7 +47,7 @@ ul {
 }
 
 .list-navbar {
-  padding: 10px;
+  padding: 1rem;
   transition: all linear 0.2s;
   color: var(--gray-cacs);
 }
