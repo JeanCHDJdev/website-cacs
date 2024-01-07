@@ -13,13 +13,13 @@ const slide_styles : React.CSSProperties = {
     objectFit:'cover',
 }
 const project_image_slides = [
-    <img src='/projets/FusEx/AjaCS/ajacs_attente.jpg' style={slide_styles}></img>,
-    <img src='/projets/FusEx/AjaCS/ajacs_dos.jpg' style={slide_styles}></img>,
-    <img src='/projets/FusEx/AjaCS/ajacs_ramp.jpg' style={slide_styles}></img>,
-    <img src='/projets/FusEx/AjaCS/ajacs_team_ramp.jpg' style={slide_styles}></img>,
-    <img src='/projets/FusEx/AjaCS/ajacs_team.jpg' style={slide_styles}></img>,
-    <img src='/projets/FusEx/AjaCS/en travail.jpg' style={slide_styles}></img>,
-    <img src='/projets/FusEx/AjaCS/rce.jpg' style={slide_styles}></img>,
+    <img src='/projets/FusEx/AjaCS/ajacs_attente.jpg' style={slide_styles} key={0}></img>,
+    <img src='/projets/FusEx/AjaCS/ajacs_dos.jpg' style={slide_styles} key={1}></img>,
+    <img src='/projets/FusEx/AjaCS/ajacs_ramp.jpg' style={slide_styles} key={2}></img>,
+    <img src='/projets/FusEx/AjaCS/ajacs_team_ramp.jpg' style={slide_styles} key={3}></img>,
+    <img src='/projets/FusEx/AjaCS/ajacs_team.jpg' style={slide_styles} key={4}></img>,
+    <img src='/projets/FusEx/AjaCS/en travail.jpg' style={slide_styles} key={5}></img>,
+    <img src='/projets/FusEx/AjaCS/rce.jpg' style={slide_styles} key={6}></img>,
 ]
 
 const video_decollage = '/videos/projets/AjaCS/decollage_AJACS.mp4';

@@ -1,6 +1,5 @@
 import React from 'react';
 import ProjectsByYear from './ProjectsByYear';
-import Slideshow from '../tools/Slideshow';
 
 const projects2024 = {
     names:['Sirius', 'HyMir', 'Nyx'],
@@ -22,9 +21,9 @@ const projects2022 = {
 };
 
 const project_slideshow = [
-    <ProjectsByYear names={projects2024.names} subtexts={projects2024.subtexts} patches={projects2024.patches} year={2024}/>,
-    <ProjectsByYear names={projects2023.names} subtexts={projects2023.subtexts} patches={projects2023.patches} year={2023}/>,
-    <ProjectsByYear names={projects2022.names} subtexts={projects2022.subtexts} patches={projects2022.patches} year={2022}/>
+    <ProjectsByYear names={projects2024.names} subtexts={projects2024.subtexts} patches={projects2024.patches} year={2024} key={2024}/>,
+    <ProjectsByYear names={projects2023.names} subtexts={projects2023.subtexts} patches={projects2023.patches} year={2023} key={2023}/>,
+    <ProjectsByYear names={projects2022.names} subtexts={projects2022.subtexts} patches={projects2022.patches} year={2022} key={2022}/>
 ];
 
 const Page = () => {
@@ -38,11 +37,8 @@ const Page = () => {
                     <p className='regular-text navy' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: '20rem', marginRight: '20rem', marginBottom:'2rem', zIndex:3}}>Depuis 2021, nous acceuillons chaque année de nouveaux projets, des fusées expérimentales aux moteurs-fusées. Toujours plus exigeants et motivants, ils portent l'association vers de nouvelles altitudes. Vous pouvez ici découvrir un historique des projets du pôle espace.</p>
                 </div>
             </div>
-            <div style={{height:'200rem', marginRight:'25rem', marginLeft:'25rem', marginTop:'22rem', justifyContent:'center'}}>
-            <Slideshow 
-                    content={project_slideshow} 
-                    slideshow_styles={{ marginTop: '12rem', marginBottom:'10rem', zIndex: '10', marginLeft:'0rem', marginRight:'0rem'}} 
-                    showAdjacentSlides={true}/>
+            <div style={{height:'200rem', marginRight:'25rem', marginLeft:'25rem', marginTop:'22rem', justifyContent:'center', display:'flex', flexDirection:'row'}}>
+                {project_slideshow} 
             </div>
         </div>
     );

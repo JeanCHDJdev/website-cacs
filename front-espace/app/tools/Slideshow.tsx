@@ -36,18 +36,12 @@ const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles,
 
     return (
         <div style={{width:"100%", height:"100%", position:'relative', ...slideshow_styles}}>
-            {showAdjacentSlides && (
+            {/*{showAdjacentSlides && (
                 <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'row', position:'absolute' }}>
-                    <div style={{width:"100%", height:"100%", display:"flex", overflow:"hidden"}}>
-                    {content.map((cont, index) => (
+                    <div style={{width:"100%", height:"100%", display:"flex"}}>
+                    {content.map(cont => (
                         <div>
-                            {content[currentContentIndex-1] && <div className='slider-content' style={{ translate: `${-100 * ((currentContentIndex + 1 ) % content.length)}%`}}>
-                            {cont}
-                            </div>}
-                            <div className='slider-content' style={{ scale:'1.2', translate: `${-100 * currentContentIndex}%`}}>
-                            {cont}
-                            </div>
-                            <div className='slider-content' style={{ translate: `${-100 * ((currentContentIndex-1 + content.length) % content.length)}%`}}>
+                            <div className='slider-content' style={{ scale: currentContentIndex === 0 ? '1.2' : '1', translate: `${-100 * currentContentIndex}%`, opacity: currentContentIndex === 0 ? '1' : '0.8' }}>
                             {cont}
                             </div>
                         </div>))}
@@ -59,7 +53,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles,
                         <img src={right_arrow} alt="Right Arrow" className='right'/>
                     </button>
                 </div>
-            )}
+                    )}*/}
             {!showAdjacentSlides && (            
             <div style={{width:"100%", height:"100%", position:'relative', ...slideshow_styles}}>
                 <div style={{width:"100%", height:"100%", display:"flex", overflow:"hidden"}}>
