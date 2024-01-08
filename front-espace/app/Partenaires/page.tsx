@@ -1,5 +1,6 @@
 "use client";
 import Paragraph from "../tools/text_display/Paragraph";
+import Header from "../tools/global_layout/Header";
 
 const CNESText = 'Le CNES est le Centre National des études Spatiales. Le CNES, en collaboration avec l\'association planète sciences, organise chaque année le C\'Space, la campagne de lancement de fusées expérimentales étudiantes nationale, à laquelle l\'association participe chaque année.'
 const PlaneteSciencesText = 'Planète Sciences est une association qui a pour but de promouvoir les sciences et les techniques auprès des jeunes. Elle est composée de 12 délégations régionales, dont une en Île-de-France. L\'association organise de nombreux évènements, dont le C\'Space, un rassemblement de fusées expérimentales.'
@@ -14,12 +15,12 @@ const background_top_image = '/soutiens/bg_soutiens.jpg';
 const Page = () => { 
     return (
         <div>
-            <img src={background_top_image} style={{ objectFit: 'cover', objectPosition: 'center', filter: 'brightness(78%)',  height: '52rem', width:'100%',  position: 'relative', zIndex: 1}} />
-            <text className='title-text huge white' style={{ textAlign: 'center', zIndex: '5', position: 'absolute', left: '10rem', top: '40rem'}}>Découvrir nos partenaires</text>
-            <div style={{ marginTop: '6rem', display: 'flex', justifyContent: 'center', alignContent:'column', flexDirection:'column' }}>
-                <text className='title-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'4rem'}}>Devenir Partenaire</text>
-                <p className='regular-text tiny navy' style={{ marginLeft: '30rem', marginRight: '30rem' }}>Vous êtes professionel ou particulier et souhaitez aider un groupe de jeunes étudiants motivés et passionés dans la réalisation de projets toujours plus ambitieux ? Que ce soit par une aide financière, matérielle, ou une expertise technique, vous pouvez rejoindre nos partenaires :</p>
-            </div>
+            <Header 
+                bg={background_top_image} 
+                title="Découvrir nos partenaires" 
+                subtitle="Devenir Partenaire" 
+                paragraph="Vous êtes professionel ou particulier et souhaitez aider un groupe de jeunes étudiants motivés et passionés dans la réalisation de projets toujours plus ambitieux ? Que ce soit par une aide financière, matérielle, ou une expertise technique, vous pouvez rejoindre nos partenaires :"
+            />
             <div style={{ marginTop: '2rem', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
                 <a className='alt-buttons' href='/Devenir-Partenaire' style={{marginRight:'6rem'}}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -42,6 +43,55 @@ const Page = () => {
                     imageWidth='30rem' 
                     text={ArianeGroupText}
                 />
+                <Paragraph 
+                    image='/projets/FusEx/PheniCS/perce_nuages.png' 
+                    imageName="ArianeGroup"
+                    imagePosition='left' 
+                    imageWidth='40rem' 
+                    text={ArianeGroupSubText}
+                />
+                <text className='title-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'4rem'}}>Nos Soutiens</text>
+                <Paragraph 
+                    image='/soutiens/planete-sciences.png'
+                    imageName="PlaneteSciences"
+                    title="Planète Sciences"
+                    imagePosition='right' 
+                    imageWidth='30rem' 
+                    text={PlaneteSciencesText} 
+                />
+                <Paragraph 
+                    image='/soutiens/cnes.png' 
+                    imagePosition='left'
+                    imageName="CNES"
+                    title="CNES"
+                    imageWidth='30rem'
+                    text={CNESText} 
+                />
+                <Paragraph 
+                    image='/soutiens/centralesupelec.png' 
+                    imagePosition='right'
+                    imageName="CentraleSupélec" 
+                    imageWidth='30rem' 
+                    title="CentraleSupélec"
+                    text={CSText} 
+                />
+                <Paragraph 
+                    image='/soutiens/em2c.png' 
+                    imagePosition='left' 
+                    imageName="EM2C"
+                    title="Laboratoire EM2C"
+                    imageWidth='30rem' 
+                    text={EM2CText} 
+                />
+                <Paragraph 
+                    image='/soutiens/lafabrique.png' 
+                    imagePosition='right' 
+                    imageName="LaFabrique"
+                    title="La Fabrique"
+                    imageWidth='50rem' 
+                    text={LaFabriqueText} 
+                />
+
           </div>
         </div>
     );

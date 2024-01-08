@@ -2,6 +2,7 @@
 import React from 'react';
 import RocketDetails from '../RocketDetails';
 import Slideshow from '@/app/tools/Slideshow';
+import ProjectHeader from '@/app/tools/global_layout/ProjectHeader';
 
 const background_top_image = '/projets/FusEx/AjaCS/ajacs en vol.jpg';
 
@@ -37,14 +38,12 @@ const Page: React.FC = () => {
 
     return (
         <div>
-            <img src={background_top_image} style={{ objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(78%)',  height: '30rem', width:'100%',  position: 'relative', zIndex: 1 }} />
-            <div style={{ display: 'flex', textAlign: 'center', justifyContent:'center', zIndex: 5, position:'relative', marginTop:'-15rem' }}>
-                <img src={patch_image} alt='Patch' style={{ marginRight: '2rem', width: '10rem', height: 'auto' }} />
-                <text className='title-text huge white'>AjaCS</text>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop:'5rem' }}>
-                <h2 className='title-text navy tiny' style={{margin:'2rem'}}>Présentation d'AjaCS</h2>
-            </div>
+            <ProjectHeader 
+                bg={background_top_image}
+                patch={patch_image}
+                title="AjaCS"
+                subtitle="Présentation d'AjaCS"
+                />
             <div style={{ display: 'flex', flexDirection: 'row', marginLeft:'20rem', marginRight:'20rem', marginTop:'3rem' }}>
                 <video controls style={{ height: '28rem' }}>
                     <source src={video_decollage} type="video/mp4" />

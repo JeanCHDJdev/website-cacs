@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectsByYear from './ProjectsByYear';
+import Header from '../tools/global_layout/Header';
 
 const projects2024 = {
     names:['Sirius', 'HyMir', 'Nyx'],
@@ -26,17 +27,17 @@ const project_slideshow = [
     <ProjectsByYear names={projects2022.names} subtexts={projects2022.subtexts} patches={projects2022.patches} year={2022} key={2022}/>
 ];
 
+const project_background = '/projets/bg_projets.png';
+
 const Page = () => {
     return (
         <div>
-            <div style={{ position: 'relative', zIndex: '1', height: '70rem' }}>
-                <img src="/projets/bg_projets.png" style={{ objectFit: 'cover', objectPosition: 'center', height: '100%', filter: 'brightness(72%)' }} />
-                <text className='title-text huge white' style={{ textAlign: 'center', zIndex: '5', position: 'absolute', left: '10rem', top: '40rem'}}>Nos projets</text>
-                <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '18rem', backgroundColor: 'white' }}>
-                    <text className='title-text navy' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '4.5rem', marginBottom:'4.5rem', zIndex:3}}>Découvrez nos fusées expérimentales</text>
-                    <p className='regular-text navy' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: '20rem', marginRight: '20rem', marginBottom:'2rem', zIndex:3}}>Depuis 2021, nous acceuillons chaque année de nouveaux projets, des fusées expérimentales aux moteurs-fusées. Toujours plus exigeants et motivants, ils portent l'association vers de nouvelles altitudes. Vous pouvez ici découvrir un historique des projets du pôle espace.</p>
-                </div>
-            </div>
+            <Header 
+                bg={project_background}
+                title = 'Nos projets'
+                subtitle='Découvrez nos fusées expérimentales'
+                paragraph="Depuis 2021, nous accueillons chaque année de nouveaux projets, des fusées expérimentales aux moteurs-fusées. Toujours plus exigeants et motivants, ils portent l'association vers de nouvelles altitudes. Vous pouvez ici découvrir un historique des projets du pôle espace."
+            />
             <div style={{height:'110rem', marginRight:'25rem', marginLeft:'25rem', marginTop:'15rem', justifyContent:'center', display:'flex', flexDirection:'row'}}>
                 {project_slideshow} 
             </div>
