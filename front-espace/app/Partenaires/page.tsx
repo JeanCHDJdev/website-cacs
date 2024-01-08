@@ -35,7 +35,7 @@ const Page = () => {
             <div style={{marginTop:'4rem'}}>
                 <text className='title-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'4rem'}}>Nos Partenaires</text>
                 <Paragraph 
-                    image='../../soutiens/arianegroup.png' 
+                    image='/soutiens/arianegroup.png' 
                     title='ArianeGroup'
                     imageName="ArianeGroup"
                     imagePosition='right' 

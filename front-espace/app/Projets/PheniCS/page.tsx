@@ -21,7 +21,6 @@ const project_image_slides = [
     <img src='/projets/FusEx/PheniCS/qualification.png' style={img_styles} key={6}></img>,
 ]
 
-const video_trailer = '/videos/projets/PheniCS/Teaser Phenics Peinte.mp4';
 const video_tableau_de_bord = '/videos/projets/PheniCS/Reconstruction_Phenics.mp4';
 const video_decollage = '/videos/projets/PheniCS/decollage_phenics.mp4';
 
