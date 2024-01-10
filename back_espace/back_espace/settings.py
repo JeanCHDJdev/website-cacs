@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,7 +59,19 @@ REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES':[
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+gettext = lambda s: s
+LANGUAGES = (
+    ('fr', gettext('French')),
+    ('en', gettext('English')),
+)
 
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'fr'
+
+MODELTRANSLATION_LANGUAGES = ('fr', 'en')
+
+MODELTRANSLATION_TRANSLATION_FILES = (
+    'myapi.translation',
+)
 
 ROOT_URLCONF = 'back_espace.urls'
 

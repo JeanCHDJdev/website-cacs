@@ -17,3 +17,11 @@ class ProjetViewSet(ModelViewSet):
 class SponsorViewSet(ModelViewSet):
     queryset = Sponsor.objects.all()
     serializer_class = SponsorSerializer
+
+class RocketDetailViewSet(ModelViewSet):
+    queryset = RocketDetail.objects.all()
+    serializer_class = RocketDetailSerializer
+
+class MemberRoleViewSet(ModelViewSet):
+    queryset = MemberRole.objects.all()
+    serializer_class = MemberRoleSerializer

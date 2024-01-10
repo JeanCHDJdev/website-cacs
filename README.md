@@ -22,10 +22,14 @@ npm install axios
 Dans un terminal, lancer les commandes suivantes :
 ```bash
 cd back_espace
-python manage.py runserver
+python3 manage.py runserver
 ```
 Dans un autre terminal, lancer les commandes suivantes :
 ```bash
 cd front-espace
 npm run dev
 ```
+# Modifier les bases de données
+site : http://127.0.0.1:8000/admin/
+user : himmi
+mdp : azerty
