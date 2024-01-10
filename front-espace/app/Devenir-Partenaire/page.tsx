@@ -24,9 +24,9 @@ const page: React.FC = () => {
     return (
           
         <div>
-            <div style={{ position: 'relative', zIndex: '1', height: '59rem' }}>
-                <img src="/contact/bg_contact.jpg" style={{ objectFit: 'cover', objectPosition: 'center', height: '55rem', filter: 'brightness(72%)', width:'100%' }} />
-                <text className='title-text huge white' style={{ textAlign: 'center', zIndex: '5', position: 'absolute', left: '10rem', top: '45rem'}}>Devenir partenaire</text>
+            <div style={{ position: 'relative', zIndex: '1', height: '55rem' }}>
+                <img src="/contact/bg_contact.jpg" style={{ objectFit: 'cover', objectPosition: 'center', height: '51rem', filter: 'brightness(72%)', width:'100%' }} />
+                <text className='title-text huge white' style={{ textAlign: 'center', zIndex: '5', position: 'absolute', left: '10rem', top: '41rem'}}>Devenir partenaire</text>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center', flexDirection: 'column', textAlign: 'center' }}>
                 <text className='title-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'4rem'}}>Être partenaire de l'association</text>

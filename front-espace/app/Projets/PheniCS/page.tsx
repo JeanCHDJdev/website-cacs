@@ -2,6 +2,7 @@
 import React from 'react';
 import RocketDetails from '../RocketDetails';
 import Slideshow from '@/app/tools/Slideshow';
+import ProjectHeader from '@/app/tools/global_layout/ProjectHeader';
 
 const background_top_image = '/home_page/main_img_diapo/phenics_decollage.jpg';
 
@@ -21,7 +22,6 @@ const project_image_slides = [
     <img src='/projets/FusEx/PheniCS/qualification.png' style={img_styles} key={6}></img>,
 ]
 
-const video_trailer = '/videos/projets/PheniCS/Teaser Phenics Peinte.mp4';
 const video_tableau_de_bord = '/videos/projets/PheniCS/Reconstruction_Phenics.mp4';
 const video_decollage = '/videos/projets/PheniCS/decollage_phenics.mp4';
 
@@ -38,14 +38,12 @@ const Page: React.FC = () => {
 
     return (
         <div>
-            <img src={background_top_image} style={{ objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(78%)',  height: '30rem', width:'100%',  position: 'relative', zIndex: 1 }} />
-            <div style={{ display: 'flex', textAlign: 'center', justifyContent:'center', zIndex: 5, position:'relative', marginTop:'-15rem' }}>
-                <img src={patch_image} alt='Patch' style={{ marginRight: '2rem', width: '10rem', height: 'auto' }} />
-                <text className='title-text huge white'>PheniCS</text>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop:'5rem' }}>
-                <h2 className='title-text navy tiny' style={{margin:'2rem'}}>Présentation de PheniCS</h2>
-            </div>
+            <ProjectHeader 
+                bg={background_top_image}
+                patch={patch_image}
+                title="PheniCS"
+                subtitle="Présentation de PheniCS"
+                />
             <div style={{ display: 'flex', flexDirection: 'row', marginLeft:'20rem', marginRight:'20rem', marginTop:'3rem' }}>
                 <video controls style={{ height: '28rem' }}>
                     <source src={video_decollage} type="video/mp4" />

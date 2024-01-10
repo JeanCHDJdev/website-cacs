@@ -22,7 +22,7 @@ function createDivContent(content: string[]): JSX.Element {
         <div>
             <p className='regular-text navy tiny' style={{ textDecoration: 'underline', marginTop:'3.5rem', justifyContent:'center', alignItems:'center', display:'flex' }}>{content[0]}</p>
             {content.length === 3 && (
-                <div style={{justifyContent:'center', alignItems:'center', display:'flex' }}>
+                <div style={{justifyContent:'center', alignItems:'center', display:'flex' }} key={content[0]}>
                     <img src={content[2]} alt='Rocket' style={{ height: '20rem', marginTop:'1rem', marginBottom:'1rem' }} />
                 </div>
             )}
