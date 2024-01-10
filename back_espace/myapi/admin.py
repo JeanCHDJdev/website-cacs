@@ -24,17 +24,17 @@ class MembreAdmin(admin.ModelAdmin):
 #     model = RocketDetail
 #     extra = 1  # Number of empty forms to display for adding new RocketDetail instances
 
-class RocketDetailInline(TranslationTabularInline):
-    model = RocketDetail
-    extra = 1
-    classes = ['collapse']  # Add the 'collapse' class to make it collapsible
-    show_change_link = True  # Show the change link for each inline instance
+# class RocketDetailInline(TranslationTabularInline):
+#     model = RocketDetail
+#     extra = 1
+#     classes = ['collapse']  # Add the 'collapse' class to make it collapsible
+#     show_change_link = True  # Show the change link for each inline instance
 
 class ProjetAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['nom', 'description', 'logo', 'annee_creation', 'is_rocket', 'is_motor']}),
+        (None, {'fields': ['nom', 'description', 'logo', 'annee_creation']}),
     ]
-    inlines = [RocketDetailInline]
+    # inlines = [RocketDetailInline]
 
 class ProjetAdminTranslated(ProjetAdmin, TranslationAdmin):
     pass

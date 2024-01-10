@@ -26,7 +26,7 @@ router.registry.extend(role_router.registry)
 router.registry.extend(membre_router.registry)
 router.registry.extend(projet_router.registry)
 router.registry.extend(sponsor_router.registry)
-router.registry.extend(rocketdetail_router.registry)
+# router.registry.extend(rocketdetail_router.registry)
 router.registry.extend(memberrole_router.registry)
 
 urlpatterns = [

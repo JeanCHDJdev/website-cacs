@@ -14,8 +14,8 @@ projet_router.register(r'projets', ProjetViewSet)
 sponsor_router = DefaultRouter()
 sponsor_router.register(r'sponsors', SponsorViewSet)
 
-rocketdetail_router = DefaultRouter()
-rocketdetail_router.register(r'rocketdetails', RocketDetailViewSet)
+# rocketdetail_router = DefaultRouter()
+# rocketdetail_router.register(r'rocketdetails', RocketDetailViewSet)
 
 memberrole_router = DefaultRouter()
 memberrole_router.register(r'memberroles', MemberRoleViewSet)
