@@ -15,13 +15,9 @@ class Page extends React.Component {
         let url = models[model]
         axios.get(url)
         .then(res => {
-          interface Results {
-            [key: string]: any;
-          }
-          // ...
-          const results: Results = {};
           results[model] = res.data;
         })
+
       }
       this.setState({ details: results});
     })
@@ -30,6 +26,7 @@ class Page extends React.Component {
 
   render(){
     console.log(this.state.details);
+
 
   return (
     <div>

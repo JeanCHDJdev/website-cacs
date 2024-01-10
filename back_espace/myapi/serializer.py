@@ -20,3 +20,15 @@ class SponsorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sponsor
         fields = '__all__'
+
+# class RocketDetailSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = RocketDetail
+#         fields = '__all__'
+
+class MemberRoleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MemberRole
+        fields = '__all__'
+
+
