@@ -7,6 +7,7 @@
 ```bash
 pip install django
 pip install djangorestframework django-cors-headers
+pip install django-modeltranslation
 ```
 ## React
 ```bash
