@@ -1,33 +1,9 @@
 "use client";
-import React, { useState, useEffect, useRef, use } from 'react';
-import axios from 'axios';
+import React from 'react';
 // export default function Page() {
 class Page extends React.Component {
-
-  state = { details: {}};
-  componentDidMount() {
-    let models;
-    axios.get('http://127.0.0.1:8000/')
-    .then(res => {
-      models = res.data;
-      let results = {};
-      for (let model in models) {
-        let url = models[model]
-        axios.get(url)
-        .then(res => {
-          results[model] = res.data;
-        })
-
-      }
-      this.setState({ details: results});
-    })
-    .catch(err => {});
-  }
-
   render(){
-    console.log(this.state.details);
-
-
+    
   return (
     <div>
       <div className="slideshow-container" style={{top: 0, left: 0, right: 0}}>
