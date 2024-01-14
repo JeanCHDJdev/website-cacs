@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 interface MemberDesc {
     image: string;
     first_name: string;
@@ -10,6 +9,19 @@ interface MemberDesc {
     roles_project: { [project: string]: string };
     linkedin?: string;
 }
+
+const TeamDropdown: React.FC<{ team: string; members: MemberDesc[] }> = ({ team, members }) => {
+    return (
+        <details>
+            <summary className='regular-text small navy' style={{ borderBottom: '0.5rem solid darkblue', width:'16rem', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom:'0.5rem' }}><strong>{team}</strong></summary>
+            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
+                {members.map((member) => (
+                    <Member key={member.first_name} {...member} />
+                ))}
+            </div>
+        </details>
+    );
+};
 
 const Member: React.FC<MemberDesc> = ({
     image,
@@ -38,7 +50,7 @@ const Member: React.FC<MemberDesc> = ({
                 <img src={`/members/P${promo}${image.replace('http://127.0.0.1:8000/myapi/static/myapi/images/membres', '')}`} alt={`${first_name} ${last_name}`} style={{width:'16rem', objectFit:'cover', height:'16rem'}} />
             </div>
             <h2 className='regular-text small navy' style={{ borderBottom: '0.5rem solid darkblue', width:'16rem', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom:'0.5rem' }}><strong>{first_name} {last_name}</strong></h2>
-            <div className='regular-text small navy' style={{display: 'flex', flexDirection:'column', justifyContent: 'center', alignItems: 'center', width:'16rem', marginBottom:'0.5rem'}}>
+            <div className='regular-text small navy' style={{display: 'flex', flexDirection:'column', justifyContent: 'center', width:'16rem', marginBottom:'0.5rem'}}>
                 {Object.keys(roles_project).filter((project) => !teams.includes(project)).map((project) => (
                     <li key={project}>
                         <strong>{project}</strong> - <i>{roles_project[project]}</i>

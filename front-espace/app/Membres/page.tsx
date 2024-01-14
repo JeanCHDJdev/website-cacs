@@ -9,8 +9,12 @@ const Page = () => {
   const [details, setDetails] = useState<{ [key: string]: any }>([]);
   const roles = details["roles"];
   const connexions = details["memberroles"]
-  const projects = details["projets"];
-  
+
+  const [projectToDisplay, setProjectToDisplay] = useState<number>(0);
+
+  const promos : string[] = ['2024', '2023', '2022', '2021'];
+  const [promosToShow, setPromosToShow] = useState<string[]>(promos);
+
   useEffect(() => {
       axios.get('http://127.0.0.1:8000/')
           .then(response => {
@@ -40,33 +44,38 @@ const Page = () => {
 
   const sortMembers = (members: any[]) => {
     const sortedMembers = members.sort((a: any, b: any) => {
-      
-      const memberAPriorities = a.roles.map((roleId: number) => roles[roleId-1].priority);
-      const memberBPriorities = b.roles.map((roleId: number) => roles[roleId-1].priority);
-      const prio = Math.min(...memberAPriorities) - Math.min(...memberBPriorities)
-      if(prio === 0)
+      if(a.promo === b.promo)
       {
-        return b.promo-a.promo; // On trie par promo décroissante
+        const memberAPriorities = a.roles.map((roleId: number) => roles[roleId-1].priority);
+        const memberBPriorities = b.roles.map((roleId: number) => roles[roleId-1].priority);
+        return Math.min(...memberAPriorities) - Math.min(...memberBPriorities);
       }
-      return prio;
+      return b.promo - a.promo;
     });
 
     return sortedMembers;
   };
 
-  const sortRolesByPriority = (roles: any[]) => {
-    const sortedRoles = roles.sort((a: any, b: any) => {
-      return a.priority - b.priority;
-    });
-    return sortedRoles;
-  };
-
-  const getMembersToShow = (): any[] => {
-    const members = details["membres"];
-
+  const getMembersToShow = (annee?:string, projet?:number): any[] => {
+    let members: any[] = [];
+    if(Array.isArray(details["membres"])) 
+    {
+      members = [...details["membres"]];
+    } 
+    {Array.isArray(members) && members.map((membre:any) => 
+      {connexions
+        .filter((connexion: any) => connexion.member === membre.id)
+        .map((connexion: any) => {
+          if ((annee !== 'Default' && annee !== undefined && connexion.year !== parseInt(annee)) || (projet !== 0 && projet !== undefined && connexion.project !== projet))
+          {
+            members.splice(members.indexOf(membre), 1, '');
+          }
+        })
+      });
+    }
     if (Array.isArray(members)) {
-      const sortedMembers = sortMembers(members);
-      return sortedMembers;
+      members = members.filter((member) => member !== '');
+      return sortMembers(members);
     }
     else
     {
@@ -74,7 +83,7 @@ const Page = () => {
     }
   };
 
-  const getRolesToShowByMember = (membre: { [key: string]: any }, projects?:[string]): { [key: string]: string } => {
+  const getRolesToShowByMember = (membre: { [key: string]: any }, annee?:string, projet?:number): { [key: string]: string } => {
     const role_project_dict: { [key: string]: string } = {};
     const member_role_project_table = connexions
       .filter((connexion: any) => connexion.member === membre.id)
@@ -83,12 +92,47 @@ const Page = () => {
       });
 
     member_role_project_table.forEach((connexion: any) => {
+      if((annee !== undefined && connexion.year !== parseInt(annee)) || (projet !== undefined) && connexion.project !== projet)
+      {
+        return;
+      }
       const role = roles[connexion.role-1];
-      const projet = details["projets"][connexion.project-2];
-      role_project_dict[projet.nom] = role.nom_fr + ' ' + connexion.year;
+      const project = details["projets"][connexion.project-2];
+      role_project_dict[project.nom] = role.nom_fr + ' ' + connexion.year;
     });
 
     return role_project_dict;
+  };
+
+  const handleProjectSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const projectToShow = event.target.value;
+    console.log(event.target.value, 'project change');
+    if(projectToShow === 'Default')
+    {
+      setProjectToDisplay(0);
+      return;
+    }
+    setProjectToDisplay(projectToDisplay);
+
+    {/*const projectSelect = document.getElementById('year-select') as HTMLSelectElement;
+    if (projectSelect) {
+      projectSelect.selectedIndex = 0;
+    }*/} // This allows to reset dropdowns when the other one is changed
+  };
+  const handleYearSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    console.log(event.target.value, 'year change');
+    const yearsToShow = event.target.value;
+    if(yearsToShow === 'Default')
+    {
+      return;
+    }
+    const year = yearsToShow.split('/')[0];
+    setPromosToShow([yearsToShow.split('/')[1],yearsToShow.split('/')[0]])
+
+    {/*const projectSelect = document.getElementById('project-select') as HTMLSelectElement;
+    if (projectSelect) {
+      projectSelect.selectedIndex = 0;
+    }*/} // This allows to reset dropdowns when the other one is changed
   };
 
   return (
@@ -97,13 +141,13 @@ const Page = () => {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginLeft:'20rem', marginRight:'20rem', marginTop:'3rem', marginBottom:'3rem' }}>
         <p className="title-text navy">Membres</p>
         <div>
-          <select className="classic-dropdown" defaultValue='Default' id={'project-select'}>
+          <select className="classic-dropdown" defaultValue='Default' id={'project-select'} onChange={handleProjectSelectChange}>
             <option value='Default'>Tous les projets</option>
             {Array.isArray(details["projets"]) && details["projets"].map((project) => (
-              <option key={project.id} value={project.nom}>{project.nom}</option>
+              <option key={project.id} value={project.id}>{project.nom}</option>
             ))}
           </select>
-          <select className="classic-dropdown" defaultValue='Default' id={'year-select'}>
+          <select className="classic-dropdown" defaultValue='Default' id={'year-select'} onChange={handleYearSelectChange}>
               <option value='Default'>Tous les membres</option>
               <option value="2023/2024">2023/2024</option>
               <option value="2022/2023">2022/2023</option>
@@ -112,19 +156,29 @@ const Page = () => {
             </select>
           </div>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', marginLeft: '20rem', marginRight: '20rem', alignContent:'center', justifyContent:'center' }}>
-          {getMembersToShow().map((membre: any) => (
-            <Member
-              key={membre.id}
-              first_name={membre.prenom}
-              last_name={membre.nom}
-              image={membre.photo}
-              linkedin={membre.linkedin}
-              promo={membre.promo}
-              roles_project={getRolesToShowByMember(membre)}
-              mail={membre.mail}
-            />
-          ))}
+        <div>
+          <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', marginLeft: '20rem', marginRight: '20rem'}}>
+            {promosToShow.map((promo : string) => (
+              <div key={promo} style={{ display: 'flex', flexDirection: 'column'}}>
+                <p className="title-text navy">{promo}</p>
+                <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
+                  {getMembersToShow(promo, projectToDisplay === 0 ? undefined : projectToDisplay)
+                    .map((membre: any) => (
+                      <Member
+                        key={membre.id}
+                        first_name={membre.prenom}
+                        last_name={membre.nom}
+                        image={membre.photo}
+                        linkedin={membre.linkedin}
+                        promo={membre.promo}
+                        roles_project={getRolesToShowByMember(membre, promo, projectToDisplay === 0 ? undefined : projectToDisplay)}
+                        mail={membre.mail}
+                      />
+                    ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
   );
