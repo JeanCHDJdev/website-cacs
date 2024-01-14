@@ -6,35 +6,44 @@ interface MemberDesc {
     first_name: string;
     last_name: string;
     mail: string;
-    gpa_year: number;
+    promo: number;
     roles_project: { [project: string]: string };
-    teams_project: { [project: string]: string };
     linkedin?: string;
 }
 
-{/* would be amazing to add badges / achievements to each member !!!!!!!*/}
 const Member: React.FC<MemberDesc> = ({
     image,
     first_name,
     last_name,
     mail,
-    gpa_year,
+    promo,
     roles_project,
-    teams_project,
     linkedin,
 }) => {
+    const registeredTeams = 
+    {'Equipe Mécanique': '/members/badge/badge_meca.png',
+    'Equipe Electronique': '/members/badge/badge_elec.png',
+    'Equipe Software':'/members/badge/badge_soft.png',
+    'Equipe Combustion':'/members/badge/badge_combustion.png',
+    'Equipe Hydraulique':'/members/badge/badge_hydro.png'}
+
+    const teams = Object.keys(roles_project).filter((project) => {
+        const equipeName = Object.keys(registeredTeams).find((team) => roles_project[project].startsWith(team));
+        return equipeName !== undefined;
+    });
+
     return (
-        <div style={{display:'flex', flexDirection:'column', marginBottom:'0.5rem'}}>
-            <img src={image} alt={`${first_name} ${last_name}`} style={{width:'14rem', objectFit:'cover', height:'14rem'}} />
-            <h2 className='regular-text small navy' style={{ borderBottom: '0.5rem solid darkblue', width:'14rem', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom:'0.5rem' }}><strong>{first_name} {last_name}</strong></h2>
-            <div className='regular-text small navy' style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width:'14rem', marginBottom:'0.5rem'}}>
-                <ul>
-                    {Object.keys(roles_project).map((project) => (
-                        <li key={project}>
-                            <strong>{project}</strong> - <i>{roles_project[project]}</i>
-                        </li>
+        <div style={{display:'flex', flexDirection:'column', padding:'1rem'}}>
+            <div>
+                <img src={`/members/P${promo}${image.replace('http://127.0.0.1:8000/myapi/static/myapi/images/membres', '')}`} alt={`${first_name} ${last_name}`} style={{width:'16rem', objectFit:'cover', height:'16rem'}} />
+            </div>
+            <h2 className='regular-text small navy' style={{ borderBottom: '0.5rem solid darkblue', width:'16rem', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom:'0.5rem' }}><strong>{first_name} {last_name}</strong></h2>
+            <div className='regular-text small navy' style={{display: 'flex', flexDirection:'column', justifyContent: 'center', alignItems: 'center', width:'16rem', marginBottom:'0.5rem'}}>
+                {Object.keys(roles_project).filter((project) => !teams.includes(project)).map((project) => (
+                    <li key={project}>
+                        <strong>{project}</strong> - <i>{roles_project[project]}</i>
+                    </li>
                     ))}
-                </ul>
             </div>
             <div style={{ display: 'flex', alignContent:'center', flexDirection:'row'}}>
                 <a href={linkedin}>
