@@ -1,5 +1,5 @@
 import React from 'react';
-
+import DropdownTeamDisplay from './DropdownTeamDisplay';
 
 interface MemberDesc {
     image: string;
@@ -7,9 +7,22 @@ interface MemberDesc {
     last_name: string;
     mail: string;
     promo: number;
-    roles_project: { [project: string]: string };
+    roles_project: { [project: string]: [string] };
     linkedin?: string;
 }
+
+const TeamDropdown: React.FC<{ team: string; members: MemberDesc[] }> = ({ team, members }) => {
+    return (
+        <details>
+            <summary className='regular-text small navy' style={{ borderBottom: '0.5rem solid darkblue', width:'16rem', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom:'0.5rem' }}><strong>{team}</strong></summary>
+            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
+                {members.map((member) => (
+                    <Member key={member.first_name} {...member} />
+                ))}
+            </div>
+        </details>
+    );
+};
 
 const Member: React.FC<MemberDesc> = ({
     image,
@@ -27,23 +40,37 @@ const Member: React.FC<MemberDesc> = ({
     'Equipe Combustion':'/members/badge/badge_combustion.png',
     'Equipe Hydraulique':'/members/badge/badge_hydro.png'}
 
-    const teams = Object.keys(roles_project).filter((project) => {
-        const equipeName = Object.keys(registeredTeams).find((team) => roles_project[project].startsWith(team));
-        return equipeName !== undefined;
+    // Split roles_project into nonTeamRoles and teamRoles
+    const nonTeamRoles: { [project: string]: [string] } = {};
+    const teamRoles: { [project: string]: [string] } = {};
+
+    Object.entries(roles_project).forEach(([project, roles]) => {
+        const nonTeamRolesArray = roles.filter(role => !role.startsWith('Equipe'));
+        const teamRolesArray = roles.filter(role => role.startsWith('Equipe'));
+        if (nonTeamRolesArray.length > 0) {
+            nonTeamRoles[project] = nonTeamRolesArray as [string];
+        }
+        if (teamRolesArray.length > 0) {
+            teamRoles[project] = teamRolesArray as [string];
+        }
     });
+    console.log(first_name, nonTeamRoles, teamRoles);
 
     return (
         <div style={{display:'flex', flexDirection:'column', padding:'1rem'}}>
-            <div>
-                <img src={`/members/P${promo}${image.replace('http://127.0.0.1:8000/myapi/static/myapi/images/membres', '')}`} alt={`${first_name} ${last_name}`} style={{width:'16rem', objectFit:'cover', height:'16rem'}} />
+            <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: 0, right: 0 }}>
+                        <DropdownTeamDisplay project_team_dict={teamRoles} />
+                    </div>
+                <img src={`/members/P${promo}${image.replace('http://127.0.0.1:8000/myapi/static/myapi/images/membres', '')}`} alt={`${first_name} ${last_name}`} style={{ width: '16rem', objectFit: 'cover', height: '16rem' }} />
             </div>
             <h2 className='regular-text small navy' style={{ borderBottom: '0.5rem solid darkblue', width:'16rem', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom:'0.5rem' }}><strong>{first_name} {last_name}</strong></h2>
-            <div className='regular-text small navy' style={{display: 'flex', flexDirection:'column', justifyContent: 'center', alignItems: 'center', width:'16rem', marginBottom:'0.5rem'}}>
-                {Object.keys(roles_project).filter((project) => !teams.includes(project)).map((project) => (
+            <div className='regular-text small navy' style={{display: 'flex', flexDirection:'column', justifyContent: 'center', width:'16rem', marginBottom:'0.5rem'}}>
+                {Object.keys(nonTeamRoles).map((project) => (
                     <li key={project}>
-                        <strong>{project}</strong> - <i>{roles_project[project]}</i>
+                        <strong>{project}</strong> - <i>{nonTeamRoles[project][0]}</i> {/* pulls the most important role per project */}
                     </li>
-                    ))}
+                ))}
             </div>
             <div style={{ display: 'flex', alignContent:'center', flexDirection:'row'}}>
                 <a href={linkedin}>
