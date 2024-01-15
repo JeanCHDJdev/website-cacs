@@ -33,12 +33,6 @@ const Member: React.FC<MemberDesc> = ({
     roles_project,
     linkedin,
 }) => {
-    const registeredTeams = 
-    {'Equipe Mécanique': '/members/badge/badge_meca.png',
-    'Equipe Electronique': '/members/badge/badge_elec.png',
-    'Equipe Software':'/members/badge/badge_soft.png',
-    'Equipe Combustion':'/members/badge/badge_combustion.png',
-    'Equipe Hydraulique':'/members/badge/badge_hydro.png'}
 
     // Split roles_project into nonTeamRoles and teamRoles
     const nonTeamRoles: { [project: string]: [string] } = {};

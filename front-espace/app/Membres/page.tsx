@@ -83,8 +83,8 @@ const Page = () => {
     }
   };
 
-  const getRolesToShowByMember = (membre: { [key: string]: any }, annee?:string, projet?:number): { [key: string]: string } => {
-    const role_project_dict: { [key: string]: string } = {};
+  const getRolesToShowByMember = (membre: { [key: string]: any }, annee?:string, projet?:number): { [key: string]: [string] } => {
+    const role_project_dict: { [key: string]: [string] } = {};
     const member_role_project_table = connexions
       .filter((connexion: any) => connexion.member === membre.id)
       .sort((a: any, b: any) => {
@@ -98,7 +98,11 @@ const Page = () => {
       }
       const role = roles[connexion.role-1];
       const project = details["projets"][connexion.project-2];
-      role_project_dict[project.nom] = role.nom_fr + ' ' + connexion.year;
+      if (role_project_dict[project.nom]) {
+        role_project_dict[project.nom].push(role.nom_fr + ' ' + connexion.year);
+      } else {
+        role_project_dict[project.nom] = [role.nom_fr + ' ' + connexion.year];
+      }
     });
 
     return role_project_dict;
