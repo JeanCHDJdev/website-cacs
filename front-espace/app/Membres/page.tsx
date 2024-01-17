@@ -11,7 +11,7 @@ const Page = () => {
   const connexions = details["memberroles"]
 
   const [projectToDisplay, setProjectToDisplay] = useState<number>(0);
-
+  
   const promos : string[] = ['2024', '2023', '2022', '2021'];
   const [promosToShow, setPromosToShow] = useState<string[]>(promos);
 
@@ -66,7 +66,9 @@ const Page = () => {
       {connexions
         .filter((connexion: any) => connexion.member === membre.id)
         .map((connexion: any) => {
-          if ((annee !== 'Default' && annee !== undefined && connexion.year !== parseInt(annee)) || (projet !== 0 && projet !== undefined && connexion.project !== projet))
+          console.log(connexion.year, annee, 'projets :',connexion.project, projet)
+          if ((annee !== 'Default' && annee !== undefined && connexion.year !== parseInt(annee)) 
+            || (projet !== 0 && projet !== undefined && !connexions.some((connexion: any) => connexion.member === membre.id && connexion.project === projet)))
           {
             members.splice(members.indexOf(membre), 1, '');
           }
@@ -113,30 +115,34 @@ const Page = () => {
     console.log(event.target.value, 'project change');
     if(projectToShow === 'Default')
     {
+      setPromosToShow(promos);
       setProjectToDisplay(0);
       return;
     }
-    setProjectToDisplay(projectToDisplay);
+    setProjectToDisplay(parseInt(projectToShow));
 
-    {/*const projectSelect = document.getElementById('year-select') as HTMLSelectElement;
-    if (projectSelect) {
-      projectSelect.selectedIndex = 0;
-    }*/} // This allows to reset dropdowns when the other one is changed
+    const yearSelect = document.getElementById('year-select') as HTMLSelectElement;
+    if (yearSelect) {
+      setPromosToShow(promos);
+      yearSelect.selectedIndex = 0;
+    } // This allows to reset dropdowns when the other one is changed
   };
   const handleYearSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     console.log(event.target.value, 'year change');
     const yearsToShow = event.target.value;
     if(yearsToShow === 'Default')
     {
+      setPromosToShow(promos);
+      setProjectToDisplay(0);
       return;
     }
-    const year = yearsToShow.split('/')[0];
     setPromosToShow([yearsToShow.split('/')[1],yearsToShow.split('/')[0]])
 
-    {/*const projectSelect = document.getElementById('project-select') as HTMLSelectElement;
+    const projectSelect = document.getElementById('project-select') as HTMLSelectElement;
     if (projectSelect) {
       projectSelect.selectedIndex = 0;
-    }*/} // This allows to reset dropdowns when the other one is changed
+      setProjectToDisplay(0);
+    } // This allows to reset dropdowns when the other one is changed
   };
 
   return (
@@ -161,10 +167,11 @@ const Page = () => {
           </div>
         </div>
         <div>
-          <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', marginLeft: '20rem', marginRight: '20rem'}}>
-            {promosToShow.map((promo : string) => (
+          <div style={{ display: 'flex', flexDirection: 'column', flexWrap: projectToDisplay === 0 ? 'wrap' : 'nowrap', marginLeft: '20rem', marginRight: '20rem'}}>
+            {promosToShow
+            .map((promo : string) => (
               <div key={promo} style={{ display: 'flex', flexDirection: 'column'}}>
-                <p className="title-text navy">{promo}</p>
+                {projectToDisplay === 0 && <p className="title-text navy">{promo}</p>}
                 <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
                   {getMembersToShow(promo, projectToDisplay === 0 ? undefined : projectToDisplay)
                     .map((membre: any) => (

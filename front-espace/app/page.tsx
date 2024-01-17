@@ -16,7 +16,7 @@ class Page extends React.Component {
           left: '28rem',
           whiteSpace: 'pre-wrap' 
         }}>
-          Space Section{'\n'}CentraleSupélec
+          Pôle Espace{'\n'}CentraleSupélec
         </h1>
       </div>
         <div style={{ display: 'flex', justifyContent: 'center', position: 'absolute', top: '40rem', left: '28rem' }}>

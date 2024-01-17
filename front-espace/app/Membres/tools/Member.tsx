@@ -11,19 +11,6 @@ interface MemberDesc {
     linkedin?: string;
 }
 
-const TeamDropdown: React.FC<{ team: string; members: MemberDesc[] }> = ({ team, members }) => {
-    return (
-        <details>
-            <summary className='regular-text small navy' style={{ borderBottom: '0.5rem solid darkblue', width:'16rem', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom:'0.5rem' }}><strong>{team}</strong></summary>
-            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
-                {members.map((member) => (
-                    <Member key={member.first_name} {...member} />
-                ))}
-            </div>
-        </details>
-    );
-};
-
 const Member: React.FC<MemberDesc> = ({
     image,
     first_name,
@@ -48,7 +35,6 @@ const Member: React.FC<MemberDesc> = ({
             teamRoles[project] = teamRolesArray as [string];
         }
     });
-    console.log(first_name, nonTeamRoles, teamRoles);
 
     return (
         <div style={{display:'flex', flexDirection:'column', padding:'1rem'}}>
