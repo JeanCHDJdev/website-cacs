@@ -14,7 +14,7 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({bg, title, subtitle, patch
                 <img src={patch} alt='Patch' style={{ marginRight: '2rem', width: '10rem', height: 'auto' }} />
                 <text className='title-text huge white'>{title}</text>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop:'5rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop:'8rem' }}>
                 <h2 className='title-text navy tiny' style={{margin:'2rem'}}>{subtitle}</h2>
             </div>
         </div>

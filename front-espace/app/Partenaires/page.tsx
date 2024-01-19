@@ -9,7 +9,9 @@ const EM2CText = 'L\'EM2C [Energétique Moléculaire et Macroscopique, Combustio
 const LaFabriqueText = 'La Fabrique est le fablab de l\'école CentraleSupélec. Elle met à disposition ressources premières (plastique, bois, métaux, etc.) et machines (imprimantes 3D, découpe laser, fraiseuse, etc.) pour la réalisation de projets.'
 
 const ArianeGroupText = 'ArianeGroup est l\'entreprise qui conçoit et fabrique les lanceurs spatiaux européens Ariane, mais également de nombreux systèmes aérospatiaux de défense et de mise en orbite. L\'entreprise nous soutient à la fois par son expertise technique et financièrement dans nos projets.'
-const ArianeGroupSubText = 'ArianeGroup a notamment soutenu le projet PheniCS, notre fusée supersonique en 2023, ainsi que le projet Sirius, notre première fusée bi-étage en 2024. Ce partenaire historique et prestigieux est un soutien de taille pour l\'association, et plusieurs de nos membres rejoignent le leader européen des lanceurs spatiaux européens en stage ou CDI.'
+const ArianeGroupSubText = 'ArianeGroup a notamment soutenu le projet PheniCS, notre fusée supersonique en 2023, ainsi que le projet Sirius, notre première fusée bi-étage en 2024. Ce partenaire historique et prestigieux est un soutien de taille pour l\'association, et plusieurs de nos membres rejoignent le leader européen des lanceurs spatiaux, ou ses filiales, en stage ou CDI.'
+const ArianeGroupConfText = "En Janvier 2024, M. Martin Sion, PDG d'Ariane Group, est venu donner une conférence passionante pour présenter ArianeGroup et ses activités aux élèves du campus."
+
 const background_top_image = '/soutiens/bg_soutiens.jpg';
 
 const Page = () => { 
@@ -45,10 +47,17 @@ const Page = () => {
                 />
                 <Paragraph 
                     image='/projets/FusEx/PheniCS/perce_nuages.png' 
-                    imageName="ArianeGroup"
+                    imageName="PerceNuages"
                     imagePosition='left' 
-                    imageWidth='40rem' 
+                    imageWidth='35rem' 
                     text={ArianeGroupSubText}
+                />
+                <Paragraph 
+                    image='/soutiens/conf_ariane.jpg' 
+                    imageName="Conférence ArianeGroup"
+                    imagePosition='right' 
+                    imageWidth='50rem' 
+                    text={ArianeGroupConfText}
                 />
                 <text className='title-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'4rem'}}>Nos Soutiens</text>
                 <Paragraph 
