@@ -175,17 +175,18 @@ const Page = () => {
                 <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
                   {getMembersToShow(promo, projectToDisplay === 0 ? undefined : projectToDisplay)
                     .map((membre: any) => (
-                      <Member
-                        key={membre.id}
-                        first_name={membre.prenom}
-                        last_name={membre.nom}
-                        image={membre.photo}
-                        linkedin={membre.linkedin}
-                        promo={membre.promo}
-                        roles_project={getRolesToShowByMember(membre, promo, projectToDisplay === 0 ? undefined : projectToDisplay)}
-                        mail={membre.mail}
-                      />
-                    ))}
+                        membre.ok_to_be_displayed && (
+                        <Member
+                          key={membre.id}
+                          first_name={membre.prenom}
+                          last_name={membre.nom}
+                          image={membre.photo}
+                          linkedin={membre.linkedin}
+                          promo={membre.promo}
+                          roles_project={getRolesToShowByMember(membre, promo, projectToDisplay === 0 ? undefined : projectToDisplay)}
+                          mail={membre.mail}
+                        />
+                      )))}
                 </div>
               </div>
             ))}

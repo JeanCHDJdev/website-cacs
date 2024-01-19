@@ -28,8 +28,12 @@ const video_decollage = '/videos/projets/AjaCS/decollage_AJACS.mp4';
 const dossier_postvol = '/pdfs/projets/AjaCS/Dossier post vol.pdf';
 
 const side_paragraphs = [
-    ['Avionique', 'L\'avionique d\'AjaCS est composée de 2 cartes électroniques : 1 carte de gestion des expériences, et une carte séquenceur. La carte séquenceur est particulièrement originale, car entièrement analogique et designée à l\'aide de portes logiques. La carte expérience, munie d\'un capteur de pression-température et d\'un accéléromètre-gyroscope pour intégrer les données en temps réel.','/projets/FusEx/AjaCS/avionique.png'],
-    ['Structure', 'La structure d\'AjaCS est maintenue par un tube en carbone confectionné par l\'association, ici composé de deux demi-coques, qui vient remplacer l\'originel tube en pvc. Le carbone offre un très bon compromis de résistance structurelle, épaisseur et légèreté.','/projets/FusEx/AjaCS/carbone_ajacs.png'],
+    ['Avionique', 
+    'L\'avionique d\'AjaCS est composée de 2 cartes électroniques : 1 carte de gestion des expériences, et une carte séquenceur. La carte séquenceur est particulièrement originale, car entièrement analogique et designée à l\'aide de portes logiques. La carte expérience, munie d\'un capteur de pression-température et d\'un accéléromètre-gyroscope pour intégrer les données en temps réel.',
+    '/projets/FusEx/AjaCS/avionique.png'],
+    ['Structure', 
+    'La structure d\'AjaCS est maintenue par un tube en carbone confectionné par l\'association, ici composé de deux demi-coques, qui vient remplacer l\'originel tube en pvc. Le carbone offre un très bon compromis de résistance structurelle, épaisseur et légèreté.',
+    '/projets/FusEx/AjaCS/carbone_ajacs.png'],
 ]
 const Page: React.FC = () => {
     const handleDownload = () => {

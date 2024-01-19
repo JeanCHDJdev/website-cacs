@@ -67,6 +67,17 @@ const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles,
                     <button onClick={showNextContent} className='slider-buttons' style={{ right:0 }}>
                         <img src={right_arrow} alt="Right Arrow" className='right'/>
                     </button>
+                    <div style ={{position:'absolute', bottom:'.5rem', left:'50%', translate:'-50%', display:'flex', gap:'.25rem'}}>
+                        {content.map((_,index) => (
+                            <button 
+                                key={index} 
+                                onClick={() => setCurrentContentIndex(index)}
+                                className='slider-dot-buttons'
+                            >
+                                {}
+                            </button>
+                        ))}
+                    </div>
             </div>)
             }
         </div>
