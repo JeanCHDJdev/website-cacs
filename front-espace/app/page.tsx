@@ -21,7 +21,7 @@ class Page extends React.Component {
       </div>
         <div style={{ display: 'flex', justifyContent: 'center', position: 'absolute', top: '40rem', left: '28rem' }}>
           <a className="buttons" href='/Projets' style={{ marginRight: '4rem'}}>Découvrir nos projets</a>
-          <a className="buttons" href='/Nous-Soutenir'>Nous soutenir</a>
+          <a className="buttons" href='/Devenir-Partenaire'>Nous soutenir</a>
         </div>
         {/*<Slideshow content={slideshow} timer={slideSwitchTimer} slideshow_styles={{display: 'flex', objectFit:'cover', width:'100%', height:'80rem'}}/>*/}
         <img src='/home_page/main_img_diapo/phenics_decollage.jpg' alt="Phenics Decollage" style={{objectFit:'cover', left:0, right:0}} />
