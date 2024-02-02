@@ -1,40 +1,56 @@
 import React from 'react';
-
+import DropdownTeamDisplay from './DropdownTeamDisplay';
 
 interface MemberDesc {
     image: string;
     first_name: string;
     last_name: string;
     mail: string;
-    gpa_year: number;
-    roles_project: { [project: string]: string };
-    teams_project: { [project: string]: string };
+    promo: number;
+    roles_project: { [project: string]: [string] };
     linkedin?: string;
 }
 
-{/* would be amazing to add badges / achievements to each member !!!!!!!*/}
 const Member: React.FC<MemberDesc> = ({
     image,
     first_name,
     last_name,
     mail,
-    gpa_year,
+    promo,
     roles_project,
-    teams_project,
     linkedin,
 }) => {
+
+    // Split roles_project into nonTeamRoles and teamRoles
+    const nonTeamRoles: { [project: string]: [string] } = {};
+    const teamRoles: { [project: string]: [string] } = {};
+
+    Object.entries(roles_project).forEach(([project, roles]) => {
+        const nonTeamRolesArray = roles.filter(role => !role.startsWith('Equipe'));
+        const teamRolesArray = roles.filter(role => role.startsWith('Equipe'));
+        if (nonTeamRolesArray.length > 0) {
+            nonTeamRoles[project] = nonTeamRolesArray as [string];
+        }
+        if (teamRolesArray.length > 0) {
+            teamRoles[project] = teamRolesArray as [string];
+        }
+    });
+
     return (
-        <div style={{display:'flex', flexDirection:'column', marginBottom:'0.5rem'}}>
-            <img src={image} alt={`${first_name} ${last_name}`} style={{width:'14rem', objectFit:'cover', height:'14rem'}} />
-            <h2 className='regular-text small navy' style={{ borderBottom: '0.5rem solid darkblue', width:'14rem', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom:'0.5rem' }}><strong>{first_name} {last_name}</strong></h2>
-            <div className='regular-text small navy' style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width:'14rem', marginBottom:'0.5rem'}}>
-                <ul>
-                    {Object.keys(roles_project).map((project) => (
-                        <li key={project}>
-                            <strong>{project}</strong> - <i>{roles_project[project]}</i>
-                        </li>
-                    ))}
-                </ul>
+        <div style={{display:'flex', flexDirection:'column', padding:'1rem'}}>
+            <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: 0, right: 0 }}>
+                        <DropdownTeamDisplay project_team_dict={teamRoles} />
+                    </div>
+                <img src={`/members/P${promo}${image.replace('http://127.0.0.1:8000/myapi/static/myapi/images/membres', '')}`} alt={`${first_name} ${last_name}`} style={{ width: '16rem', objectFit: 'cover', height: '16rem' }} />
+            </div>
+            <h2 className='regular-text small navy' style={{ borderBottom: '0.5rem solid darkblue', width:'16rem', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom:'0.5rem' }}><strong>{first_name} {last_name}</strong></h2>
+            <div className='regular-text small navy' style={{display: 'flex', flexDirection:'column', justifyContent: 'center', width:'16rem', marginBottom:'0.5rem'}}>
+                {Object.keys(nonTeamRoles).map((project) => (
+                    <li key={project}>
+                        <strong>{project}</strong> - <i>{nonTeamRoles[project][0]}</i> {/* pulls the most important role per project */}
+                    </li>
+                ))}
             </div>
             <div style={{ display: 'flex', alignContent:'center', flexDirection:'row'}}>
                 <a href={linkedin}>

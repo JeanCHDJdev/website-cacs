@@ -56,8 +56,8 @@ const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles,
             {!showAdjacentSlides && (            
             <div style={{width:"100%", height:"100%", position:'relative', ...slideshow_styles}}>
                 <div style={{width:"100%", height:"100%", display:"flex", overflow:"hidden"}}>
-                    {content.map(cont => (
-                        <div className='slider-content' style={{ translate: `${-100 * currentContentIndex}%`}}>
+                    {content.map((cont, index) => (
+                        <div className='slider-content' key={index} style={{ translate: `${-100 * currentContentIndex}%`}}>
                         {cont}
                         </div>))}
                 </div>
@@ -67,6 +67,17 @@ const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles,
                     <button onClick={showNextContent} className='slider-buttons' style={{ right:0 }}>
                         <img src={right_arrow} alt="Right Arrow" className='right'/>
                     </button>
+                    <div style ={{position:'absolute', bottom:'.5rem', left:'50%', translate:'-50%', display:'flex', gap:'.25rem'}}>
+                        {content.map((_,index) => (
+                            <button 
+                                key={index} 
+                                onClick={() => setCurrentContentIndex(index)}
+                                className='slider-dot-buttons'
+                            >
+                                {}
+                            </button>
+                        ))}
+                    </div>
             </div>)
             }
         </div>

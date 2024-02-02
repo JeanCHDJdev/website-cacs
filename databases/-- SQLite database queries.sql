@@ -166,4 +166,4 @@ INSERT INTO MemberProjectRoles (
     
 SELECT * FROM Members;*/
 
-
+SELECT * FROM Members;

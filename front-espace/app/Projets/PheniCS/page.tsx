@@ -95,7 +95,7 @@ const Page: React.FC = () => {
                     <img src='/projets/FusEx/PheniCS/prix_phenics.jpg' style={{ height: '31.5rem', marginRight:'2rem' }} />
                     <img src='/projets/FusEx/PheniCS/pei_phenics.jpg' style={{ height: '31.5rem', marginRight:'2rem' }} />
                     <div style={{display: 'flex', flexDirection: 'column' }}>
-                        <text className='regular-text tiny navy'>PheniCS a également remporté le 16 février le Prix Espace et Industrie 2023 MBDA au siège social du CNES, à Paris. Ce prix récompense l'implication de nos membres et notre réalisation pour le C'Space 2023.</text>
+                        <text className='regular-text tiny navy'>PheniCS a également remporté le 16 décembre le Prix Espace et Industrie 2023 MBDA au siège social du CNES, à Paris. Ce prix récompense l'implication de nos membres et notre réalisation pour le C'Space 2023.</text>
                         <a className='alt-buttons' href='https://www.youtube.com/live/BuDKCX8IRCY?feature=shared&t=5868' target="_blank" rel="noopener noreferrer" style={{marginTop:'1rem'}}>
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent:'center' }}>
                                 <img src='/layout_images/networks/youtube.png' alt='Download icon' style={{ width: '2.1rem', height: 'auto', marginRight: '0.5rem' }} />

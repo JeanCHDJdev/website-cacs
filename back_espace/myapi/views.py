@@ -6,6 +6,7 @@ class RoleViewSet(ModelViewSet):
     queryset = Role.objects.all()
     serializer_class = RoleSerializer
 
+
 class MembreViewSet(ModelViewSet):
     queryset = Membre.objects.all()
     serializer_class = MembreSerializer

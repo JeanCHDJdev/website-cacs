@@ -1,8 +1,13 @@
 "use client";
 import React from 'react';
-import { useState}  from 'react';
+import { useState } from 'react';
 import { Document, Page } from 'react-pdf';
 import { pdfjs } from 'react-pdf';
+import Slideshow from '../tools/Slideshow';
+import Header from '../tools/global_layout/Header';
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
+import Paragraph from '../tools/text_display/Paragraph';
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.js',
@@ -11,46 +16,67 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 
 const PlaquettePoleEspace = '/pdfs/Devenir-Partenaire/PlaquettePoleEspace.pdf';
 
-const page: React.FC = () => {
-    const [numPages, setNumPages] = useState<number>();
-    const [pageNumber, setPageNumber] = useState<number>(1);
-  
-    function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
-      setNumPages(numPages);
-    }
+const PageComponent: React.FC = () => {
+    const [maxPageNumber, setMaxPageNumber] = useState(0);
+
+    const handleDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
+        setMaxPageNumber(numPages);
+    };
+
+    const pdfPages = (maxPageNumber: number): JSX.Element[] => {
+        const pages: JSX.Element[] = [];
+        for (let i = 1; i <= maxPageNumber; i++) {
+            pages.push(
+                <Page key={i} pageNumber={i} />
+            );
+        }
+        return pages;
+    };
+
     const handleDownload = () => {
         window.open(PlaquettePoleEspace, '_blank');
     };
+
     return (
-          
         <div>
-            <div style={{ position: 'relative', zIndex: '1', height: '55rem' }}>
-                <img src="/contact/bg_contact.jpg" style={{ objectFit: 'cover', objectPosition: 'center', height: '51rem', filter: 'brightness(72%)', width:'100%' }} />
-                <text className='title-text huge white' style={{ textAlign: 'center', zIndex: '5', position: 'absolute', left: '10rem', top: '41rem'}}>Devenir partenaire</text>
+            <Header
+                bg='/soutiens/bg_partenaires.jpg'
+                title="Devenir partenaire"
+                subtitle='Nos projets volent grâce à la générosité de nos partenaires !'
+            />
+            <Paragraph
+                image='/soutiens/centralesupelec.png'
+                imageName='CentraleSupelec'
+                imagePosition='right'
+                imageWidth='30rem'
+                text="Notre école, CentraleSupélec, est parmi les meilleures écoles d'ingénieur françaises, et mondialement reconnue avec l'Université Paris-Saclay. Chaque année, près de 1000 étudiants en ressortent diplômés ingénieurs et rejoignent alors le monde du travail. Nous sponsoriser vous assure le contact d'un vivier de talents sans pareil en France. "
+            />
+            <p className='regular-text navy' style={{ marginLeft: '20rem', marginRight: '20rem' }}>Vous êtes une entreprise ou un particulier qui souhaite sponsoriser les projets aérospatiaux de l'association ? Nous proposons plusieurs offres en contrepartie de votre soutien. Découvrez ci dessous notre <strong>plaquette Entreprise !</strong></p>
+            <div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center', flexDirection: 'column', textAlign: 'center', marginLeft: '17rem', marginRight: '17rem', marginTop:'2rem' }}>
+                <Document file={PlaquettePoleEspace} onLoadSuccess={handleDocumentLoadSuccess}>
+                    <Slideshow content={pdfPages(maxPageNumber)} slideshow_styles={{ width: '100%', height: '100%' }} />
+                </Document>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center', flexDirection: 'column', textAlign: 'center' }}>
-                <text className='title-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'4rem'}}>Être partenaire de l'association</text>
-                <p className='title-text tiny navy' style={{ marginLeft: '30rem', marginRight: '30rem', marginBottom:'4rem' }}>Nos fusées volent grâce à la générosité de nos sponsors.</p>
-                <p className='regular-text tiny navy' style={{ marginLeft: '30rem', marginRight: '30rem' }}>Vous êtes une entreprise ou un particulier qui souhaite sponsoriser les projets aérospatiaux de l'association ? Nous proposons plusieurs offres en contrepartie de votre soutien.</p>
-                <div style={{width:"0rem"}}>
-                    <Document file={PlaquettePoleEspace}>
-                        <Page pageNumber={pageNumber} />
-                    </Document>
-                </div>
-            </div>
-            <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center' }}>
-                <p className='regular-text tiny navy' style={{ alignItems: 'column', marginLeft: '30rem', marginRight: '30rem' }}>Vous souhaitez découvrir plus de notre projet et de cette aventure ? Découvrez notre dossier post-vol, qui entre en détails dans nos choix techniques, notre organisation et les problèmes rencontrés dans le projet.</p>
-            </div>
-            <div style={{ marginTop: '2rem', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
+            <div style={{ marginTop: '2rem', marginBottom: '2rem', display: 'flex', justifyContent: 'center', gap:'2rem' }}>
                 <button className='alt-buttons' onClick={handleDownload}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <img src='/layout_images/other/donwload_icon.png' alt='Download icon' style={{ width: '2.1rem', height: 'auto', marginRight: '0.5rem' }} />
-                        <span style={{ marginLeft: '0.5rem', fontSize: '1.2rem', marginRight: '0.5rem' }}>Dossier Post-Vol</span>
+                        <img src='/layout_images/other/donwload_icon.png' alt='Download icon' style={{ width: '2.1rem', height: 'auto', marginRight: '0.5rem'}} />
+                        <span style={{ marginLeft: '0.5rem', fontSize: '1.2rem', marginRight: '0.5rem' }}>Plaquette Entreprise</span>
                     </div>
                 </button>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <a className='alt-buttons' href='/Partenaires'>
+                        <span style={{ marginLeft: '0.5rem', fontSize: '1.2rem', marginRight: '0.5rem' }}>Ils nous soutiennent déjà</span>
+                    </a>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <a className='alt-buttons' href='/Contact'>
+                        <span style={{ marginLeft: '0.5rem', fontSize: '1.2rem', marginRight: '0.5rem' }}>Nous contacter</span>
+                    </a>
+                </div>
             </div>
         </div>
     );
 };
 
-export default page;
+export default PageComponent;

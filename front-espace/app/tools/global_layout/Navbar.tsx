@@ -12,7 +12,7 @@ interface Tab {
 const Navbar: React.FC = () => {
     const [tabs, setTabs] = useState<Tab[]>([
         {
-            label: 'A propos',
+            label: 'Informations',
             options: ['Projets', 'Membres'],
             links: ['/Projets', '/Membres'],
             showMenu: false,

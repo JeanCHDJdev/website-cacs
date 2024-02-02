@@ -9,14 +9,17 @@ const EM2CText = 'L\'EM2C [Energétique Moléculaire et Macroscopique, Combustio
 const LaFabriqueText = 'La Fabrique est le fablab de l\'école CentraleSupélec. Elle met à disposition ressources premières (plastique, bois, métaux, etc.) et machines (imprimantes 3D, découpe laser, fraiseuse, etc.) pour la réalisation de projets.'
 
 const ArianeGroupText = 'ArianeGroup est l\'entreprise qui conçoit et fabrique les lanceurs spatiaux européens Ariane, mais également de nombreux systèmes aérospatiaux de défense et de mise en orbite. L\'entreprise nous soutient à la fois par son expertise technique et financièrement dans nos projets.'
-const ArianeGroupSubText = 'ArianeGroup a notamment soutenu le projet PheniCS, notre fusée supersonique en 2023, ainsi que le projet Sirius, notre première fusée bi-étage en 2024. Ce partenaire historique et prestigieux est un soutien de taille pour l\'association, et plusieurs de nos membres rejoignent le leader européen des lanceurs spatiaux européens en stage ou CDI.'
-const background_top_image = '/soutiens/bg_soutiens.jpg';
+const ArianeGroupSubText = 'ArianeGroup a notamment soutenu le projet PheniCS, notre fusée supersonique en 2023, ainsi que le projet Sirius, notre première fusée bi-étage en 2024. Ce partenaire historique et prestigieux est un soutien de taille pour l\'association, et plusieurs de nos membres rejoignent le leader européen des lanceurs spatiaux, ou ses filiales, en stage ou CDI.'
+//const ArianeGroupConfText = "En Janvier 2024, M. Martin Sion, PDG d'Ariane Group, est venu donner une conférence passionante pour présenter ArianeGroup et ses activités aux élèves du campus."
+
+//const background_top_image = '/soutiens/bg_soutiens.jpg';
+const background_top = '/soutiens/conf_ariane.jpg';
 
 const Page = () => { 
     return (
         <div>
             <Header 
-                bg={background_top_image} 
+                bg={background_top} 
                 title="Découvrir nos partenaires" 
                 subtitle="Devenir Partenaire" 
                 paragraph="Vous êtes professionel ou particulier et souhaitez aider un groupe de jeunes étudiants motivés et passionés dans la réalisation de projets toujours plus ambitieux ? Que ce soit par une aide financière, matérielle, ou une expertise technique, vous pouvez rejoindre nos partenaires :"
@@ -45,9 +48,9 @@ const Page = () => {
                 />
                 <Paragraph 
                     image='/projets/FusEx/PheniCS/perce_nuages.png' 
-                    imageName="ArianeGroup"
+                    imageName="PerceNuages"
                     imagePosition='left' 
-                    imageWidth='40rem' 
+                    imageWidth='35rem' 
                     text={ArianeGroupSubText}
                 />
                 <text className='title-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'4rem'}}>Nos Soutiens</text>

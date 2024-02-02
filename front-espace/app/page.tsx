@@ -1,4 +1,5 @@
 "use client";
+<<<<<<< HEAD
 import React, { useState, useEffect, useRef, use, Component} from 'react';
 import axios from 'axios';
 // export default function Page() {
@@ -38,6 +39,13 @@ class Page extends React.Component {
 
 
 
+=======
+import React from 'react';
+// export default function Page() {
+class Page extends React.Component {
+  render(){
+    
+>>>>>>> origin
   return (
     <div>
       <div className="slideshow-container" style={{top: 0, left: 0, right: 0}}>
@@ -50,12 +58,12 @@ class Page extends React.Component {
           left: '28rem',
           whiteSpace: 'pre-wrap' 
         }}>
-          Space Section{'\n'}CentraleSupélec
+          Pôle Espace{'\n'}CentraleSupélec
         </h1>
       </div>
         <div style={{ display: 'flex', justifyContent: 'center', position: 'absolute', top: '40rem', left: '28rem' }}>
           <a className="buttons" href='/Projets' style={{ marginRight: '4rem'}}>Découvrir nos projets</a>
-          <a className="buttons" href='/Nous-Soutenir'>Nous soutenir</a>
+          <a className="buttons" href='/Devenir-Partenaire'>Nous soutenir</a>
         </div>
         {/*<Slideshow content={slideshow} timer={slideSwitchTimer} slideshow_styles={{display: 'flex', objectFit:'cover', width:'100%', height:'80rem'}}/>*/}
         <img src='/home_page/main_img_diapo/phenics_decollage.jpg' alt="Phenics Decollage" style={{objectFit:'cover', left:0, right:0}} />
