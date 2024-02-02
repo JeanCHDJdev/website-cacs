@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef, use } from 'react';
+import React, { useState, useEffect, useRef, use, Component} from 'react';
 import axios from 'axios';
 // export default function Page() {
 class Page extends React.Component {
@@ -10,7 +10,7 @@ class Page extends React.Component {
     axios.get('http://127.0.0.1:8000/')
     .then(res => {
       models = res.data;
-      let results = {};
+      let results: { [key: string]: any } = {};
       for (let model in models) {
         let url = models[model]
         axios.get(url)
@@ -24,8 +24,18 @@ class Page extends React.Component {
     .catch(err => {});
   }
 
-  render(){
+  componentDidUpdate(prevProps, prevState) {
+    // This lifecycle method will be called when the component updates.
+    // You can log the state here or perform other actions.
     console.log(this.state.details);
+  }
+
+  render(){
+   
+    
+
+
+
 
 
   return (
