@@ -1,8 +1,9 @@
 import Slideshow from "../tools/Slideshow";import React, { useState } from "react";
 import TeamPage from "./TeamPage";
 
-const Teams: JSX.Element[] = [
-
+const Teams = [
+    <a key={'x'}>X</a>,
+    <a key={'y'}>Y</a>,
 ];
 
 const Page: React.FC = () => {
@@ -18,4 +19,4 @@ const Page: React.FC = () => {
     );
 };
 
-export default Slideshow;
+export default Page;
