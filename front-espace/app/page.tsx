@@ -1,9 +1,51 @@
 "use client";
+<<<<<<< HEAD
+import React, { useState, useEffect, useRef, use, Component} from 'react';
+import axios from 'axios';
+// export default function Page() {
+class Page extends React.Component {
+
+  state = { details: {}};
+  componentDidMount() {
+    let models;
+    axios.get('http://127.0.0.1:8000/')
+    .then(res => {
+      models = res.data;
+      let results: { [key: string]: any } = {};
+      for (let model in models) {
+        let url = models[model]
+        axios.get(url)
+        .then(res => {
+          results[model] = res.data;
+        })
+
+      }
+      this.setState({ details: results});
+    })
+    .catch(err => {});
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // This lifecycle method will be called when the component updates.
+    // You can log the state here or perform other actions.
+    console.log(this.state.details);
+  }
+
+  render(){
+   
+    
+
+
+
+
+
+=======
 import React from 'react';
 // export default function Page() {
 class Page extends React.Component {
   render(){
     
+>>>>>>> origin
   return (
     <div>
       <div className="slideshow-container" style={{top: 0, left: 0, right: 0}}>

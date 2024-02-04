@@ -56,7 +56,7 @@ const Member: React.FC<MemberDesc> = ({
                 <a href={linkedin}>
                     <img className='clickable-mini-images' src="/layout_images/networks/linkedin.png" alt="LinkedIn" style={{ width: '1.5rem', marginLeft:'5rem' }} />
                 </a>
-                <a href={mail}>
+                <a href={`mailto:${mail}`}>
                     <img className='clickable-mini-images' src="/layout_images/networks/mail_logo.png" alt="Mail icon" style={{ width: '2.25rem', height: '1.5rem', marginLeft:'0.3rem' }} />
                 </a>
             </div>

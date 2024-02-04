@@ -184,7 +184,7 @@ const Page = () => {
                           linkedin={membre.linkedin}
                           promo={membre.promo}
                           roles_project={getRolesToShowByMember(membre, promo, projectToDisplay === 0 ? undefined : projectToDisplay)}
-                          mail={membre.mail}
+                          mail={membre.email}
                         />
                       )))}
                 </div>

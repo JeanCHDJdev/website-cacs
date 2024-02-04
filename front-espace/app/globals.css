@@ -17,7 +17,7 @@
   --white-cacs: #fff;
   --gray-cacs: #ccc;
   --navy-cacs: #263f6b;
-  font-size: 0.75vw;
+  font-size: 0.75lvw;
 }
 
 @media (prefers-color-scheme: dark) {
