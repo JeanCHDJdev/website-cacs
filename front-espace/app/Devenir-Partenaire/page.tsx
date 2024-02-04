@@ -27,7 +27,8 @@ const PageComponent: React.FC = () => {
         const pages: JSX.Element[] = [];
         for (let i = 1; i <= maxPageNumber; i++) {
             pages.push(
-                <Page key={i} pageNumber={i} />
+                <Page key={i} pageNumber={i} size={[1,1]}>
+                </Page>
             );
         }
         return pages;
@@ -52,9 +53,9 @@ const PageComponent: React.FC = () => {
                 text="Notre école, CentraleSupélec, est parmi les meilleures écoles d'ingénieur françaises, et mondialement reconnue avec l'Université Paris-Saclay. Chaque année, près de 1000 étudiants en ressortent diplômés ingénieurs et rejoignent alors le monde du travail. Nous sponsoriser vous assure le contact d'un vivier de talents sans pareil en France. "
             />
             <p className='regular-text navy' style={{ marginLeft: '20rem', marginRight: '20rem' }}>Vous êtes une entreprise ou un particulier qui souhaite sponsoriser les projets aérospatiaux de l'association ? Nous proposons plusieurs offres en contrepartie de votre soutien. Découvrez ci dessous notre <strong>plaquette Entreprise !</strong></p>
-            <div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center', flexDirection: 'column', textAlign: 'center', marginLeft: '17rem', marginRight: '17rem', marginTop:'2rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center', flexDirection: 'column', textAlign: 'center', marginTop:'2rem',marginLeft: '17rem', marginRight: '17rem' }}>
                 <Document file={PlaquettePoleEspace} onLoadSuccess={handleDocumentLoadSuccess}>
-                    <Slideshow content={pdfPages(maxPageNumber)} slideshow_styles={{ width: '100%', height: '100%' }} />
+                    <Slideshow content={pdfPages(maxPageNumber)}/>
                 </Document>
             </div>
             <div style={{ marginTop: '2rem', marginBottom: '2rem', display: 'flex', justifyContent: 'center', gap:'2rem' }}>

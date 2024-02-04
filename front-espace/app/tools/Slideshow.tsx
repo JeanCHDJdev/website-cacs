@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 interface SlideshowProps {
     content: React.ReactNode[];
     timer?: number;
-    slideshow_styles: React.CSSProperties;
+    slideshow_styles?: React.CSSProperties;
     showAdjacentSlides?: boolean;
 }
 
