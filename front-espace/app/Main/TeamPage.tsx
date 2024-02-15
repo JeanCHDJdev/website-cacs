@@ -15,21 +15,21 @@ const TeamPage: React.FC<TeamPageProps> = ({ patch, team_text, team_bg }) => {
                         className='title-text huge white' 
                         style={{ 
                             position: 'absolute',
-                            top: '23rem', 
-                            left: '28rem',
+                            top: '70%', 
+                            left: '20%',
                             whiteSpace: 'pre-wrap' 
                         }}
                     >
                         {team_text}
                     </h1>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'center', position: 'absolute', top: '40rem', left: '28rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', position: 'absolute', top: '70%rem', left: '20%' }}>
                     <a className="buttons" href='/Projets' style={{ marginRight: '4rem'}}>Découvrir nos projets</a>
                     <a className="buttons" href='/Nous-Soutenir'>Nous soutenir</a>
                 </div>
                 <img 
                     src={patch} 
-                    alt="Logo Pôle Espace" 
+                    alt="patch" 
                     style={{ 
                         position: 'absolute', 
                         top: '24rem', 
