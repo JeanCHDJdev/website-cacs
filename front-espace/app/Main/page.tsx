@@ -2,18 +2,16 @@ import Slideshow from "../tools/Slideshow";import React, { useState } from "reac
 import TeamPage from "./TeamPage";
 
 const Teams = [
-    <a key={'x'}>X</a>,
-    <a key={'y'}>Y</a>,
+    <TeamPage team_text="Pôle Espace" team_bg="/home_page/main_img_diapo/phenics_decollage.jpg" patch=""/>
 ];
 
 const Page: React.FC = () => {
     return (
-        <div style={{width:'100%', height:'70rem'}}>
+        <div style={{width:'100vw', height:'100vh'}}>
             <Slideshow
                 content={Teams}
                 timer={5000}
                 slideshow_styles={{ width: "100%", height: "100%" }}
-                showAdjacentSlides={true}
             />
         </div>
     );

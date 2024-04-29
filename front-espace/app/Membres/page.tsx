@@ -7,7 +7,9 @@ import Header from "../tools/global_layout/Header";
 const Page = () => {
   const [data, setData] = useState<{ [key: string]: string }>();
   const [details, setDetails] = useState<{ [key: string]: any }>([]);
+
   const roles = details["roles"];
+  console.log(roles);
   const connexions = details["memberroles"]
 
   const [projectToDisplay, setProjectToDisplay] = useState<number>(0);
@@ -42,12 +44,28 @@ const Page = () => {
     fetchData();
   }, [data]);
 
-  const sortMembers = (members: any[]) => {
+  const sortMembers = (members: any[], projet?: number) => {
     const sortedMembers = members.sort((a: any, b: any) => {
       if(a.promo === b.promo)
       {
-        const memberAPriorities = a.roles.map((roleId: number) => roles[roleId-1].priority);
-        const memberBPriorities = b.roles.map((roleId: number) => roles[roleId-1].priority);
+        const memberAPriorities = a.roles
+          /*.filter((roleId: number) => {
+            if (projet !== undefined) {
+              return connexions.some((connexion: any) => connexion.member === a.id && connexion.project === projet && connexion.role === roleId);
+            } else {
+              return true;
+            }
+          })*/
+          .map((roleId: number) => roles.filter((role: any) => role.id === roleId)[0].priority);
+        const memberBPriorities = b.roles
+        /*.filter((roleId: number) => {
+          if (projet !== undefined) {
+            return connexions.some((connexion: any) => connexion.member === a.id && connexion.project === projet && connexion.role === roleId);
+          } else {
+            return true;
+          }
+        })*/
+        .map((roleId: number) => roles.filter((role: any) => role.id === roleId)[0].priority);
         return Math.min(...memberAPriorities) - Math.min(...memberBPriorities);
       }
       return b.promo - a.promo;
@@ -77,7 +95,7 @@ const Page = () => {
     }
     if (Array.isArray(members)) {
       members = members.filter((member) => member !== '');
-      return sortMembers(members);
+      return sortMembers(members, projet);
     }
     else
     {
@@ -90,7 +108,7 @@ const Page = () => {
     const member_role_project_table = connexions
       .filter((connexion: any) => connexion.member === membre.id)
       .sort((a: any, b: any) => {
-        return roles[b.role-1].priority - roles[a.role-1].priority;
+        return roles.filter((r: any) => r.id === b.role)[0].priority - roles.filter((r: any) => r.id === a.role)[0].priority;
       });
 
     member_role_project_table.forEach((connexion: any) => {
@@ -98,7 +116,7 @@ const Page = () => {
       {
         return;
       }
-      const role = roles[connexion.role-1];
+      const role = roles.filter((r: any) => r.id === connexion.role)[0];
       const project = details["projets"][connexion.project-2];
       if (role_project_dict[project.nom]) {
         role_project_dict[project.nom].push(role.nom_fr + ' ' + connexion.year);
@@ -148,7 +166,7 @@ const Page = () => {
   return (
     <div>
       <Header bg={'/members/bg_membres.jpg'} title="Nos Membres" subtitle="Qui sommes nous ?" paragraph="Aucune association n'existe sans ses membres. Nous sommmes maintenant plus de 30 étudiants à activement participer aux projets aérospatiaux, répartis dans différents projets, rôles et équipes. Découvrez nos membres !" />
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginLeft:'20rem', marginRight:'20rem', marginTop:'3rem', marginBottom:'3rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginLeft:'10vw', marginRight:'10vw', marginTop:'3rem', marginBottom:'3rem' }}>
         <p className="title-text navy">Membres</p>
         <div>
           <select className="classic-dropdown" defaultValue='Default' id={'project-select'} onChange={handleProjectSelectChange}>
@@ -166,31 +184,47 @@ const Page = () => {
             </select>
           </div>
         </div>
-        <div>
-          <div style={{ display: 'flex', flexDirection: 'column', flexWrap: projectToDisplay === 0 ? 'wrap' : 'nowrap', marginLeft: '20rem', marginRight: '20rem'}}>
-            {promosToShow
-            .map((promo : string) => (
-              <div key={promo} style={{ display: 'flex', flexDirection: 'column'}}>
-                {projectToDisplay === 0 && <p className="title-text navy">{promo}</p>}
-                <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
-                  {getMembersToShow(promo, projectToDisplay === 0 ? undefined : projectToDisplay)
-                    .map((membre: any) => (
-                        membre.ok_to_be_displayed && (
-                        <Member
-                          key={membre.id}
-                          first_name={membre.prenom}
-                          last_name={membre.nom}
-                          image={membre.photo}
-                          linkedin={membre.linkedin}
-                          promo={membre.promo}
-                          roles_project={getRolesToShowByMember(membre, promo, projectToDisplay === 0 ? undefined : projectToDisplay)}
-                          mail={membre.email}
-                        />
-                      )))}
-                </div>
+        <div style={{ display: 'flex', flexDirection: 'column', flexWrap: projectToDisplay === 0 ? 'wrap' : 'nowrap', marginLeft:'10vw', marginRight:'10vw'}}>
+          {projectToDisplay === 0 ? 
+          promosToShow.map((promo : string) => (
+            <div key={promo} style={{ display: 'flex', flexDirection: 'column'}}>
+              {/*projectToDisplay === 0 && */<p className="title-text navy">{promo}</p>}
+              <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
+                {getMembersToShow(promo, projectToDisplay === 0 ? undefined : projectToDisplay)
+                  .map((membre: any) => (
+                      membre.ok_to_be_displayed && (
+                      <Member
+                        key={membre.id}
+                        first_name={membre.prenom}
+                        last_name={membre.nom}
+                        image={membre.photo}
+                        linkedin={membre.linkedin}
+                        promo={membre.promo}
+                        roles_project={getRolesToShowByMember(membre, promo, projectToDisplay === 0 ? undefined : projectToDisplay)}
+                        mail={membre.email}
+                      />
+                    )))}
               </div>
-            ))}
-          </div>
+            </div>
+          )) :
+          <div>
+            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
+                {getMembersToShow(undefined, projectToDisplay)
+                  .map((membre: any) => (
+                      membre.ok_to_be_displayed && (
+                      <Member
+                        key={membre.id}
+                        first_name={membre.prenom}
+                        last_name={membre.nom}
+                        image={membre.photo}
+                        linkedin={membre.linkedin}
+                        promo={membre.promo}
+                        roles_project={getRolesToShowByMember(membre, undefined, projectToDisplay)}
+                        mail={membre.email}
+                      />
+                    )))}
+              </div>
+          </div>}
         </div>
       </div>
   );

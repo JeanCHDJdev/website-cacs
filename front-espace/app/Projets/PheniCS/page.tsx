@@ -6,6 +6,8 @@ import ProjectHeader from '@/app/tools/global_layout/ProjectHeader';
 
 const background_top_image = '/home_page/main_img_diapo/phenics_decollage.jpg';
 
+//const solidworks_model = 'other/PheniCS.htm';
+
 const patch_image = '/projets/patchs/patch PheniCS.png';
 const img_styles : React.CSSProperties = {
     height: '40rem',
@@ -35,7 +37,6 @@ const Page: React.FC = () => {
     const handleDownload = () => {
         window.open(dossier_postvol, '_blank');
     };
-{/*comment reset*/}
     return (
         <div>
             <ProjectHeader 

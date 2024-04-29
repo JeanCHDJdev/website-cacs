@@ -5,8 +5,7 @@ const TeamBadges: { [key: string]: string } = {
     'Mécanique': '/members/badges/badge_meca.png',
     'Electronique': '/members/badges/badge_elec.png',
     'Software':'/members/badges/badge_soft.png',
-    'Combustion':'/members/badges/badge_combustion.png',
-    'Hydraulique':'/members/badges/badge_hydro.png'
+    'Propulsion':'/members/badges/badge_combustion.png',
 };
 
 interface DropdownTeamDisplayProps {

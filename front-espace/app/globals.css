@@ -7,24 +7,19 @@
 @import './css-style-sheets/text.css';
 @import './css-style-sheets/form.css';
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 0, 0, 255;
-  --background-end-rgb: 255, 255, 255;
-  --darkblue-cacs: rgb(0,0,50);
-  --darkblue-cacs-transparent: rgba(0, 0, 50, 0.6);
-  --lightblue-cacs: rgb(47, 122, 172);
-  --white-cacs: #fff;
-  --gray-cacs: #ccc;
-  --navy-cacs: #263f6b;
-  font-size: 0.75lvw;
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 0, 0, 255;
+    --background-end-rgb: 255, 255, 255;
+    --darkblue-cacs: rgb(0,0,50);
+    --darkblue-cacs-transparent: rgba(0, 0, 50, 0.6);
+    --lightblue-cacs: rgb(47, 122, 172);
+    --white-cacs: #fff;
+    --gray-cacs: #ccc;
+    --navy-cacs: #263f6b;
+    font-size: 0.5em;
   }
 }
 
