@@ -19,8 +19,8 @@ const Navbar: React.FC = () => {
         },
         {
             label: 'Rejoignez-nous!',
-            options: ['Nous rejoindre','Formations', 'Hackathon'],
-            links: ['/Nous-rejoindre','/Formations', '/Hackathon'],
+            options: ['Formations', 'Hackathon'],
+            links: ['/Formations', '/Hackathon'],
             showMenu: false,
         },
         {

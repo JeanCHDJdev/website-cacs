@@ -10,8 +10,9 @@ const LaFabriqueText = 'La Fabrique est le fablab de l\'école CentraleSupélec.
 
 const ArianeGroupText = 'ArianeGroup est l\'entreprise qui conçoit et fabrique les lanceurs spatiaux européens Ariane, mais également de nombreux systèmes aérospatiaux de défense et de mise en orbite. L\'entreprise nous soutient à la fois par son expertise technique et financièrement dans nos projets.'
 const ArianeGroupSubText = 'ArianeGroup a notamment soutenu le projet PheniCS, notre fusée supersonique en 2023, ainsi que le projet Sirius, notre première fusée bi-étage en 2024. Ce partenaire historique et prestigieux est un soutien de taille pour l\'association, et plusieurs de nos membres rejoignent le leader européen des lanceurs spatiaux, ou ses filiales, en stage ou CDI.'
-//const ArianeGroupConfText = "En Janvier 2024, M. Martin Sion, PDG d'Ariane Group, est venu donner une conférence passionante pour présenter ArianeGroup et ses activités aux élèves du campus."
+//const ArianeGroupConfText = "En Janvier 2024, M. Martin Sion, PDG d'Ariane Group, est venu donner une conférence passionante pour présenter ArianeGroup et ses activités aux élèves du campus."*
 
+const ArcheryText = "Fondée en 2013 à Paris, Archery Strategic Consulting s'adresse aux grandes entreprises mondiales en leur proposant des solutions de conseil en stratégie et en transformation. Archery mise sur 3 secteurs : l'énergie-environnement, les transports et la logistique, et bien sûr l'aérospatial et la défense. Composée maintenant d'une équipe de 45 consultants, Archery a mené a bien plus de 300 projets depuis sa fondation.  Archery a soutenu le projet Sirius, notre première fusée bi-étage en 2024."
 //const background_top_image = '/soutiens/bg_soutiens.jpg';
 const background_top = '/soutiens/conf_ariane.jpg';
 
@@ -53,18 +54,34 @@ const Page = () => {
                     imageWidth='35rem' 
                     text={ArianeGroupSubText}
                 />
+                <Paragraph 
+                    image='/soutiens/archery.png' 
+                    title='Archery Consulting'
+                    imageName="Archery"
+                    imagePosition='right' 
+                    imageWidth='30rem' 
+                    text={ArcheryText}
+                />
                 <text className='title-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'4rem'}}>Nos Soutiens</text>
+                <Paragraph 
+                    image='/soutiens/lafabrique.png' 
+                    imagePosition='right' 
+                    imageName="LaFabrique"
+                    title="La Fabrique"
+                    imageWidth='150%' 
+                    text={LaFabriqueText} 
+                />
                 <Paragraph 
                     image='/soutiens/planete-sciences.png'
                     imageName="PlaneteSciences"
                     title="Planète Sciences"
-                    imagePosition='right' 
+                    imagePosition='left' 
                     imageWidth='30rem' 
                     text={PlaneteSciencesText} 
                 />
                 <Paragraph 
                     image='/soutiens/cnes.png' 
-                    imagePosition='left'
+                    imagePosition='right'
                     imageName="CNES"
                     title="CNES"
                     imageWidth='30rem'
@@ -72,7 +89,7 @@ const Page = () => {
                 />
                 <Paragraph 
                     image='/soutiens/centralesupelec.png' 
-                    imagePosition='right'
+                    imagePosition='left'
                     imageName="CentraleSupélec" 
                     imageWidth='30rem' 
                     title="CentraleSupélec"
@@ -80,21 +97,12 @@ const Page = () => {
                 />
                 <Paragraph 
                     image='/soutiens/em2c.png' 
-                    imagePosition='left' 
+                    imagePosition='right' 
                     imageName="EM2C"
                     title="Laboratoire EM2C"
                     imageWidth='30rem' 
                     text={EM2CText} 
                 />
-                <Paragraph 
-                    image='/soutiens/lafabrique.png' 
-                    imagePosition='right' 
-                    imageName="LaFabrique"
-                    title="La Fabrique"
-                    imageWidth='50rem' 
-                    text={LaFabriqueText} 
-                />
-
           </div>
         </div>
     );

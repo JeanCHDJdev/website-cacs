@@ -42,7 +42,7 @@ const Page: React.FC = () => {
             </div>
             <Slideshow 
                 content={minif_display}
-                slideshow_styles={{ width: '60rem', height: '40rem', marginTop:'2rem', marginLeft:'20rem', marginRight:'20rem', marginBottom:'2rem', objectFit:'cover' }}
+                slideshow_styles={{ width: '70%', height: '40rem', marginTop:'2rem', marginLeft:'15%', marginRight:'15%', marginBottom:'2rem', objectFit:'cover', display: 'flex', justifyContent: 'center'  }}
             />
             <Paragraph 
                 image = '/hackathon/landing.jpg'

@@ -5,7 +5,7 @@ import Header from '../tools/global_layout/Header';
 const projects2024 = {
     names:['Sirius', 'HyMir', 'Nyx'],
     subtexts:['Notre première fusée bi-étage !', 'Projet de développement d\'un moteur fusée à ergols hybrides', 'Mini-fusée tirée de nuit bariolée de LEDs'],
-    patches:['/home_page/main_imgs/Pole_Espace.png', '/home_page/main_imgs/Pole_Espace.png', '/home_page/main_imgs/Pole_Espace.png'],
+    patches:['/projets/patchs/patch Sirius.png', '/home_page/main_imgs/Pole_Espace.png', '/home_page/main_imgs/Pole_Espace.png'],
     path: ['/Projets/Sirius', '/Projets/HyMir', '/Projets/Nyx'],
 };
 const projects2023 = {
@@ -38,7 +38,7 @@ const Page = () => {
                 subtitle='Découvrez nos fusées expérimentales'
                 paragraph="Depuis 2021, nous accueillons chaque année de nouveaux projets, des fusées expérimentales aux moteurs-fusées. Toujours plus exigeants et motivants, ils portent l'association vers de nouvelles altitudes. Vous pouvez ici découvrir un historique des projets du pôle espace."
             />
-            <div style={{height:'110rem', marginRight:'25rem', marginLeft:'25rem', marginTop:'5rem', justifyContent:'center', display:'flex', flexDirection:'row'}}>
+            <div style={{height:'110rem', marginRight:'10%', marginLeft:'10%', marginTop:'5rem', justifyContent:'center', display:'flex', flexDirection:'row'}}>
                 {project_slideshow} 
             </div>
         </div>

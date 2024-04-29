@@ -52,7 +52,7 @@ const PageComponent: React.FC = () => {
                 imageWidth='30rem'
                 text="Notre école, CentraleSupélec, est parmi les meilleures écoles d'ingénieur françaises, et mondialement reconnue avec l'Université Paris-Saclay. Chaque année, près de 1000 étudiants en ressortent diplômés ingénieurs et rejoignent alors le monde du travail. Nous sponsoriser vous assure le contact d'un vivier de talents sans pareil en France. "
             />
-            <p className='regular-text navy' style={{ marginLeft: '20rem', marginRight: '20rem' }}>Vous êtes une entreprise ou un particulier qui souhaite sponsoriser les projets aérospatiaux de l'association ? Nous proposons plusieurs offres en contrepartie de votre soutien. Découvrez ci dessous notre <strong>plaquette Entreprise !</strong></p>
+            <p className='regular-text navy' style={{ marginLeft: '5%', marginRight: '5%' }}>Vous êtes une entreprise ou un particulier qui souhaite sponsoriser les projets aérospatiaux de l'association ? Nous proposons plusieurs offres en contrepartie de votre soutien. Découvrez ci dessous notre <strong>plaquette Entreprise !</strong></p>
             <div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center', flexDirection: 'column', textAlign: 'center', marginTop:'2rem',marginLeft: '17rem', marginRight: '17rem' }}>
                 <Document file={PlaquettePoleEspace} onLoadSuccess={handleDocumentLoadSuccess}>
                     <Slideshow content={pdfPages(maxPageNumber)}/>

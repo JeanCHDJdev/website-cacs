@@ -11,6 +11,7 @@ const Footer: React.FC = () => {
 
   const partenaires = [
     { src :'/soutiens/ArianeGroup_blanc.png', alt: 'ArianeGroup', link: 'https://www.ariane.group/fr/', width: '25rem', height: 'auto', marginLeft: '2.5rem', text: 'ArianeGroup est le leader européen des lanceurs spatiaux, avec leur programme de fusée phare Ariane. ArianeGroup nous soutient à la fois par son expertise technique et financièrement dans nos projets.', scale: '1.5'},
+    { src :'/soutiens/Archery.png', alt: 'Archery', link: 'https://www.archeryconsulting.com/', width: '25rem', height: 'auto', marginLeft: '2.5rem', text: 'Archery Strategic Consulting est un cabinet de conseil en stratégie notamment impliqué dans l\'aérospatial et la défense, qui nous soutient dans nos projets.', scale: '1.2'},
   ];
 
   return (
@@ -24,7 +25,7 @@ const Footer: React.FC = () => {
                 <a href={image.link} target="_blank" rel="noopener noreferrer">
                   <img className='clickable-mini-images' src={image.src} alt={image.alt} style={{ width: image.width, height: image.height, marginRight: '0.75rem' }} />
                 </a>
-                <p style={{ color: 'white', fontSize: '0.9rem', marginLeft: image.marginLeft, textAlign: 'left' }}>{image.text}</p>
+                <p style={{ color: 'white', fontSize: '0.6vw', marginLeft: image.marginLeft, textAlign: 'left' }}>{image.text}</p>
               </div>
             ))}
           </div>
@@ -49,7 +50,7 @@ const Footer: React.FC = () => {
                     <a href={image.link} target="_blank" rel="noopener noreferrer">
                       <img className='clickable-mini-images' src={image.src} alt={image.alt} style={{ width: image.width, height: image.height, scale: image.scale}} />
                     </a>
-                    <p style={{ color: 'white', fontSize: '0.9rem', marginLeft: image.marginLeft, marginRight:'0.75rem', textAlign: 'left' }}>{image.text}</p>
+                    <p style={{ color: 'white', fontSize: '0.6vw', marginLeft: image.marginLeft, marginRight:'0.75rem', textAlign: 'left' }}>{image.text}</p>
                   </div>
                 ))}
             </div>
