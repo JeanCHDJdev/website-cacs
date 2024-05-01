@@ -96,7 +96,7 @@ const Page = () => {
                     text={CSText} 
                 />
                 <Paragraph 
-                    image='/soutiens/em2c.png' 
+                    image='/soutiens/EM2C.png' 
                     imagePosition='right' 
                     imageName="EM2C"
                     title="Laboratoire EM2C"

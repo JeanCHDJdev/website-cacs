@@ -17,8 +17,8 @@ const Page = () => {
                 <img src='/hackathon/minif_halle.jpg' style={{ width:'45rem'}} />
                 <p className='regular-text navy' style={{marginLeft:'2rem'}}>Nous travaillons au FabLab de l'école, LaFabrique, ainsi qu'au local technique juste en face. Les équipements et ressources disponibles nous permettent de mener à bien nos projets !</p> 
             </div>
-            <text className='title-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'4rem', marginTop:'4rem' }}>Formulaire de contact</text>
-            <text className='regular-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'2rem', marginTop:'2rem', marginRight:'25rem', marginLeft:'25rem' }}>Une question ? Une demande ? Remplissez le formulaire de contact ci-dessous et nous reviendrons vers vous au plus vite !</text>
+            <text className='regular-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'2rem', marginTop:'2rem', marginRight:'25rem', marginLeft:'25rem' }}>Une question ? Une demande ? Vous souhaitez rejoindre l'association ? N'hésitez pas à nous contacter via nos réseaux sociaux ou lors du tour des associations !</text>
+            {/*<text className='title-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'4rem', marginTop:'4rem' }}>Formulaire de contact</text>
             <form style={{display:'flex', justifyContent:'center', alignContent:'center', flexDirection:'column', marginRight:'30rem', marginLeft:'30rem'}}>
                 <label htmlFor="nom" className='regular-text navy' style={{ marginTop:'2rem'}}>Nom :</label>
                 <input type="text" id="nom" name="nom" required className="input-box"/>
@@ -33,7 +33,7 @@ const Page = () => {
                 <textarea id="message" name="message" rows={6} required className="input-box"/>
 
                 <button className='alt-buttons' style={{zIndex:6, marginTop:'2rem', filter:'invert(1)'}} type="submit">Envoyer</button>
-            </form>
+    </form>*/}
         </div>
     );
 };
