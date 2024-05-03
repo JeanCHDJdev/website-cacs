@@ -21,7 +21,7 @@ const Paragraph: React.FC<ParagraphProps> = ({
 }) => {
 
     return (
-        <div style={{ marginTop: '3rem', marginBottom:'3rem', marginLeft:'20rem', marginRight:'20rem' }} >
+        <div style={{ marginTop: '3rem', marginBottom:'3rem', marginLeft:'10%', marginRight:'10%' }} >
             {title && (
                 <div className="title-text small navy" style={{marginTop:'2rem', marginBottom:'2rem'}}>
                     {title}

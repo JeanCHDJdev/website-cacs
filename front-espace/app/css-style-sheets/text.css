@@ -37,5 +37,9 @@
 .regular-text.navy {
     color: var(--navy-cacs);
 }
+.paragraph-content{
+    color: var(--navy-cacs);
+    flex-direction: row;
+  }
 
   
