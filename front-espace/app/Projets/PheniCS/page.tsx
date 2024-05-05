@@ -45,7 +45,7 @@ const Page: React.FC = () => {
                 title="PheniCS"
                 subtitle="Présentation de PheniCS"
                 />
-            <div style={{ display: 'flex', flexDirection: 'row', marginLeft:'20rem', marginRight:'20rem', marginTop:'3rem' }}>
+            <div style={{ display: 'flex', marginLeft:'10%', marginRight:'10%', marginTop:'1rem' }} className='paragraph-content'>
                 <video controls style={{ height: '28rem' }}>
                     <source src={video_decollage} type="video/mp4" />
                 </video>
@@ -77,9 +77,9 @@ const Page: React.FC = () => {
                         paragraph_array={side_paragraphs}
                     />
                 </div>
-                <Slideshow content={project_image_slides} slideshow_styles={{height:'40rem', width:'auto', marginLeft:'18.5rem', marginRight:'18.5rem'}}/>
+                <Slideshow content={project_image_slides} slideshow_styles={{height:'40%', width:'90%', maxHeight:'40rem', maxWidth:'60rem', marginLeft:'5%', marginRight:'5%', marginTop: '2rem', marginBottom:'2rem', alignItems:'center'}}/>
                 <h2 className='title-text navy tiny' style={{margin:'4rem'}}>Les expériences embarquées</h2>
-                <div style={{ display: 'flex', flexDirection: 'row', marginLeft:'20rem', marginRight:'20rem' }}>
+                <div style={{ display: 'flex', marginLeft:'10%', marginRight:'10%' }} className='paragraph-content'>
                     <div style={{ display: 'flex', flexDirection: 'column', marginRight:'4rem' }}>    
                         <p className='regular-text tiny navy' style={{marginBottom:'1rem'}}>PheniCS avait pour ambition et objectif principal de créer un profil pression-température de l'onde de choc supersonique. Sur le tableau de bord reconstitué à droite, vous pouvez retrouver le retour de ces expériences pendant le vol, ainsi que l'état de la fusée. On observe bien le phénomène de surpression-dépression au niveau de la coiffe, qu'on retrouve également dans les simulations effectuées sous ANSYS Fluent par le groupe.</p>                    
                     </div>
@@ -87,31 +87,31 @@ const Page: React.FC = () => {
                         <source src={video_tableau_de_bord} type="video/mp4" />
                     </video>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'row', marginLeft:'20rem', marginRight:'20rem', marginTop:'4rem' }}>
-                    <img src='/projets/FusEx/PheniCS/pression_phenics.png' style={{ height: '36rem', marginRight:'4rem' }} />
-                    <img src='/projets/FusEx/PheniCS/fluent_phenics_cut.png' style={{ height: '36rem' }} />
+                <div style={{ display: 'flex', marginLeft:'10%', marginRight:'10%', marginTop:'4rem', alignItems:'center' }} className='paragraph-content'>
+                    <img src='/projets/FusEx/PheniCS/pression_phenics.png' style={{ maxHeight: '36rem', marginRight:'4rem' }} />
+                    <img src='/projets/FusEx/PheniCS/fluent_phenics_cut.png' style={{ height:'36rem',  }} />
                 </div>
-                <h2 className='title-text navy tiny' style={{margin:'4rem'}}>Prix Espace et Industrie 2023</h2>
-                <div style={{ display: 'flex', flexDirection: 'row', marginLeft:'20rem', marginRight:'20rem'}}>
-                    <img src='/projets/FusEx/PheniCS/prix_phenics.jpg' style={{ height: '31.5rem', marginRight:'2rem' }} />
-                    <img src='/projets/FusEx/PheniCS/pei_phenics.jpg' style={{ height: '31.5rem', marginRight:'2rem' }} />
+                <h2 className='title-text navy tiny' style={{margin:'3rem'}}>Prix Espace et Industrie 2023</h2>
+                <div style={{ display: 'flex', marginLeft:'10%', marginRight:'10%', alignContent:'center', justifyContent:'center', alignItems:'center'}} className='paragraph-content'> 
+                    <img src='/projets/FusEx/PheniCS/prix_phenics.jpg' style={{ width:'23rem', height:'31.5rem', margin:'1rem' }} />
+                    <img src='/projets/FusEx/PheniCS/pei_phenics.jpg' style={{ height: '31.5rem', width:'45rem', margin:'1rem'}} />
                     <div style={{display: 'flex', flexDirection: 'column' }}>
                         <text className='regular-text tiny navy'>PheniCS a également remporté le 16 décembre le Prix Espace et Industrie 2023 MBDA au siège social du CNES, à Paris. Ce prix récompense l'implication de nos membres et notre réalisation pour le C'Space 2023.</text>
                         <a className='alt-buttons' href='https://www.youtube.com/live/BuDKCX8IRCY?feature=shared&t=5868' target="_blank" rel="noopener noreferrer" style={{marginTop:'1rem'}}>
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent:'center' }}>
-                                <img src='/layout_images/networks/youtube.png' alt='Download icon' style={{ width: '2.1rem', height: 'auto', marginRight: '0.5rem' }} />
+                                <img src='/layout_images/networks/youtube.png' alt='Youtube icon' style={{ width: '2.1rem', height: 'auto', marginRight: '0.5rem', filter:'invert(1)' }} />
                                 <span style={{ marginLeft: '0.5rem', fontSize: '1.2rem', marginRight: '0.5rem' }}>Revoir notre présentation</span>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center' }}>
-                    <p className='regular-text tiny navy' style={{ alignItems: 'column', marginLeft: '30rem', marginRight: '30rem' }}>Vous souhaitez découvrir plus de notre projet et de cette aventure ? Découvrez notre dossier post-vol, qui entre en détails dans nos choix techniques, notre organisation et les problèmes rencontrés dans le projet.</p>
+                    <p className='regular-text tiny navy' style={{ alignItems: 'column', marginLeft: '10%', marginRight: '10%' }}>Vous souhaitez découvrir plus de notre projet et de cette aventure ? Découvrez notre dossier post-vol, qui entre en détails dans nos choix techniques, notre organisation et les problèmes rencontrés dans le projet.</p>
                 </div>
                 <div style={{ marginTop: '2rem', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
                     <button className='alt-buttons' onClick={handleDownload}>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
-                            <img src='/layout_images/other/donwload_icon.png' alt='Download icon' style={{ width: '2.1rem', height: 'auto', marginRight: '0.5rem' }} />
+                            <img src='/layout_images/other/donwload_icon.png' alt='Download icon' style={{ width: '2.1rem', height: 'auto', marginRight: '0.5rem', filter:'invert(1)' }} />
                             <span style={{ marginLeft: '0.5rem', fontSize: '1.2rem', marginRight: '0.5rem' }}>Dossier Post-Vol</span>
                         </div>
                     </button>

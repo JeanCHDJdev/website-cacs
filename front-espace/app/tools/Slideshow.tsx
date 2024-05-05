@@ -9,6 +9,7 @@ interface SlideshowProps {
 }
 
 const right_arrow = '/layout_images/other/arrow.png';
+
 const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles, showAdjacentSlides }) => {
 
     const [currentContentIndex, setCurrentContentIndex] = useState(0);
@@ -34,7 +35,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ content, timer, slideshow_styles,
     }, [content.length, timer]);
 
     return (
-        <div style={{width:"100%", height:"100%", position:'relative', ...slideshow_styles}}>
+        <div style={{position:'relative', ...slideshow_styles}}>
             {/*{showAdjacentSlides && (
                 <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'row', position:'absolute' }}>
                     <div style={{width:"100%", height:"100%", display:"flex"}}>

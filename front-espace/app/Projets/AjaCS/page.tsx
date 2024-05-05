@@ -4,7 +4,7 @@ import RocketDetails from '../RocketDetails';
 import Slideshow from '@/app/tools/Slideshow';
 import ProjectHeader from '@/app/tools/global_layout/ProjectHeader';
 
-const background_top_image = '/projets/FusEx/AjaCS/ajacs en vol.jpg';
+const background_top_image = '/projets/FusEx/AjaCS/ajacs_en_vol.jpg';
 
 const patch_image = '/projets/patchs/patch AjaCS.png';
 
@@ -48,7 +48,7 @@ const Page: React.FC = () => {
                 title="AjaCS"
                 subtitle="Présentation d'AjaCS"
                 />
-            <div style={{ display: 'flex', flexDirection: 'row', marginLeft:'20rem', marginRight:'20rem', marginTop:'3rem' }}>
+            <div style={{ display: 'flex', marginLeft:'10%', marginRight:'10%', marginTop:'2rem' }} className='paragraph-content'>
                 <video controls style={{ height: '28rem' }}>
                     <source src={video_decollage} type="video/mp4" />
                 </video>
@@ -73,29 +73,29 @@ const Page: React.FC = () => {
                         number_members={8}
                         prizes={['Première fusée de l\'association']}
                         exps={['Accéléromètres','Gyromètres','Mesure de Pression', 'Mesure de Température', 'Télémétrie LoRA']}
-                        exps_state={['Succès partiel', 'Succès partiel', 'Succès', 'Succès','Succès']}
+                        exps_state={['Succès', 'Succès', 'Succès', 'Succès','Succès']}
                         rocket_image='/projets/FusEx/AjaCS/ajacs_cut.png'
                         rocket_styles={{ height: '85rem', width: 'auto', marginRight: '4rem', marginLeft:'1rem', transform: 'rotate(-4deg)' }}
                         paragraph_array={side_paragraphs}
                     />
                 </div>
-                <Slideshow content={project_image_slides} slideshow_styles={{height:'40rem', width:'auto', marginLeft:'18.5rem', marginRight:'18.5rem'}}/>
-                <h2 className='title-text navy tiny' style={{margin:'4rem'}}>Les expériences embarquées</h2>
-                <div style={{ display: 'flex', flexDirection: 'row', marginLeft:'20rem', marginRight:'20rem' }}>
+                <Slideshow content={project_image_slides} slideshow_styles={{height:'40%', width:'90%', maxHeight:'40rem', maxWidth:'60rem', marginLeft:'5%', marginRight:'5%', marginTop: '2rem', marginBottom:'2rem', alignItems:'center'}}/>
+                <h2 className='title-text navy tiny' style={{margin:'2rem'}}>Les expériences embarquées</h2>
+                <div style={{ display: 'flex', flexDirection: 'row', marginLeft:'10%', marginRight:'10%' }}>
                         <p className='regular-text tiny navy' style={{marginBottom:'1rem'}}>AjaCS avait pour ambition et objectif principal de créer un profil pression-température de l'atmosphère. Bien que les capteurs ont a priori bien fonctionné, l'inertie sur le capteur thermique n'a pas révélé la baisse de température attendue avec la montée en altitude. Cependant, la dépression observée par l'ascension s'est transcrite dans les données du vol.</p>                    
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', marginLeft:'20rem', marginRight:'20rem', marginTop:'4rem' }}>
-                    <img src='/projets/FusEx/AjaCS/pression_ajacs.png' style={{ height: '20rem'}} />
-                    <img src='/projets/FusEx/AjaCS/temperature_ajacs.png' style={{ height: '20rem'}} />
-                    <img src='/projets/FusEx/AjaCS/accel_ajacs.png' style={{ height: '20rem'}} />
+                <div style={{ display: 'flex', flexDirection: 'column', marginLeft:'10%', marginRight:'10%', marginTop:'4rem' }}>
+                    <img src='/projets/FusEx/AjaCS/pression_ajacs.png' style={{ maxHeight: '18rem'}} />
+                    <img src='/projets/FusEx/AjaCS/temperature_ajacs.png' style={{ maxHeight: '18rem'}} />
+                    <img src='/projets/FusEx/AjaCS/accel_ajacs.png' style={{ maxHeight: '18rem'}} />
                 </div>
                 <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center' }}>
-                    <p className='regular-text tiny navy' style={{ alignItems: 'column', marginLeft: '30rem', marginRight: '30rem' }}>Vous souhaitez découvrir plus de notre projet et de cette aventure ? Découvrez notre dossier post-vol, qui entre en détails dans nos choix techniques, notre organisation et les problèmes rencontrés dans le projet.</p>
+                    <p className='regular-text tiny navy' style={{ alignItems: 'column', marginLeft: '10%', marginRight: '10%' }}>Vous souhaitez découvrir plus de notre projet et de cette aventure ? Découvrez notre dossier post-vol, qui entre en détails dans nos choix techniques, notre organisation et les problèmes rencontrés dans le projet.</p>
                 </div>
                 <div style={{ marginTop: '2rem', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
                     <button className='alt-buttons' onClick={handleDownload}>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
-                            <img src='/layout_images/other/donwload_icon.png' alt='Download icon' style={{ width: '2.1rem', height: 'auto', marginRight: '0.5rem' }} />
+                            <img src='/layout_images/other/donwload_icon.png' alt='Download icon' style={{ width: '2.1rem', height: 'auto', marginRight: '0.5rem', filter:'invert(1)' }} />
                             <span style={{ marginLeft: '0.5rem', fontSize: '1.2rem', marginRight: '0.5rem' }}>Dossier Post-Vol</span>
                         </div>
                     </button>

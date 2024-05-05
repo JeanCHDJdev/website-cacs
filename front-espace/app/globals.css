@@ -7,6 +7,7 @@
 @import './css-style-sheets/text.css';
 @import './css-style-sheets/form.css';
 @import './css-style-sheets/images.css';
+@import './css-style-sheets/backgrounds.css';
 
 
 @media (prefers-color-scheme: dark) {
@@ -47,7 +48,14 @@
     .paragraph-content{
       flex-direction: column;
     }
+    .hide-mobile {
+      visibility: hidden;
+    }
+    .hide-mobile.small {
+      display: none;
+    }
  }
+
 
 *,*::before,*::after {
   box-sizing: border-box;

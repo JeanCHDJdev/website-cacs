@@ -9,7 +9,7 @@ interface Projects {
 
 const ProjectsByYear: React.FC<Projects> = ({ names, subtexts, patches, year}) => {
     return (
-        <div style={{ maxWidth: '25rem', marginLeft:'3rem', textAlign:'center' }}>
+        <div style={{ maxWidth: '25%', marginLeft:'3rem', textAlign:'center' }}>
             <text className='title-text small navy'>{year}</text>
             {patches.map((patch, index) => (
                 <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -18,7 +18,7 @@ const ProjectsByYear: React.FC<Projects> = ({ names, subtexts, patches, year}) =
                     </div>
                     <div style={{ marginTop: '1em' }}>
                         <a href={`/Projets/${names[index]}`}>
-                            <img src={patch} alt={names[index]} style={{ width: '20rem', height: 'auto' }}/>
+                            <img src={patch} alt={names[index]} style={{ width: '100%', height: 'auto' }}/>
                         </a>
                     </div>
                     <text className='regular-text tiny navy'>{subtexts[index]}</text>

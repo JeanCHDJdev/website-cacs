@@ -12,8 +12,7 @@ const minif_display = [
     <img src='/hackathon/minif_para.jpg' key={4} />,
     <img src='/hackathon/minif_soudure.jpg' key={5} />,
     <img src='/hackathon/minif_trou.jpg' key={6} />,
-    <img src='/hackathon/minif_vol.jpg' key={7} />,
-    <img src='/hackathon/telem.jpg' key={8} />,
+    <img src='/hackathon/telem.jpg' key={7} />,
 ];
 
 const Page: React.FC = () => {

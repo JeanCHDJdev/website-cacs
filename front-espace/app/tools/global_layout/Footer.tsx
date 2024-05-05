@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer style={{ width: '100%', height: '26rem', backgroundColor: 'rgb(0, 0, 50)', borderTop: '0.75rem solid white' }}>
+    <footer style={{ width: '100%', height: '28rem', backgroundColor: 'rgb(0, 0, 50)', borderTop: '0.75rem solid white' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', height: '100%' }}>
         <div style={{ flex: '1', textAlign: 'center' }}>
           <p style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.75rem', marginTop: '0.75rem' }}>D'autres assos qu'on apprécie</p>
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
                 <a href={image.link} target="_blank" rel="noopener noreferrer">
                   <img className='clickable-mini-images' src={image.src} alt={image.alt} style={{ width: image.width, height: image.height, marginRight: '0.75rem' }} />
                 </a>
-                <p style={{ color: 'white', fontSize: '0.6vw', marginLeft: image.marginLeft, textAlign: 'left' }}>{image.text}</p>
+                <p style={{ color: 'white', fontSize: '0.6vw', marginLeft: image.marginLeft, textAlign: 'left' }} className='hide-mobile'>{image.text}</p>
               </div>
             ))}
           </div>
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
                     <a href={image.link} target="_blank" rel="noopener noreferrer">
                       <img className='clickable-mini-images' src={image.src} alt={image.alt} style={{ width: image.width, height: image.height, scale: image.scale}} />
                     </a>
-                    <p style={{ color: 'white', fontSize: '0.6vw', marginLeft: image.marginLeft, marginRight:'0.75rem', textAlign: 'left' }}>{image.text}</p>
+                    <p style={{ color: 'white', fontSize: '0.6vw', marginLeft: image.marginLeft, marginRight:'0.75rem', textAlign: 'left' }} className='hide-mobile'>{image.text}</p>
                   </div>
                 ))}
             </div>

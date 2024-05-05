@@ -51,12 +51,12 @@ const Page: React.FC = () => {
                     />
                 </div>
                 <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center' }}>
-                    <p className='regular-text tiny navy' style={{ alignItems: 'column', marginLeft: '30rem', marginRight: '30rem' }}>Vous souhaitez découvrir plus de notre projet et de cette aventure ? Découvrez notre dossier pré-vol, qui entre en détails dans nos choix techniques, notre organisation et les problèmes rencontrés dans le projet.</p>
+                    <p className='regular-text tiny navy' style={{ alignItems: 'column', marginLeft: '10%', marginRight: '10%' }}>Vous souhaitez découvrir plus de notre projet et de cette aventure ? Découvrez notre dossier pré-vol, qui entre en détails dans nos choix techniques, notre organisation et les problèmes rencontrés dans le projet.</p>
                 </div>
                 <div style={{ marginTop: '2rem', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
                     <button className='alt-buttons' onClick={handleDownload}>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
-                            <img src='/layout_images/other/donwload_icon.png' alt='Download icon' style={{ width: '2.1rem', height: 'auto', marginRight: '0.5rem' }} />
+                            <img src='/layout_images/other/donwload_icon.png' alt='Download icon' style={{ width: '2.1rem', height: 'auto', marginRight: '0.5rem', filter:'invert(1)' }} />
                             <span style={{ marginLeft: '0.5rem', fontSize: '1.2rem', marginRight: '0.5rem' }}>Dossier Pré-Vol</span>
                         </div>
                     </button>

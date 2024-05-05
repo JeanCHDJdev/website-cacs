@@ -27,7 +27,7 @@ const PageComponent: React.FC = () => {
         const pages: JSX.Element[] = [];
         for (let i = 1; i <= maxPageNumber; i++) {
             pages.push(
-                <Page key={i} pageNumber={i} size={[1,1]}>
+                <Page key={i} pageNumber={i} style={{width:'60%', height:'1%'}}>
                 </Page>
             );
         }
@@ -53,15 +53,15 @@ const PageComponent: React.FC = () => {
                 text="Notre école, CentraleSupélec, est parmi les meilleures écoles d'ingénieur françaises, et mondialement reconnue avec l'Université Paris-Saclay. Chaque année, près de 1000 étudiants en ressortent diplômés ingénieurs et rejoignent alors le monde du travail. Nous sponsoriser vous assure le contact d'un vivier de talents sans pareil en France. "
             />
             <p className='regular-text navy' style={{ marginLeft: '5%', marginRight: '5%' }}>Vous êtes une entreprise ou un particulier qui souhaite sponsoriser les projets aérospatiaux de l'association ? Nous proposons plusieurs offres en contrepartie de votre soutien. Découvrez ci dessous notre <strong>plaquette Entreprise !</strong></p>
-            <div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center', flexDirection: 'column', textAlign: 'center', marginTop:'2rem',marginLeft: '17rem', marginRight: '17rem' }}>
+            {/*<div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center', flexDirection: 'column', textAlign: 'center', marginTop:'2rem',marginLeft: '5%', marginRight: '5%', width:'90%' }}>
                 <Document file={PlaquettePoleEspace} onLoadSuccess={handleDocumentLoadSuccess}>
                     <Slideshow content={pdfPages(maxPageNumber)}/>
                 </Document>
-            </div>
+    </div> jamais réussi à faire fct le pdf bien*/}
             <div style={{ marginTop: '2rem', marginBottom: '2rem', display: 'flex', justifyContent: 'center', gap:'2rem' }}>
                 <button className='alt-buttons' onClick={handleDownload}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <img src='/layout_images/other/donwload_icon.png' alt='Download icon' style={{ width: '2.1rem', height: 'auto', marginRight: '0.5rem'}} />
+                        <img src='/layout_images/other/donwload_icon.png' alt='Download icon' style={{ width: '2.1rem', height: 'auto', marginRight: '0.5rem', filter:'invert(1)'}} />
                         <span style={{ marginLeft: '0.5rem', fontSize: '1.2rem', marginRight: '0.5rem' }}>Plaquette Entreprise</span>
                     </div>
                 </button>

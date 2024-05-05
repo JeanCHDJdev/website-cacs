@@ -23,10 +23,10 @@ function createDivContent(content: string[]): JSX.Element {
             <p className='regular-text navy tiny' style={{ textDecoration: 'underline', marginTop:'3.5rem', justifyContent:'center', alignItems:'center', display:'flex' }}>{content[0]}</p>
             {content.length === 3 && (
                 <div style={{justifyContent:'center', alignItems:'center', display:'flex' }} key={content[0]}>
-                    <img src={content[2]} alt='Rocket' style={{ height: '20rem', marginTop:'1rem', marginBottom:'1rem' }} />
+                    <img src={content[2]} alt='Rocket' style={{ height: '20rem', marginTop:'1rem', marginBottom:'1rem' }} key={content[1]}/>
                 </div>
             )}
-            <p className='regular-text navy tiny' style={{width:'25rem'}}>{content[1]}</p>
+            <p className='regular-text navy tiny' style={{}}>{content[1]}</p>
         </div>
     );
 }
@@ -46,31 +46,32 @@ const RocketDetails: React.FC<RocketDetailsProps> = ({
     length,
     rocket_image, 
     rocket_styles,
-    paragraph_array }) => {
+    paragraph_array 
+}) => {
     return (
-        <div style={{justifyContent:'center', display:'flex', marginRight:'20rem', marginLeft:'20rem'}}>
-            <div>
+        <div style={{justifyContent:'center', display:'flex', marginRight:'10%', marginLeft:'10%'}}>
+            <div style={{width:'50%', margin:'.5rem'}}>
                 <h1 style={{justifyContent:'center', display:'flex'}} className='regular-text navy'><strong>Détails</strong></h1>
-                <p className='regular-text navy tiny'><strong>Type de projet :</strong> {project_type}</p>
-                <p className='regular-text navy tiny'><strong>Type de propulsion :</strong> {propulsion_type}</p>
-                <p className='regular-text navy tiny'><strong>Longueur :</strong> {length}</p>
-                <p className='regular-text navy tiny'><strong>Diamètre :</strong> {diameter}</p>
-                <p className='regular-text navy tiny'><strong>Années de développement :</strong> {years}</p>
-                <p className='regular-text navy tiny'><strong>Etat de vol :</strong> {flightStatus}</p>
-                <p className='regular-text navy tiny'><strong>Date de lancement :</strong> {launch_date}</p>
-                <p className='regular-text navy tiny'><strong>Lieu de lancement :</strong> {launch_location}</p>
-                <p className='regular-text navy tiny'><strong>Nombre de membres :</strong> {number_members}</p>
+                <p className='regular-text navy tiny' key={1}><strong>Type de projet :</strong> {project_type}</p>
+                <p className='regular-text navy tiny' key={2}><strong>Type de propulsion :</strong> {propulsion_type}</p>
+                <p className='regular-text navy tiny' key={3}><strong>Longueur :</strong> {length}</p>
+                <p className='regular-text navy tiny' key={4}><strong>Diamètre :</strong> {diameter}</p>
+                <p className='regular-text navy tiny' key={5}><strong>Années de développement :</strong> {years}</p>
+                <p className='regular-text navy tiny' key={6}><strong>Etat de vol :</strong> {flightStatus}</p>
+                <p className='regular-text navy tiny' key={7}><strong>Date de lancement :</strong> {launch_date}</p>
+                <p className='regular-text navy tiny' key={8}><strong>Lieu de lancement :</strong> {launch_location}</p>
+                <p className='regular-text navy tiny' key={9}><strong>Nombre de membres :</strong> {number_members}</p>
                 {paragraph_array.map((paragraph, index) => {
                     if (index % 2 === 0) {
-                        return createDivContent(paragraph);
+                        return <div key={index}> {createDivContent(paragraph)} </div>;
                     }
                     return null;
                 })}
             </div>
-            <div>
-                <img src={rocket_image} alt='Rocket' style={rocket_styles} />
+            <div key='1' className='hide-mobile small'>
+                <img src={rocket_image} key='rocket' alt='Rocket' style={rocket_styles} />
             </div>
-            <div>
+            <div style={{width:'50%', margin:'.5rem'}}>
                 <p className='regular-text navy tiny' style={{ textDecoration: 'underline', marginTop:'3.5rem'  }}>Prix et distinctions :</p>
                 {prizes.map((prize, index) => (
                     <li className='list-statistics small' key={index}>{prize}</li>
@@ -81,7 +82,7 @@ const RocketDetails: React.FC<RocketDetailsProps> = ({
                 ))}
                 {paragraph_array.map((paragraph, index) => {
                     if (index % 2 === 1) {
-                        return createDivContent(paragraph);
+                        return <div key={index}> {createDivContent(paragraph)} </div>;
                     }
                     return null;
                 })}

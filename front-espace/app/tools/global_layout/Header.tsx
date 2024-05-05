@@ -9,10 +9,14 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({bg, title, subtitle, paragraph}) => {
     return (
         <div> 
-            <div style={{
-                height:'80vh', width:'100vw',
-                backgroundImage: `url(${bg})`,
+            <div className='bg'
+                style={{
+                objectFit:'cover',
+                backgroundPosition: 'center',
                 backgroundSize: 'cover',
+                height:'70vh', 
+                width:'100vw',               
+                backgroundImage: `url(${bg})`,
                 filter:'brightness(70%)'
             }}/>
             <div>

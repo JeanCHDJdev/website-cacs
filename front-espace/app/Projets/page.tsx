@@ -16,7 +16,7 @@ const projects2023 = {
 };
 const projects2022 = {
     names:['AjaCS'],
-    subtexts:['Première fusée de l\'association. Trajectographie inertielle et initiation au monde de l\'astromodélisme'],
+    subtexts:['Première fusée de l\'association : Trajectographie inertielle et initiation au monde de l\'astromodélisme'],
     patches:['/projets/patchs/patch AjaCS.png'],
     path: ['/Projets/AjaCS'],
 };
@@ -38,7 +38,7 @@ const Page = () => {
                 subtitle='Découvrez nos fusées expérimentales'
                 paragraph="Depuis 2021, nous accueillons chaque année de nouveaux projets, des fusées expérimentales aux moteurs-fusées. Toujours plus exigeants et motivants, ils portent l'association vers de nouvelles altitudes. Vous pouvez ici découvrir un historique des projets du pôle espace."
             />
-            <div style={{height:'110rem', marginRight:'10%', marginLeft:'10%', marginTop:'5rem', justifyContent:'center', display:'flex', flexDirection:'row'}}>
+            <div style={{height:'200rem', marginRight:'10%', marginLeft:'10%', marginTop:'5rem', justifyContent:'center', display:'flex', flexDirection:'row'}}>
                 {project_slideshow} 
             </div>
         </div>

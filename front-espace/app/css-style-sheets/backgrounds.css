@@ -1,0 +1,22 @@
+.bg {
+    background-size: 'cover';
+    z-index: 1;
+  }
+
+
+@media (min-width: 1000px) {
+  .bg {
+    height:'80vh';
+  }
+  .map {
+    flex-direction: row;
+    }
+}
+@media (max-width: 1000px) {
+    .bg {
+      height:'50vh';
+    }
+    .map {
+        flex-direction: column;
+    }
+  }

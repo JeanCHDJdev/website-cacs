@@ -24,14 +24,13 @@ class Page extends React.Component {
             position: 'absolute',
             alignItems: 'center',
             top: '40%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
+            left: '15%',
             width: '40%'
           }}
         >
-          <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'row', alignItems: 'center' }}>
-            <img src="/home_page/main_imgs/Pole_Espace.png" alt="Logo Pôle Espace" style={{ width: '35%' }} />
-            <h1 className='title-text huge white' style={{ whiteSpace: 'pre-wrap' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <img src="/home_page/main_imgs/Pole_Espace.png" alt="Logo Pôle Espace" style={{ width: '35%' }}  className='hide-mobile' />
+            <h1 className='title-text huge white' style={{ whiteSpace: 'pre-wrap'}}>
               Pôle Espace{'\n'}CentraleSupélec
             </h1>
           </div>
