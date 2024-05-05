@@ -39,10 +39,12 @@ const Page: React.FC = () => {
                     text="Parmi les objectifs de ces mini-fusées, les premières années fraîchement arrivés doivent établir une électronique de déclenchement parachute fonctionnelle, détecter le décollage, installer un module de télémétrie, obtenir une mécanique fonctionnelle, créer leur parachute, respecter tout le cahier des charges, et vérifier la stabilité de la fusée."
                 />
             </div>
-            <Slideshow 
-                content={minif_display}
-                slideshow_styles={{ width: '70%', height: '40rem', marginTop:'2rem', marginLeft:'15%', marginRight:'15%', marginBottom:'2rem', objectFit:'cover', display: 'flex', justifyContent: 'center'  }}
-            />
+            <div style={{alignContent:'center', alignItems:'center', display:'flex', justifyContent:'center'}}>
+                <Slideshow 
+                    content={minif_display}
+                    slideshow_styles={{height:'40%', width:'90%', maxHeight:'40rem', maxWidth:'60rem', marginLeft:'5%', marginRight:'5%', marginTop: '2rem', marginBottom:'2rem', alignItems:'center'}}
+                />
+            </div>
             <Paragraph 
                 image = '/hackathon/landing.jpg'
                 imageName='Photo_grp'
