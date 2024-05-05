@@ -4,7 +4,7 @@ import Paragraph from '../tools/text_display/Paragraph';
 const Page = () => {
     return (
         <div>
-            <text className='title-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginRight:'15%', marginLeft:'15%', marginBottom:'4rem', marginTop:'4rem'  }}>Notre base d'opérations</text>
+            <text className='title-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginRight:'15%', marginLeft:'15%', marginBottom:'4rem', marginTop:'4rem'  }}>Notre base d&apos;opérations</text>
             <div style={{justifyContent:'center', display:'flex', marginLeft: '10%', marginRight: '10%', marginBottom:'10%', alignContent:'center'}} className='map'>
                 <div style={{display:'flex', flexDirection:'column', marginRight:'4rem', width:'30rem'}}>
                     <p className='title-text small navy' style={{borderBottom:'solid 0.5rem darkblue'}}>CentraleSupélec</p>
@@ -21,7 +21,7 @@ const Page = () => {
                 imageWidth='45rem'
                 text="Nous travaillons au FabLab de l'école, LaFabrique, ainsi qu'au local technique juste en face. Les équipements et ressources disponibles nous permettent de mener à bien nos projets !"
             />
-            <text className='regular-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'2rem', marginTop:'2rem', marginRight:'10%', marginLeft:'10%' }}>Une question ? Une demande ? Vous souhaitez rejoindre l'association ? N'hésitez pas à nous contacter via nos réseaux sociaux ou lors du tour des associations !</text>
+            <text className='regular-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'2rem', marginTop:'2rem', marginRight:'10%', marginLeft:'10%' }}>Une question ? Une demande ? Vous souhaitez rejoindre l&apos;association ? N&apos;hésitez pas à nous contacter via nos réseaux sociaux ou lors du tour des associations !</text>
             {/*<text className='title-text navy' style={{textAlign:'center', display:'flex', justifyContent:'center', marginBottom:'4rem', marginTop:'4rem' }}>Formulaire de contact</text>
             <form style={{display:'flex', justifyContent:'center', alignContent:'center', flexDirection:'column', marginRight:'30rem', marginLeft:'30rem'}}>
                 <label htmlFor="nom" className='regular-text navy' style={{ marginTop:'2rem'}}>Nom :</label>

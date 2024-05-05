@@ -1,23 +1,19 @@
 "use client";
 import React from 'react';
-import { useState } from 'react';
-import { Document, Page } from 'react-pdf';
-import { pdfjs } from 'react-pdf';
-import Slideshow from '../tools/Slideshow';
 import Header from '../tools/global_layout/Header';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 import Paragraph from '../tools/text_display/Paragraph';
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+/*pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.js',
   import.meta.url,
-).toString();
+).toString();*/
 
 const PlaquettePoleEspace = '/pdfs/Devenir-Partenaire/PlaquettePoleEspace.pdf';
 
 const PageComponent: React.FC = () => {
-    const [maxPageNumber, setMaxPageNumber] = useState(0);
+    {/*const [maxPageNumber, setMaxPageNumber] = useState(0);
 
     const handleDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
         setMaxPageNumber(numPages);
@@ -32,7 +28,7 @@ const PageComponent: React.FC = () => {
             );
         }
         return pages;
-    };
+    };*/}
 
     const handleDownload = () => {
         window.open(PlaquettePoleEspace, '_blank');
@@ -52,7 +48,7 @@ const PageComponent: React.FC = () => {
                 imageWidth='30rem'
                 text="Notre école, CentraleSupélec, est parmi les meilleures écoles d'ingénieur françaises, et mondialement reconnue avec l'Université Paris-Saclay. Chaque année, près de 1000 étudiants en ressortent diplômés ingénieurs et rejoignent alors le monde du travail. Nous sponsoriser vous assure le contact d'un vivier de talents sans pareil en France. "
             />
-            <p className='regular-text navy' style={{ marginLeft: '5%', marginRight: '5%' }}>Vous êtes une entreprise ou un particulier qui souhaite sponsoriser les projets aérospatiaux de l'association ? Nous proposons plusieurs offres en contrepartie de votre soutien. Découvrez ci dessous notre <strong>plaquette Entreprise !</strong></p>
+            <p className='regular-text navy' style={{ marginLeft: '5%', marginRight: '5%' }}>Vous êtes une entreprise ou un particulier qui souhaite sponsoriser les projets aérospatiaux de l&apos;association ? Nous proposons plusieurs offres en contrepartie de votre soutien. Découvrez ci dessous notre <strong>plaquette Entreprise !</strong></p>
             {/*<div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center', flexDirection: 'column', textAlign: 'center', marginTop:'2rem',marginLeft: '5%', marginRight: '5%', width:'90%' }}>
                 <Document file={PlaquettePoleEspace} onLoadSuccess={handleDocumentLoadSuccess}>
                     <Slideshow content={pdfPages(maxPageNumber)}/>

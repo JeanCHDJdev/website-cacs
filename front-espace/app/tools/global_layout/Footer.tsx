@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
     <footer style={{ width: '100%', height: '28rem', backgroundColor: 'rgb(0, 0, 50)', borderTop: '0.75rem solid white' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', height: '100%' }}>
         <div style={{ flex: '1', textAlign: 'center' }}>
-          <p style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.75rem', marginTop: '0.75rem' }}>D'autres assos qu'on apprécie</p>
+          <p style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.75rem', marginTop: '0.75rem' }}>D&apos;autres assos qu&apos;on apprécie</p>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'left', marginLeft: '1.5rem' }}>
             {autres_assos.map((image, index) => (
               <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '0.75rem' }}>

@@ -83,7 +83,7 @@ class Page extends React.Component {
         />
         <div style={{ top: '30%', position: 'absolute', left: '10%', width: '80%' }}>
           <text className='title-text small white' style={{ zIndex: 10, whiteSpace: 'pre-wrap' }}>Nos objectifs</text>
-          <p className='regular-text tiny white' style={{ top: '10%', zIndex: 10, whiteSpace: 'pre-wrap' }}>Chaque année, nous formons et acceuillons de nouveaux membres, commençons de nouveaux projets et{'\n'}développons notre savoir-faire aérospatial. Nous participons anuellement à la campagne C'Space,{'\n'}organisée par le CNES et PlanèteSciences. Nos prochains objectifs se situent dans les nouvelles altitudes{'\n'}en maîtrisant les systèmes de propulsion. Nous développons également actuellement{'\n'}un ambitieux projet de fusée bi-étage pour le C'Space 2024.</p>
+          <p className='regular-text tiny white' style={{ top: '10%', zIndex: 10, whiteSpace: 'pre-wrap' }}>Chaque année, nous formons et acceuillons de nouveaux membres, commençons de nouveaux projets et{'\n'}développons notre savoir-faire aérospatial. Nous participons anuellement à la campagne C&apos;Space,{'\n'}organisée par le CNES et PlanèteSciences. Nos prochains objectifs se situent dans les nouvelles altitudes{'\n'}en maîtrisant les systèmes de propulsion. Nous développons également actuellement{'\n'}un ambitieux projet de fusée bi-étage pour le C&apos;Space 2024.</p>
           <div style={{ display: 'flex', marginTop: '2rem' }}>
             <a className="buttons" href='/Nous-rejoindre' style={{ marginRight: '4rem' }}>Nous rejoindre</a>
             <a className="buttons" href='/Membres'>Nos membres</a>

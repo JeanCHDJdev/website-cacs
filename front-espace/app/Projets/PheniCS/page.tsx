@@ -50,7 +50,7 @@ const Page: React.FC = () => {
                     <source src={video_decollage} type="video/mp4" />
                 </video>
                 <div style={{ display: 'flex', flexDirection: 'column', marginLeft:'4rem' }}>    
-                    <p className='regular-text tiny navy' style={{marginBottom:'1rem'}}>PheniCS est la première fusée supersonique de l'association, et la première fusée supersonique nominale depuis plus de 10 ans en France pour les fusées expérimentales étudiantes. Lancée le 20 juillet lors du C'Space à proximité de Tarbes, elle atteint :</p>                    
+                    <p className='regular-text tiny navy' style={{marginBottom:'1rem'}}>PheniCS est la première fusée supersonique de l&apos;association, et la première fusée supersonique nominale depuis plus de 10 ans en France pour les fusées expérimentales étudiantes. Lancée le 20 juillet lors du C&apos;Space à proximité de Tarbes, elle atteint :</p>                    
                     <li className='list-statistics' key={'speed'}>Mach 1.04</li>
                     <li className='list-statistics' key={'supersonic time'}>Supersonique pendant 1.97s</li>
                     <li className='list-statistics' key={'time'}>4min27 de vol</li>
@@ -81,7 +81,7 @@ const Page: React.FC = () => {
                 <h2 className='title-text navy tiny' style={{margin:'4rem'}}>Les expériences embarquées</h2>
                 <div style={{ display: 'flex', marginLeft:'10%', marginRight:'10%' }} className='paragraph-content'>
                     <div style={{ display: 'flex', flexDirection: 'column', marginRight:'4rem' }}>    
-                        <p className='regular-text tiny navy' style={{marginBottom:'1rem'}}>PheniCS avait pour ambition et objectif principal de créer un profil pression-température de l'onde de choc supersonique. Sur le tableau de bord reconstitué à droite, vous pouvez retrouver le retour de ces expériences pendant le vol, ainsi que l'état de la fusée. On observe bien le phénomène de surpression-dépression au niveau de la coiffe, qu'on retrouve également dans les simulations effectuées sous ANSYS Fluent par le groupe.</p>                    
+                        <p className='regular-text tiny navy' style={{marginBottom:'1rem'}}>PheniCS avait pour ambition et objectif principal de créer un profil pression-température de l&apos;onde de choc supersonique. Sur le tableau de bord reconstitué à droite, vous pouvez retrouver le retour de ces expériences pendant le vol, ainsi que l&apos;état de la fusée. On observe bien le phénomène de surpression-dépression au niveau de la coiffe, qu&apos;on retrouve également dans les simulations effectuées sous ANSYS Fluent par le groupe.</p>                    
                     </div>
                     <video controls style={{ height: '30rem' }}>
                         <source src={video_tableau_de_bord} type="video/mp4" />
@@ -96,7 +96,7 @@ const Page: React.FC = () => {
                     <img src='/projets/FusEx/PheniCS/prix_phenics.jpg' style={{ width:'23rem', height:'31.5rem', margin:'1rem' }} />
                     <img src='/projets/FusEx/PheniCS/pei_phenics.jpg' style={{ height: '31.5rem', width:'45rem', margin:'1rem'}} />
                     <div style={{display: 'flex', flexDirection: 'column' }}>
-                        <text className='regular-text tiny navy'>PheniCS a également remporté le 16 décembre le Prix Espace et Industrie 2023 MBDA au siège social du CNES, à Paris. Ce prix récompense l'implication de nos membres et notre réalisation pour le C'Space 2023.</text>
+                        <text className='regular-text tiny navy'>PheniCS a également remporté le 16 décembre le Prix Espace et Industrie 2023 MBDA au siège social du CNES, à Paris. Ce prix récompense l&apos;implication de nos membres et notre réalisation pour le C&apos;Space 2023.</text>
                         <a className='alt-buttons' href='https://www.youtube.com/live/BuDKCX8IRCY?feature=shared&t=5868' target="_blank" rel="noopener noreferrer" style={{marginTop:'1rem'}}>
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent:'center' }}>
                                 <img src='/layout_images/networks/youtube.png' alt='Youtube icon' style={{ width: '2.1rem', height: 'auto', marginRight: '0.5rem', filter:'invert(1)' }} />

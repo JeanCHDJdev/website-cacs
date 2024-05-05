@@ -53,10 +53,10 @@ const Page: React.FC = () => {
                     <source src={video_decollage} type="video/mp4" />
                 </video>
                 <div style={{ display: 'flex', flexDirection: 'column', marginLeft:'4rem' }}>    
-                    <p className='regular-text tiny navy' style={{marginBottom:'1rem'}}>AjaCS est la première fusée de l'association. Cette fusée a mis en place de nombreuses techniques de fabrication utilisées pour les projets suivants : tube en carbone, conception CAO avec SolidWorks, cartes électroniques, certaines expériences... AjaCS a atteint :</p>                    
+                    <p className='regular-text tiny navy' style={{marginBottom:'1rem'}}>AjaCS est la première fusée de l&apos;association. Cette fusée a mis en place de nombreuses techniques de fabrication utilisées pour les projets suivants : tube en carbone, conception CAO avec SolidWorks, cartes électroniques, certaines expériences... AjaCS a atteint :</p>                    
                     <li className='list-statistics' key={'speed'}>Vitesse maximale de 205m/s</li>
                     <li className='list-statistics' key={'fall'}>Vitesse sous parachute de 10m/s</li>
-                    <li className='list-statistics' key={'alt'}>1500m d'altitude</li>
+                    <li className='list-statistics' key={'alt'}>1500m d&apos;altitude</li>
                 </div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop:'4rem' }}>
@@ -82,7 +82,7 @@ const Page: React.FC = () => {
                 <Slideshow content={project_image_slides} slideshow_styles={{height:'40%', width:'90%', maxHeight:'40rem', maxWidth:'60rem', marginLeft:'5%', marginRight:'5%', marginTop: '2rem', marginBottom:'2rem', alignItems:'center'}}/>
                 <h2 className='title-text navy tiny' style={{margin:'2rem'}}>Les expériences embarquées</h2>
                 <div style={{ display: 'flex', flexDirection: 'row', marginLeft:'10%', marginRight:'10%' }}>
-                        <p className='regular-text tiny navy' style={{marginBottom:'1rem'}}>AjaCS avait pour ambition et objectif principal de créer un profil pression-température de l'atmosphère. Bien que les capteurs ont a priori bien fonctionné, l'inertie sur le capteur thermique n'a pas révélé la baisse de température attendue avec la montée en altitude. Cependant, la dépression observée par l'ascension s'est transcrite dans les données du vol.</p>                    
+                        <p className='regular-text tiny navy' style={{marginBottom:'1rem'}}>AjaCS avait pour ambition et objectif principal de créer un profil pression-température de l&apos;atmosphère. Bien que les capteurs ont a priori bien fonctionné, l&apos;inertie sur le capteur thermique n&apos;a pas révélé la baisse de température attendue avec la montée en altitude. Cependant, la dépression observée par l&apos;ascension s&apos;est transcrite dans les données du vol.</p>                    
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', marginLeft:'10%', marginRight:'10%', marginTop:'4rem' }}>
                     <img src='/projets/FusEx/AjaCS/pression_ajacs.png' style={{ maxHeight: '18rem'}} />
