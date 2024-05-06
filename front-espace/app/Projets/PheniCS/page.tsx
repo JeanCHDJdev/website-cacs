@@ -13,6 +13,7 @@ const img_styles : React.CSSProperties = {
     height: '40rem',
     width: '60rem',
     objectFit: 'cover',
+    
 };
 const project_image_slides = [
     <img src='/home_page/main_img_diapo/photo_grp_cspace_phenics.jpg' style={img_styles} key={0}></img>,

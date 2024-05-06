@@ -14,14 +14,14 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({bg, title, subtitle, patch
             <div
                 style={{
                 backgroundPosition: 'center',
-                height:'30vh', 
+                height:'40vh', 
                 width:'100vw',               
                 backgroundImage: `url(${bg})`,
                 backgroundSize: 'cover',
                 filter:'brightness(70%)',
                 objectFit:'cover',
             }}/>
-            <div style={{ display: 'flex', textAlign: 'center', justifyContent:'center', zIndex: 5, position:'relative', marginTop:'-15rem' }}>
+            <div style={{ display: 'flex', textAlign: 'center', justifyContent:'center', zIndex: 5, position:'relative', marginTop:'-12rem' }}>
                 <img src={patch} alt='Patch' style={{ marginRight: '2rem', width: '10rem', height: 'auto' }} />
                 <text className='title-text huge white'>{title}</text>
             </div>
