@@ -89,8 +89,8 @@ const Page: React.FC = () => {
                     </video>
                 </div>
                 <div style={{ display: 'flex', marginLeft:'10%', marginRight:'10%', marginTop:'4rem', alignItems:'center' }} className='paragraph-content'>
-                    <img src='/projets/FusEx/PheniCS/pression_phenics.png' style={{ maxHeight: '36rem', marginRight:'4rem' }} />
-                    <img src='/projets/FusEx/PheniCS/fluent_phenics_cut.png' style={{ height:'36rem',  }} />
+                    <img src='/projets/FusEx/PheniCS/pression_phenics.png' style={{ maxHeight: '30rem', marginRight:'4rem' }} />
+                    <img src='/projets/FusEx/PheniCS/fluent_phenics_cut.png' style={{ height:'30rem',  }} />
                 </div>
                 <h2 className='title-text navy tiny' style={{margin:'3rem'}}>Prix Espace et Industrie 2023</h2>
                 <div style={{ display: 'flex', marginLeft:'10%', marginRight:'10%', alignContent:'center', justifyContent:'center', alignItems:'center'}} className='paragraph-content'> 

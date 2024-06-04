@@ -18,7 +18,7 @@ const Page = () => {
   const [promosToShow, setPromosToShow] = useState<string[]>(promos);
 
   useEffect(() => {
-      axios.get('http://127.0.0.1:8000/')
+      axios.get('https://cacs.cs-campus.fr/')
           .then(response => {
               setData(response.data);
           })

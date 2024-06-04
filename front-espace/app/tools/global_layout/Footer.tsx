@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
 
   const partenaires = [
     { src :'/soutiens/ArianeGroup_blanc.png', alt: 'ArianeGroup', link: 'https://www.ariane.group/fr/', width: '25rem', height: 'auto', marginLeft: '2.5rem', text: 'ArianeGroup est le leader européen des lanceurs spatiaux, avec leur programme de fusée phare Ariane. ArianeGroup nous soutient à la fois par son expertise technique et financièrement dans nos projets.', scale: '1.5'},
-    { src :'/soutiens/archery.png', alt: 'Archery', link: 'https://www.archeryconsulting.com/', width: '20rem', height: 'auto', marginLeft: '2.5rem', text: 'Archery Strategic Consulting est un cabinet de conseil en stratégie notamment impliqué dans l\'aérospatial et la défense, qui nous soutient dans nos projets.', scale: '0.8'},
+    { src :'/soutiens/archery.png', alt: 'Archery', link: 'https://www.archeryconsulting.com/', width: '20rem', height: 'auto', marginLeft: '2.5rem', text: 'Archery Strategy Consulting est un cabinet de conseil en stratégie notamment impliqué dans l\'aérospatial et la défense, qui nous soutient dans nos projets.', scale: '0.8'},
   ];
 
   return (
