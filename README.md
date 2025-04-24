@@ -3,7 +3,7 @@
 ---------------
 
 This project designs a complete website for the aerospace society of CentraleSupélec, available in its full deployed glory right here : https://cacs.cs-campus.fr/.
-In it's current state, the project lacks large files such as video and photo content, now only available on the website and on its virtual machine hosting it.
+In its current state, the project lacks large files such as video and photo content, now only available on the website and on its virtual machine hosting it.
 The goal was to learn web development and therefore some code is slightly outdated or could have been written better; but it was a great learning experience.
 
 Here are some page examples ! 
