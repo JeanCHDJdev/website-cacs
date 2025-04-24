@@ -3,6 +3,9 @@ backup-dbs/
 media/
 *.sqlite3
 
+# data
+front-espace/public/**
+
 # Javascript
 node_modules/
 bundles/
