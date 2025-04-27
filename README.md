@@ -14,9 +14,9 @@ Here are some page examples !
 
 <img width="942" alt="image" src="https://github.com/user-attachments/assets/b84ee0c0-06ba-484f-a5a4-ebe12cb2fc1e" />
 
-<img width="947" alt="image" src="https://github.com/user-attachments/assets/406ee4fb-3972-4716-af74-50a07550e4bb" />
+<img width="942" alt="image" src="https://github.com/user-attachments/assets/406ee4fb-3972-4716-af74-50a07550e4bb" />
 
-<img width="926" alt="image" src="https://github.com/user-attachments/assets/28d6960a-f134-40f4-823f-7719e897570b" />
+<img width="942" alt="image" src="https://github.com/user-attachments/assets/28d6960a-f134-40f4-823f-7719e897570b" />
 
 ### Tools
 
