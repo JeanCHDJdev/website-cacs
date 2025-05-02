@@ -31,4 +31,4 @@ Here is the framework that was used in development.
 
 -------------
 
-The website is not meant to be re-used anytime soon as it will be replaced by a WordPress equivalent so that new users can easily update the website, per choice of the new members of the association. This github page is both meant as legacy code, showcasing the project, and storing it. You can find the new website at the same address ! (as of 2025). 
+The website is not meant to be re-used anytime soon as it is now replaced by a WordPress equivalent so that new users can easily update the website, per choice of the new members of the association. This github page is both meant as legacy code, showcasing the project, and storing it. You can find the new website [here](https://cacs-aerospace.fr), and the wiki [here](https://wiki.cacs-aerospace.fr) !
